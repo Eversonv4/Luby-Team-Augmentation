@@ -49,7 +49,7 @@ export const Description = styled.h4`
   font-family: ${({ theme }) => theme.fonts.regular};
   color: ${({ theme }) => theme.colors.text};
 
-  font-weight: 400;
+  font-weight: 300;
   max-width: 820px;
   text-align: center;
   text-shadow: 2px 2px 20px #000;
