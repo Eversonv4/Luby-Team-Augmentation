@@ -28,7 +28,7 @@ export const NavList = styled.ul`
     font-weight: 500;
 
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 30px;
 
     &:hover {
       color: ${({ theme }) => theme.colors.primary};

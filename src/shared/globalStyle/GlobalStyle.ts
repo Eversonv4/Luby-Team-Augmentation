@@ -13,9 +13,12 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
    }
 
+   a {
+      text-decoration: none;
+   }
+
    body {
       background-color: #383838;
-      
    }
 
    cursor: pointer;

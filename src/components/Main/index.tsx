@@ -5,8 +5,12 @@ import {
   SubTitle,
   BgImage,
   Description,
+  ActionBtnContainer,
 } from "./styles";
 import { Header } from "@components/Header";
+import Link from "next/link";
+
+import { FiChevronDown } from "react-icons/fi";
 
 export function MainContent() {
   return (
@@ -24,6 +28,14 @@ export function MainContent() {
         in IT projects across several industries, both domestically and
         internationally.
       </Description>
+
+      <ActionBtnContainer>
+        <span>
+          <Link href="#">Contact Us</Link>
+          <FiChevronDown />
+        </span>
+        <h4>Decrease Ramp-Up Time and Costs</h4>
+      </ActionBtnContainer>
     </MainSection>
   );
 }
