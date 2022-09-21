@@ -23,7 +23,7 @@ export const NavList = styled.ul`
 
   & li {
     color: ${({ theme }) => theme.colors.text};
-    font-family: ${({ theme }) => theme.fonts.regular};
+    font-family: ${({ theme }) => theme.fonts.manrope};
     font-size: 16px;
     font-weight: 500;
 

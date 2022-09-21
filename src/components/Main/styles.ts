@@ -28,7 +28,7 @@ export const BgImage = styled.img`
 
 export const MainTitle = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
-  font-family: ${({ theme }) => theme.fonts.main_title};
+  font-family: ${({ theme }) => theme.fonts.oswald};
 
   font-size: 60px;
   text-shadow: 2px 2px 20px #000;
@@ -38,7 +38,7 @@ export const MainTitle = styled.h1`
 
 export const SubTitle = styled.h2`
   color: ${({ theme }) => theme.colors.secondary};
-  font-family: ${({ theme }) => theme.fonts.main_title};
+  font-family: ${({ theme }) => theme.fonts.oswald};
 
   font-size: 32px;
   text-shadow: 2px 2px 20px #000;
@@ -46,7 +46,7 @@ export const SubTitle = styled.h2`
 
 export const Description = styled.h4`
   font-size: 24px;
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.manrope};
   color: ${({ theme }) => theme.colors.text};
 
   font-weight: 300;
@@ -57,7 +57,7 @@ export const Description = styled.h4`
 
 export const ActionBtnContainer = styled.div`
   color: ${({ theme }) => theme.colors.text};
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.manrope};
 
   display: flex;
   align-items: center;

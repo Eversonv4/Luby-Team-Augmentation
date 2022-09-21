@@ -10,8 +10,7 @@ export default {
     bg_cards: "#EBEBE8",
   },
   fonts: {
-    main_title: "Oswald",
-    regular: "Manrope",
-    light: "Manrope",
+    oswald: "Oswald",
+    manrope: "Manrope",
   },
 };
