@@ -20,7 +20,7 @@ export const LayoutContainer = styled.div`
     width: 150px;
 
     & img {
-      width: 200px;
+      width: 180px;
     }
   }
 `;
