@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
         <title>Team Augmentation | Luby</title>
-        <link rel="icon" href="/assets/company-icons/luby-icon.png" />
+        <link rel="icon" href="/assets/company-icons/luby-icon.webp" />
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>

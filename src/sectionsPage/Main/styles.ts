@@ -31,6 +31,7 @@ export const MainTitle = styled.h1`
   font-family: ${({ theme }) => theme.fonts.oswald};
 
   font-size: 60px;
+  text-align: center;
   text-shadow: 2px 2px 20px #000;
 
   margin-top: 100px;
