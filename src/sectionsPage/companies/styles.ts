@@ -19,6 +19,8 @@ export const LayoutContainer = styled.div`
   & .splide__slide {
     width: 150px;
 
+    cursor: grab;
+
     & img {
       width: 180px;
     }
