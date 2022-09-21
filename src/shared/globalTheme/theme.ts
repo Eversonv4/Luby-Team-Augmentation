@@ -7,6 +7,7 @@ export default {
     secondary: "#FFB706",
 
     bg_hover: "#0039B3",
+    bg_hover_dark: "#002066",
     hover_button: "#2F3439",
     bg_cards: "#EBEBE8",
   },

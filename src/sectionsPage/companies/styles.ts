@@ -12,13 +12,8 @@ export const LayoutContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  /* & .splide__arrows {
-    display: none;
-  } */
-
   & .splide__slide {
     width: 150px;
-
     cursor: grab;
 
     & img {
