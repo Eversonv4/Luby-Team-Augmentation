@@ -17,7 +17,7 @@ export function MainContent() {
     <MainSection>
       <Header />
       <BgImage
-        src="/assets/background-sections/outsourcing-lp-bg.jpg"
+        src="/assets/background-sections/outsourcing-lp-bg.webp"
         alt="background image"
       />
       <MainTitle>Team Augmentation</MainTitle>

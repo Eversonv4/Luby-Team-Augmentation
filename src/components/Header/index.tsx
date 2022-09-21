@@ -6,7 +6,7 @@ export function Header() {
     <HeaderContainer>
       <HeaderLayout>
         <LogoImg
-          src="/assets/company-icons/logo-luby-site.png"
+          src="/assets/company-icons/logo-luby-site.webp"
           alt="logo luby"
         />
         <nav>
