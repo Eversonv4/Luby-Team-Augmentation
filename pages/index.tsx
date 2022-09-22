@@ -4,6 +4,7 @@ import { MainContent } from "@sections/Main";
 import { CompaniesSection } from "@sections/companies";
 import { ScaleTechTeamSection } from "@sections/scaleTechTeam";
 import { BenefitsSection } from "@sections/benefits";
+import { ThePillars } from "@sections/thePillars";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <CompaniesSection />
       <ScaleTechTeamSection />
       <BenefitsSection />
+      <ThePillars />
     </>
   );
 }

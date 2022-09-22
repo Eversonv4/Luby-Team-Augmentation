@@ -59,6 +59,7 @@ export const Description = styled.h4`
 export const ActionBtnContainer = styled.div`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.manrope};
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
 
   display: flex;
   align-items: center;
