@@ -4,7 +4,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@shared/*": ["src/shared/*"],
-      "@sections/*": ["src/sectionsPage/*"]
+      "@sections/*": ["src/sectionsPage/*"],
+      "@assets/*": ["src/assets/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

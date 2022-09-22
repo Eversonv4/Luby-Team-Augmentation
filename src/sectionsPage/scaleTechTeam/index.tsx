@@ -13,6 +13,9 @@ import {
 import { BiTrendingUp } from "react-icons/bi";
 import { MdFolderShared } from "react-icons/md";
 
+import SecurityIcon from "@assets/security.svg";
+import AgilityIcon from "@assets/agility_icon.svg";
+
 export function ScaleTechTeamSection() {
   return (
     <Container>
@@ -34,7 +37,7 @@ export function ScaleTechTeamSection() {
       <CardsContainer>
         <Card>
           <CardContent>
-            <img src="/assets/icons/agility_icon.svg" alt="agility icon" />
+            <AgilityIcon />
 
             <TitleCard>Sourcing Agility And Reduced Down Time</TitleCard>
             <DescriptionCard>
@@ -68,7 +71,7 @@ export function ScaleTechTeamSection() {
         </Card>
         <Card>
           <CardContent>
-            <img src="/assets/icons/security.svg" alt="secutiry icon" />
+            <SecurityIcon />
 
             <TitleCard>Replenishment And Customer Success</TitleCard>
             <DescriptionCard>

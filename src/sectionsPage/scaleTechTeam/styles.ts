@@ -54,15 +54,16 @@ export const Card = styled.div`
     color: ${({ theme }) => theme.colors.text};
     transition: background-color 0.5s cubic-bezier(0.42, 0, 0.58, 1);
 
-    & img {
+    & image {
       filter: invert(1);
     }
   }
 
   & svg,
-  & img {
+  & image {
     width: 51px;
     height: 48px;
+    z-index: 0;
 
     margin-bottom: 20px;
   }
