@@ -15,12 +15,12 @@ export function ThePillars() {
 
   return (
     <Container>
-      <Title>The 3 Pillars of Luby`'`s IT Team Augmentation Service</Title>
+      <Title>The 3 Pillars of Luby's IT Team Augmentation Service</Title>
       <SubTitle>
         How could we increase the value provided in our IT Team Augmentation
-        service, especially to our client`'`s in North America? Watch what
-        Victor Chiea, our Head of International Business Development, has to
-        tell us about.
+        service, especially to our client's in North America? Watch what Victor
+        Chiea, our Head of International Business Development, has to tell us
+        about.
       </SubTitle>
       {loadVideo ? <IframeVideo /> : <IframeThumb showVideo={showVideo} />}
       <ActionBtnContainer>
