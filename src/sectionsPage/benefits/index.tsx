@@ -14,7 +14,7 @@ export function BenefitsSection() {
     <Container>
       <ContainerLayout>
         <Title>
-          Inherent Benefits of Luby`&apos;`s Team Augmentation Solution
+          Inherent Benefits of Luby's Team Augmentation Solution
           <TitleContrast> for your company</TitleContrast>
         </Title>
 
@@ -46,8 +46,7 @@ export function BenefitsSection() {
           <li>
             <CheckIcon />
             <BenefitsText>
-              Higher cost effectiveness through Luby`&apos;`s nearshore
-              advantage;
+              Higher cost effectiveness through Luby's nearshore advantage;
             </BenefitsText>
           </li>
         </BenefitsList>
