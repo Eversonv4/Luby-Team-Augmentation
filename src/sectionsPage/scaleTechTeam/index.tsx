@@ -35,8 +35,8 @@ export function ScaleTechTeamSection() {
       </div>
 
       <CardsContainer>
-        <Card>
-          <CardContent>
+        <Card className="Card">
+          <CardContent className="CardContent">
             <AgilityIcon />
 
             <TitleCard>Sourcing Agility And Reduced Down Time</TitleCard>

@@ -49,10 +49,11 @@ export const Card = styled.div`
   border-radius: 6px;
   overflow: hidden;
 
-  & :hover {
+  :hover {
     background-color: ${({ theme }) => theme.colors.bg_hover_dark};
     color: ${({ theme }) => theme.colors.text};
-    transition: background-color 0.5s cubic-bezier(0.42, 0, 0.58, 1);
+
+    transition: background-color 0.6s cubic-bezier(0.42, 0, 0.58, 1);
 
     & image {
       filter: invert(1);
@@ -83,6 +84,8 @@ export const TitleCard = styled.h3`
   font-size: 24px;
   font-weight: 400;
 
+  background-color: transparent;
+
   line-height: 30px;
 
   text-align: center;
@@ -93,6 +96,8 @@ export const TitleCard = styled.h3`
 export const DescriptionCard = styled.p`
   font-family: ${({ theme }) => theme.fonts.manrope};
   text-align: center;
+
+  background-color: transparent;
 
   font-size: 18px;
   line-height: 24px;
