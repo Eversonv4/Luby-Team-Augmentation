@@ -46,7 +46,7 @@ export function BenefitsSection() {
           <li>
             <CheckIcon />
             <BenefitsText>
-              Higher cost effectiveness through Luby’s nearshore advantage;
+              Higher cost effectiveness through Luby&apos;s nearshore advantage;
             </BenefitsText>
           </li>
         </BenefitsList>
