@@ -10,5 +10,9 @@ interface TechListProps {
 export function TeamsList({ techlist }: TechListProps) {
   const list = techlist;
 
-  return <List>{list && list.map((item) => <ItemList title={item} />)}</List>;
+  return (
+    <List>
+      {list && list.map((item) => <ItemList key={item} title={item} />)}
+    </List>
+  );
 }
