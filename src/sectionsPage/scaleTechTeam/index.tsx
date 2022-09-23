@@ -42,7 +42,7 @@ export function ScaleTechTeamSection() {
             <TitleCard>Sourcing Agility And Reduced Down Time</TitleCard>
             <DescriptionCard>
               Decrease dependency on internal recruiting and down time due to
-              long waits to find the right professional with Luby’s - faster
+              long waits to find the right professional with Luby's - faster
               than market - shortlist of candidates.
             </DescriptionCard>
           </CardContent>
@@ -63,7 +63,7 @@ export function ScaleTechTeamSection() {
             <MdFolderShared />
             <TitleCard>On-Demand Availability And Talent Pools</TitleCard>
             <DescriptionCard>
-              Luby’s immediately available talent can be selected to address
+              Luby's immediately available talent can be selected to address
               your current needs while our sourcing process will help you find
               very specific profiles.
             </DescriptionCard>
@@ -75,7 +75,7 @@ export function ScaleTechTeamSection() {
 
             <TitleCard>Replenishment And Customer Success</TitleCard>
             <DescriptionCard>
-              If by any reason there’s not a great fit, we replenish the
+              If by any reason there's not a great fit, we replenish the
               provided role with someone with a better fit and our team of cs
               representatives will constantly follow up with you to make sure
               the delivery is meeting your expectations.

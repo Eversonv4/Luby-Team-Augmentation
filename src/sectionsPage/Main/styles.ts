@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const AnimateOpacity = keyframes`
+    from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+`;
 
 export const MainSection = styled.main`
   height: 770px;
@@ -35,6 +44,9 @@ export const MainTitle = styled.h1`
   text-shadow: 2px 2px 20px #000;
 
   margin-top: 100px;
+
+  animation-name: ${AnimateOpacity};
+  animation-duration: 1.5s;
 `;
 
 export const SubTitle = styled.h2`
@@ -43,6 +55,9 @@ export const SubTitle = styled.h2`
 
   font-size: 32px;
   text-shadow: 2px 2px 20px #000;
+
+  animation-name: ${AnimateOpacity};
+  animation-duration: 1.4s;
 `;
 
 export const Description = styled.h4`
@@ -54,9 +69,15 @@ export const Description = styled.h4`
   max-width: 820px;
   text-align: center;
   text-shadow: 2px 2px 20px #000;
+
+  animation-name: ${AnimateOpacity};
+  animation-duration: 1.4s;
 `;
 
 export const ActionBtnContainer = styled.div`
+  animation-name: ${AnimateOpacity};
+  animation-duration: 1.4s;
+
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.manrope};
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);

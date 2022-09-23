@@ -7,6 +7,7 @@ import { ScaleTechTeamSection } from "@sections/scaleTechTeam";
 import { BenefitsSection } from "@sections/benefits";
 import { ThePillars } from "@sections/thePillars";
 import { MultiTeamsSection } from "@sections/multiTeams";
+import { StacksSection } from "@sections/stacks";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <BenefitsSection />
       <ThePillars />
       <MultiTeamsSection />
+      <StacksSection />
     </>
   );
 }
