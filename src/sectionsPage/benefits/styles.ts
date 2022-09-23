@@ -3,7 +3,7 @@ import { IoMdCheckmark } from "react-icons/io";
 
 const AnimateBottom = keyframes`
   from {
-				bottom: -300px;
+				bottom: -100px;
 				opacity: 0;
 			}
 			to {
