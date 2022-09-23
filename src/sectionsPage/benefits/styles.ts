@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { IoMdCheckmark } from "react-icons/io";
+
+const AnimateBottom = keyframes`
+  from {
+				bottom: -300px;
+				opacity: 0;
+			}
+			to {
+				bottom: 0;
+				opacity: 1;
+			}
+`;
 
 export const Container = styled.section`
   background-color: #010006;
@@ -19,6 +30,9 @@ export const ContainerLayout = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  animation-name: ${AnimateBottom};
+  animation-duration: 1.5s;
 `;
 
 export const Title = styled.h2`

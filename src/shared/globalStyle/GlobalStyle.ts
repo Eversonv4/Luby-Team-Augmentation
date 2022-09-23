@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { keyframes } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
    * {
