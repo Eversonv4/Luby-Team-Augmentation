@@ -31,6 +31,7 @@ export const ContainerLayout = styled.article`
   flex-direction: column;
   justify-content: center;
 
+  position: relative;
   animation-name: ${AnimateBottom};
   animation-duration: 1.5s;
 `;
