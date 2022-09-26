@@ -9,7 +9,7 @@ export const Button = styled.button<IButton>`
   border: none;
   padding: 20px;
   font-size: 1.125rem;
-  line-height: 1.125rem;
+  line-height: 1.5rem;
   font-weight: 500;
 
   text-align: center;

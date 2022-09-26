@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const AnimateTop = keyframes`
+  from {
+    margin-top: -100px;
+  }
+  to {
+    margin-top: 0;
+  }
+`;
 
 export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.bg_hover_dark};
@@ -9,6 +18,8 @@ export const Container = styled.section`
 export const ContainerLayout = styled.article`
   max-width: 1170px;
   margin: 0 auto;
+
+  position: relative;
 `;
 
 export const Title = styled.h2`
