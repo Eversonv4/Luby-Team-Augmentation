@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import {
   Container,
   ContainerCarrossel,
@@ -16,7 +15,7 @@ export function TestimonnialsSection() {
         We are proud to share the referrals of our dear customers
       </SubTitle>
       <ContainerCarrossel>
-        <div className="custom-html">
+        {/* <div className="custom-html">
           <script src="https://widget.clutch.co/static/js/widget.js"></script>
           <div
             className="clutch-widget"
@@ -53,11 +52,28 @@ export function TestimonnialsSection() {
               title="[iFrameSizer]iframe-0.2177849847350264:0:0:mouseleave:556:-11104"
             ></iframe>
           </div>
-        </div>
+        </div> */}
+        <script
+          type="text/javascript"
+          src="https://widget.clutch.co/static/js/widget.js"
+          async
+        ></script>{" "}
+        <div
+          className="clutch-widget"
+          data-url="https://widget.clutch.co"
+          data-widget-type="4"
+          data-height="auto"
+          data-nofollow="true"
+          data-expandifr="true"
+          data-scale="100"
+          // data-scale="100"
+          data-reviews="1981829,1973220,1962997,1917262,1909639"
+          data-clutchcompany-id="1748502"
+        ></div>
       </ContainerCarrossel>
 
       <StatusContainer>
-        <div className="custom-html">
+        {/* <div className="custom-html">
           <script src="https://widget.clutch.co/static/js/widget.js"></script>
           <div
             className="clutch-widget"
@@ -84,7 +100,7 @@ export function TestimonnialsSection() {
               title="[iFrameSizer]iframe-0.22077650616990474:0:0:mouseleave:396:-4301 Dark"
             ></iframe>
           </div>
-        </div>
+        </div> */}
       </StatusContainer>
     </Container>
   );
