@@ -14,7 +14,7 @@ export const List = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(65px, auto);
   gap: 30px;
-  padding: 20px 25px;
+  padding: 20px;
 
   animation: ${FadeList} 1.5s ease;
 `;

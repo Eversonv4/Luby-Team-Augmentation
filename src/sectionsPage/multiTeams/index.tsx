@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ButtonTechList } from "@components/ButtonTechList";
-import { TeamsListData } from "@shared/utils/TeamsListData";
+import { TeamsListData } from "@shared/dataLists/TeamsListData";
 
 import {
   Container,
@@ -11,21 +11,21 @@ import {
   TeamsListContainer,
   TechlistContainer,
 } from "./styles";
+
+import { TeamsProps } from "./inteface";
+
 import { TeamsList } from "@components/TeamsList/TeamsList";
 
 export function MultiTeamsSection() {
-  const [chooseTeam, setChooseTeam] = useState<"tech" | "product" | "design">(
-    "tech"
-  );
+  const [chooseTeam, setChooseTeam] = useState<TeamsProps>("tech");
   const [listActive, setListActive] = useState<string[]>([]);
 
-  function handleTeamActive(team: "tech" | "product" | "design") {
+  function handleTeamActive(team: TeamsProps) {
     setChooseTeam(team);
     setListActive(TeamsListData[team]);
   }
 
   useEffect(() => {
-    console.log("entrou");
     handleTeamActive(chooseTeam);
   }, [chooseTeam]);
 

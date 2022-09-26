@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   ContainerLayout,
@@ -9,11 +9,25 @@ import {
   StackListContainer,
 } from "./styles";
 
+import { StackProps, StackItem } from "./interface";
+
 import { ButtonStackList } from "@components/ButtonStackList";
 import { StackList } from "@components/StackList/StackList";
-import { StackListData } from "@shared/utils/StackListData";
+import { StackListData } from "@shared/dataLists/StackListData";
 
 export function StacksSection() {
+  const [selectedStack, setSelectedStack] = useState<StackProps>("backend");
+  const [stackActive, setStackActive] = useState<StackItem[]>([]);
+
+  function handleStackList(stack: StackProps) {
+    setSelectedStack(stack);
+    setStackActive(StackListData[stack]);
+  }
+
+  useEffect(() => {
+    handleStackList(selectedStack);
+  }, [selectedStack]);
+
   return (
     <Container>
       <ContainerLayout>
@@ -25,26 +39,90 @@ export function StacksSection() {
 
         <StackContainer>
           <TechContainer>
-            <ButtonStackList isActive={true}>Back-End</ButtonStackList>
-            <ButtonStackList isActive={false}>Front-End</ButtonStackList>
-            <ButtonStackList isActive={false}>Mobile</ButtonStackList>
+            <ButtonStackList
+              isActive={selectedStack === "backend"}
+              onClick={() => handleStackList("backend")}
+            >
+              Back-End
+            </ButtonStackList>
 
-            <ButtonStackList isActive={false}>Databases</ButtonStackList>
+            <ButtonStackList
+              isActive={selectedStack === "frontend"}
+              onClick={() => handleStackList("frontend")}
+            >
+              Front-End
+            </ButtonStackList>
 
-            <ButtonStackList isActive={false}>Cloud</ButtonStackList>
+            <ButtonStackList
+              isActive={selectedStack === "mobile"}
+              onClick={() => handleStackList("mobile")}
+            >
+              Mobile
+            </ButtonStackList>
 
-            <ButtonStackList isActive={false}>
+            <ButtonStackList
+              isActive={selectedStack === "databases"}
+              onClick={() => handleStackList("databases")}
+            >
+              Databases
+            </ButtonStackList>
+
+            <ButtonStackList
+              isActive={selectedStack === "cloud"}
+              onClick={() => handleStackList("cloud")}
+            >
+              Cloud
+            </ButtonStackList>
+
+            <ButtonStackList
+              isActive={selectedStack === "infrastructure"}
+              onClick={() => handleStackList("infrastructure")}
+            >
               Infrastructure and CI/CD
             </ButtonStackList>
 
-            <ButtonStackList isActive={false}>
+            <ButtonStackList
+              isActive={selectedStack === "quality"}
+              onClick={() => handleStackList("quality")}
+            >
               Quality Assurance
             </ButtonStackList>
 
-            <ButtonStackList isActive={false}>Data</ButtonStackList>
+            <ButtonStackList
+              isActive={selectedStack === "data"}
+              onClick={() => handleStackList("data")}
+            >
+              Data
+            </ButtonStackList>
           </TechContainer>
           <StackListContainer>
-            <StackList stacklist={StackListData.backend} />
+            {selectedStack === "backend" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "frontend" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "mobile" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "databases" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "cloud" && <StackList stacklist={stackActive} />}
+
+            {selectedStack === "infrastructure" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "quality" && (
+              <StackList stacklist={stackActive} />
+            )}
+
+            {selectedStack === "data" && <StackList stacklist={stackActive} />}
           </StackListContainer>
         </StackContainer>
       </ContainerLayout>

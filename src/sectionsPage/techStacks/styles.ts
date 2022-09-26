@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.bg_hover_dark};
 
-  padding: 60px 0 50px;
+  padding: 60px 0 40px;
 `;
 
 export const ContainerLayout = styled.article`
