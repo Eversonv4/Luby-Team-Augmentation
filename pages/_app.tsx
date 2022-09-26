@@ -5,6 +5,8 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import Theme from "@shared/globalTheme/theme";
 import { GlobalStyle } from "@shared/globalStyle/GlobalStyle";
+import { NextScript } from "next/document";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
