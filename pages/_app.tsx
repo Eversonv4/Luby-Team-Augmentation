@@ -5,8 +5,6 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import Theme from "@shared/globalTheme/theme";
 import { GlobalStyle } from "@shared/globalStyle/GlobalStyle";
-import { NextScript } from "next/document";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Team Augmentation | Luby</title>
         <meta
           name="description"
-          content="Immediately available personnel and custom-made sourcing process, all with the same quality level of Luby’s more than 20 years of experience in IT projects across several industries, both domestically and internationally."
+          content="Immediately available personnel and custom-made sourcing process, all with the same quality level of Luby's more than 20 years of experience in IT projects across several industries, both domestically and internationally."
         />
         <meta name="author" content="Luby Software" />
         <link rel="icon" href="/assets/company-icons/luby-icon.webp" />
