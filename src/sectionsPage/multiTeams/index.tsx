@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ButtonTechList } from "@components/ButtonTechList";
-import { TeamsListData } from "@shared/utils/TeamsList";
+import { TeamsListData } from "@shared/utils/TeamsListData";
 
 import {
   Container,

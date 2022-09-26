@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.bg_cards};
 
-  padding: 60px 0;
+  padding: 80px 0;
 `;
 
 export const ContainerLayout = styled.article`
