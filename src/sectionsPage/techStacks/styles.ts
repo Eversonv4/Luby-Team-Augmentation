@@ -20,6 +20,8 @@ export const ContainerLayout = styled.article`
   margin: 0 auto;
 
   position: relative;
+
+  animation: AnimateTop 1s linear;
 `;
 
 export const Title = styled.h2`
