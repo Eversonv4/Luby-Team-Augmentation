@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const AnimateTop = keyframes`
   from {
-    margin-top: -100px;
+    margin-top: -200px;
   }
   to {
     margin-top: 0;
@@ -21,7 +21,7 @@ export const ContainerLayout = styled.article`
 
   position: relative;
 
-  animation: AnimateTop 1s linear;
+  animation: AnimateTop 1.5s linear;
 `;
 
 export const Title = styled.h2`
