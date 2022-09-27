@@ -1,4 +1,5 @@
 import react from "react";
+import Link from "next/link";
 import { HeaderContainer, HeaderLayout, LogoImg, NavList } from "./styles";
 
 export function Header() {
@@ -11,7 +12,9 @@ export function Header() {
         />
         <nav>
           <NavList>
-            <li>Sale your tech team</li>
+            <li>
+              <Link href="#ScaleTeam">Sale your tech team</Link>
+            </li>
             <li>Benefits</li>
             <li>The 3 Pillars</li>
             <li>Multidisciplinary Teams</li>

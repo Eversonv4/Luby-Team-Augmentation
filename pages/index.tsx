@@ -6,6 +6,7 @@ import { ThePillars } from "@sections/thePillars";
 import { MultiTeamsSection } from "@sections/multiTeams";
 import { StacksSection } from "@sections/techStacks";
 import { TestimonnialsSection } from "@sections/testimonials";
+import { ContactUsSection } from "@sections/contactUs";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <MultiTeamsSection />
       <StacksSection />
       <TestimonnialsSection />
+      <ContactUsSection />
     </>
   );
 }

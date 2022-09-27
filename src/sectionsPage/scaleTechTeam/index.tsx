@@ -18,7 +18,7 @@ import AgilityIcon from "@assets/agility_icon.svg";
 
 export function ScaleTechTeamSection() {
   return (
-    <Container>
+    <Container id="ScaleTeam">
       <div>
         <Title>
           High performing professionals to quickly scale your tech team

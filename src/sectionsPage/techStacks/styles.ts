@@ -21,7 +21,7 @@ export const ContainerLayout = styled.article`
 
   position: relative;
 
-  animation: AnimateTop 1.5s linear;
+  animation: AnimateTop 2s linear;
 `;
 
 export const Title = styled.h2`

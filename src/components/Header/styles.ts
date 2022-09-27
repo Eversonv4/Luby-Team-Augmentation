@@ -30,6 +30,10 @@ export const NavList = styled.ul`
     cursor: pointer;
     margin-left: 30px;
 
+    a {
+      color: inherit;
+    }
+
     &:hover {
       color: ${({ theme }) => theme.colors.primary};
       transition: 0.5s ease;
