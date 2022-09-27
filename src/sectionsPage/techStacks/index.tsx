@@ -48,7 +48,7 @@ export function StacksSection() {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: "some" }}
+        viewport={{ once: true, amount: "some" }}
         variants={AnimationSection}
       >
         <ContainerLayout>
