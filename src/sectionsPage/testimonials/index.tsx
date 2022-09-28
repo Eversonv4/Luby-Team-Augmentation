@@ -12,6 +12,7 @@ import {
 } from "./styles";
 
 import { motion, Variants } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const FadeAnimation: Variants = {
   offscreen: {
@@ -119,11 +120,13 @@ export function TestimonnialsSection() {
           </StatusContainerLayout>
         </motion.div>
       </StatusContainer>
-      <script
-        type="text/javascript"
-        src="https://widget.clutch.co/static/js/widget.js"
-        async
-      ></script>
+      <Helmet>
+        <script
+          type="text/javascript"
+          src="https://widget.clutch.co/static/js/widget.js"
+          async
+        ></script>
+      </Helmet>
     </Container>
   );
 }

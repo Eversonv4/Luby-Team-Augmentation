@@ -9,10 +9,15 @@ import {
 } from "./styles";
 
 export function ContactUsSection() {
+  function MessageConsole(e: any) {
+    e.preventDefault();
+    console.log("Hello");
+  }
+
   return (
     <Container>
       <ContainerLayout>
-        <FormContainer>
+        <div>
           <Span>let's talk about</Span>
           <Title>Team Augmentation</Title>
           <ContactTitle>
@@ -20,9 +25,18 @@ export function ContactUsSection() {
             <br />
             or call <strong>+1 305 600 1993</strong>
           </ContactTitle>
-        </FormContainer>
+        </div>
         <FormContainer>
-          <h2>Hello</h2>
+          <form onSubmit={MessageConsole}>
+            <input type="name" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Company's Name" />
+            <input type="text" placeholder="Your Role" />
+            <input type="tel" placeholder="(___) ___-____" />
+            <textarea placeholder="Please feel free to enter all information that can help us to assist you"></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
         </FormContainer>
       </ContainerLayout>
     </Container>

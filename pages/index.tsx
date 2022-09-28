@@ -7,6 +7,8 @@ import { MultiTeamsSection } from "@sections/multiTeams";
 import { StacksSection } from "@sections/techStacks";
 import { TestimonnialsSection } from "@sections/testimonials";
 import { ContactUsSection } from "@sections/contactUs";
+import { FaqSection } from "@sections/FAQ";
+import Footer from "@components/Footer";
 
 function Home() {
   return (
@@ -20,6 +22,8 @@ function Home() {
       <StacksSection />
       <TestimonnialsSection />
       <ContactUsSection />
+      <FaqSection />
+      <Footer />
     </>
   );
 }
