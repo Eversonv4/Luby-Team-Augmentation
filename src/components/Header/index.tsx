@@ -3,6 +3,7 @@ import Link from "next/link";
 import { HeaderContainer, HeaderLayout, LogoImg, NavList } from "./styles";
 
 export function Header() {
+  /* TODO Header Section */
   return (
     <HeaderContainer>
       <HeaderLayout>

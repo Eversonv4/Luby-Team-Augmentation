@@ -30,54 +30,8 @@ export const TitleHighlight = styled.h3`
   text-align: center;
 `;
 
-export const AcordeonContainer = styled.div`
-  max-width: 570px;
-  border: 1px solid red;
-`;
-
-interface Open {
-  open: boolean;
-}
-
-export const ContentBox = styled.div<Open>`
-  position: relative;
-
-  & label {
-    font-family: ${({ theme }) => theme.fonts.manrope};
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 10px;
-    background-color: ${({ theme }) => theme.colors.text};
-    color: ${({ theme }) => theme.colors.text_dark};
-    cursor: pointer;
-
-    ::before {
-      content: "›";
-      position: absolute;
-      top: 5px;
-      right: 20px;
-      font-size: 1.5rem;
-      transition: 1s ease;
-      transform: ${({ open }) => (open ? "rotate(90deg)" : "")};
-    }
-  }
-`;
-
-export const ContentText = styled.div<Open>`
-  position: relative;
-  padding: 0 10px;
-  background-color: #f3f3f1;
-  transition: max-height 2s ease;
-  overflow: hidden;
-  overflow-y: hidden;
-
-  height: 0;
-  transition: height 2s ease;
-
-  &.active {
-    height: 300px;
-  }
-  -webkit-scrollbar: none;
+export const QuestionContainer = styled.div`
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: space-between;
 `;

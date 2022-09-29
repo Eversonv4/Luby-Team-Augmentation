@@ -18,6 +18,8 @@ import { TeamsList } from "@components/TeamsList/TeamsList";
 import { motion, Variants } from "framer-motion";
 
 export function MultiTeamsSection() {
+  // TODO multi teams
+
   const [chooseTeam, setChooseTeam] = useState<TeamsProps>("tech");
   const [listActive, setListActive] = useState<string[]>([]);
 

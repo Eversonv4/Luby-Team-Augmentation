@@ -10,7 +10,7 @@ interface ItemProps {
 export function ItemList({ title, image }: ItemProps) {
   return (
     <Item>
-      <Image src={image} width={75} height={75} />
+      <Image src={image} alt={title} width={75} height={75} />
       <Title>{title}</Title>
     </Item>
   );

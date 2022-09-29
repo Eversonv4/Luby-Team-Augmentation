@@ -1,31 +1,42 @@
 import React, { ReactNode } from "react";
-import { AcordeonContainer, ContentBox, ContentText } from "./styles";
-import { IoMdHelpCircle } from "react-icons/io";
+import {
+  AcordeonContainer,
+  ContentBox,
+  ContentText,
+  ArrowRightIcon,
+  HelpIcon,
+} from "./styles";
 
 interface IAccordeonProps {
+  question: string;
   children: ReactNode;
-  open: string;
+  open: boolean;
   height?: string;
-  handleOpenAcordion: (param: string) => void;
+  handleOpenAcordion?: (param: string) => void;
+  onClick: () => void;
 }
 
 export function Accordeon({
   children,
+  question,
   open,
   height,
   handleOpenAcordion,
+  ...rest
 }: IAccordeonProps) {
   return (
-    <AcordeonContainer>
-      <ContentBox open={open === "dois"} className="contentBox">
-        <label onClick={() => handleOpenAcordion("dois")}>
-          <IoMdHelpCircle size={24} /> What is IT Team Augmentation?
+    <AcordeonContainer {...rest}>
+      <ContentBox open={open} className="contentBox">
+        <label onClick={() => handleOpenAcordion}>
+          <HelpIcon />
+          <span>{question}</span>
+          <ArrowRightIcon className="arrow" />
         </label>
 
         <ContentText
           height={height}
-          className={open === "dois" ? "active" : ""}
-          open={open === "dois"}
+          className={open ? "active" : ""}
+          open={open}
         >
           {children}
         </ContentText>
