@@ -34,4 +34,18 @@ export const QuestionContainer = styled.div`
   margin: 50px auto 0;
   display: flex;
   justify-content: space-between;
+
+  & div div {
+    @media (max-width: 1000px) {
+      max-width: 100%;
+      padding: 0 10px;
+      border: none;
+      margin-bottom: 2px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;

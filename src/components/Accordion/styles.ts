@@ -14,14 +14,15 @@ interface Open {
 
 export const ArrowRightIcon = styled(FiChevronRight).attrs({
   size: 20,
-  boxSizing: "content-box",
 })`
+  box-sizing: "content-box";
   color: #ccc;
 `;
 export const HelpIcon = styled(IoMdHelpCircle).attrs({
   size: 25,
-  boxSizing: "content-box",
-})``;
+})`
+  box-sizing: "content-box";
+`;
 
 export const ContentBox = styled.div<Open>`
   position: relative;

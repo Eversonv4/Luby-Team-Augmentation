@@ -21,6 +21,10 @@ export const ContainerLayout = styled.article`
   justify-content: center;
 
   position: relative;
+
+  @media (max-width: 1000px) {
+    padding: 0 30px;
+  }
 `;
 
 export const Title = styled.h2`

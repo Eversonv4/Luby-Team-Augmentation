@@ -7,13 +7,17 @@ export const Container = styled.section`
 
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.fonts.oswald};
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 400;
 
   color: ${({ theme }) => theme.colors.text_dark};
 
   text-align: center;
-  line-height: 2;
+  line-height: 2.5rem;
+
+  @media (max-width: 1000px) {
+    padding: 0 20px;
+  }
 `;
 
 export const Description = styled.p`
@@ -25,6 +29,10 @@ export const Description = styled.p`
   max-width: 940px;
   text-align: center;
   margin: 0 auto;
+
+  @media (max-width: 1000px) {
+    padding: 0 20px;
+  }
 `;
 
 export const CardsContainer = styled.div`
@@ -38,6 +46,17 @@ export const CardsContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(85px, auto);
   gap: 30px;
+
+  @media (max-width: 1000px) {
+    padding: 0 30px 50px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+  }
 `;
 
 export const Card = styled.div`

@@ -52,7 +52,7 @@ export const TechContainer = styled.div`
   display: flex;
   position: relative;
 
-  min-width: 910px;
+  min-width: 900px;
 
   &:before {
     content: "";
@@ -63,6 +63,10 @@ export const TechContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.text};
     z-index: 1;
     margin-top: -1px;
+  }
+
+  @media (max-width: 1000px) {
+    overflow: auto;
   }
 `;
 

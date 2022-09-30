@@ -5,12 +5,12 @@ interface IActiveMenu {
   isActive: boolean;
 }
 
-const AnimateOpacity = keyframes`
+const FadeoutEffect = keyframes`
     from {
-				opacity: 0;
+				opacity: 1;
 			}
 			to {
-				opacity: 1;
+				opacity: 0;
 			}
 `;
 
@@ -23,61 +23,39 @@ const FadeinEffect = keyframes`
    }
 `;
 
-const SlideInAnimation = keyframes`
-   from {
-      right: -360px;
-   }
-
-   to {
-      right: 0;
-   }
-`;
-
-const SlideOutAnimation = keyframes`
-from {
-   right: 0;
-}
-
-to {
-   right: -360px;
-}
-`;
-
 export const Container = styled.section<IActiveMenu>`
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
+  right: 0;
 
-  /* background-color: rgba(0, 0, 0, 0.15);
-   */
+  z-index: ${({ isActive }) => (isActive ? 3 : -1)};
 
-  right: ${({ isActive }) => (isActive ? 0 : "-100vw")};
+  transition: 0.6s linear;
 
-  transition: 0.7s linear;
+  animation: ${({ isActive }) => (isActive ? FadeinEffect : FadeoutEffect)} 0.6s
+    linear;
 
-  animation: ${FadeinEffect} 1s linear;
-
-  z-index: 3;
-`;
-
-export const BackgroundBlur = styled.div`
-  width: 100%;
-  height: 100vh;
   background-color: rgba(0, 0, 0, 0.45);
-  z-index: 4;
+
+  @media (max-width: 360px) {
+  }
 `;
 
 export const AsideMenuContainer = styled.div<IActiveMenu>`
+  position: fixed;
+  overflow: auto;
+
   background-color: ${({ theme }) => theme.colors.text};
 
   height: 100vh;
   width: 360px;
 
-  position: absolute;
   top: 0;
 
   right: ${({ isActive }) => (isActive ? 0 : "-360px")};
+  opacity: 1;
 
   z-index: 5;
 
@@ -97,7 +75,9 @@ export const CloseMenuIcon = styled(IoMdClose).attrs({
   cursor: pointer;
 `;
 
-export const NavList = styled.nav``;
+export const NavList = styled.nav`
+  padding: 40px 0;
+`;
 
 export const NavText = styled.span`
   display: block;
@@ -110,57 +90,21 @@ export const NavText = styled.span`
   font-weight: 500;
 `;
 
-// Contact Us Button
-export const ActionBtnContainer = styled.div`
-  animation-name: ${AnimateOpacity};
-  animation-duration: 1.4s;
-
-  margin: 0 auto;
+export const NavTextContrast = styled.span`
   display: block;
-  max-width: fit-content;
+  margin: 30px auto;
+  padding: 15px 25px;
+  width: fit-content;
 
-  color: ${({ theme }) => theme.colors.text};
-  font-family: ${({ theme }) => theme.fonts.manrope};
+  border: 2px solid white;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.bg_hover};
 
-  margin-top: 25px;
-
-  & span {
-    display: flex;
-    align-items: center;
-
-    border: 2px solid white;
-    background-color: ${({ theme }) => theme.colors.bg_hover};
-    padding: 15px 15px 15px 25px;
-    width: fit-content;
-
-    cursor: pointer;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.hover_button};
-      transition: 0.6s ease;
-    }
-  }
-
-  & svg {
-    font-size: 18px;
-    margin-left: 10px;
-  }
-
-  & a {
-    color: ${({ theme }) => theme.colors.text};
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  & h4 {
-    font-weight: 500;
-    width: 180px;
-    margin-left: 20px;
-    font-size: 18px;
-  }
+  font-family: ${({ theme }) => theme.fonts.manrope};
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  text-align: center;
 `;

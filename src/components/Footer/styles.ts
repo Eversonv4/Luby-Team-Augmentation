@@ -11,6 +11,10 @@ export const InfoContainer = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    padding: 50px 20px;
+  }
 `;
 
 export const InfoTitle = styled.h2`
@@ -28,6 +32,10 @@ export const AddressContainer = styled.div`
   max-width: 672px;
 
   display: flex;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
 `;
 
 export const AddressLayout = styled.div`
@@ -38,6 +46,10 @@ export const AddressLayout = styled.div`
   justify-content: center;
 
   padding: 0 15px;
+
+  @media (max-width: 1000px) {
+    margin-bottom: 50px;
+  }
 `;
 
 export const AddressText = styled.address`
@@ -53,6 +65,10 @@ export const DivisorLine = styled.div`
   height: 100%;
   width: 1px;
   background-color: ${({ theme }) => theme.colors.text};
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export const AddressNumber = styled.h3`

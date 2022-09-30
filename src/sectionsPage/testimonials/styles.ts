@@ -49,6 +49,10 @@ export const StatusContainerLayout = styled.section`
   & .custom-html {
     margin-left: 35px;
   }
+
+  @media (max-width: 1000px) {
+    padding: 60px 30px;
+  }
 `;
 
 export const StatusTitle = styled.h3`

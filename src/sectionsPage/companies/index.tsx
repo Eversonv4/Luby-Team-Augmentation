@@ -25,7 +25,7 @@ export function CompaniesSection() {
               gap: 20,
               type: "loop",
               rewind: true,
-              perPage: 5,
+              perPage: 3,
               width: "100%",
               pagination: false,
               lazyLoad: true,

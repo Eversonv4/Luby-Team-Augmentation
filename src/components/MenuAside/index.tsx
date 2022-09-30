@@ -1,17 +1,14 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Container,
   AsideMenuContainer,
   MenuContent,
-  BackgroundBlur,
   CloseMenuIcon,
   NavList,
   NavText,
-  ActionBtnContainer,
+  NavTextContrast,
 } from "./styles";
-
-import { FiChevronDown } from "react-icons/fi";
 
 import Image from "next/image";
 
@@ -21,10 +18,31 @@ interface IActivateMenu {
 }
 
 export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
-  return (
-    <Container isActive={isActive}>
-      <BackgroundBlur onClick={() => handleMenuActive()} />
+  // function ChangeColor() {
+  //   if (window.scrollY > altura_nav_bar) {
+  //     console.log("está maior!");
+  //   } else {
+  //     console.log("está zero!");
+  //   }
+  // }
 
+  // window.onscroll = ChangeColor;
+
+  /*
+    another way to trigger the function
+
+     React.useEffect(() => {
+    window.addEventListener("scroll", changeNavbar);
+  }, []);
+  
+  */
+
+  return (
+    <>
+      <Container
+        onClick={() => handleMenuActive()}
+        isActive={isActive}
+      ></Container>
       <AsideMenuContainer isActive={isActive}>
         <MenuContent>
           <CloseMenuIcon onClick={handleMenuActive} />
@@ -79,19 +97,16 @@ export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
                 </Link>
               </li>
               <li>
-                <Link href="#faq-section">
-                  <ActionBtnContainer>
-                    <span>
-                      <Link href="#contact-section">Contact Us</Link>
-                      <FiChevronDown />
-                    </span>
-                  </ActionBtnContainer>
+                <Link href="#contact-section">
+                  <NavTextContrast onClick={handleMenuActive}>
+                    Contact Us
+                  </NavTextContrast>
                 </Link>
               </li>
             </ul>
           </NavList>
         </MenuContent>
       </AsideMenuContainer>
-    </Container>
+    </>
   );
 }

@@ -72,6 +72,10 @@ export const Description = styled.h4`
 
   animation-name: ${AnimateOpacity};
   animation-duration: 1.4s;
+
+  @media (max-width: 1000px) {
+    padding: 0 20px;
+  }
 `;
 
 export const ActionBtnContainer = styled.div`

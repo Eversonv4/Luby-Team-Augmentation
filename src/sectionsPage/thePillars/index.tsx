@@ -25,7 +25,7 @@ export function ThePillars() {
       {loadVideo ? <IframeVideo /> : <IframeThumb showVideo={showVideo} />}
       <ActionBtnContainer>
         <span>
-          <Link href="#">Contact Us</Link>
+          <Link href="#contact-section">Contact Us</Link>
           <FiChevronDown />
         </span>
         <h4>Decrease Ramp-Up Time and Costs</h4>

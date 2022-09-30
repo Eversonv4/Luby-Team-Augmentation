@@ -20,6 +20,10 @@ export const LayoutContainer = styled.div`
       width: 180px;
     }
   }
+
+  @media (max-width: 1000px) {
+    padding: 0 25px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -39,4 +43,8 @@ export const Title = styled.h2`
 export const CarrosselContainer = styled.div`
   max-width: 860px;
   overflow: hidden;
+
+  @media (max-width: 1000px) {
+    max-width: 600px;
+  }
 `;

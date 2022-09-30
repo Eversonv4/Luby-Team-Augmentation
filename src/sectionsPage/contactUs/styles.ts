@@ -11,6 +11,10 @@ export const ContainerLayout = styled.div`
 
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    padding: 0 30px;
+  }
 `;
 
 export const Span = styled.span`
@@ -70,6 +74,10 @@ export const FormContainer = styled.div`
       font-weight: 300;
       font-size: 1.125rem;
       line-height: 1;
+    }
+
+    @media (max-width: 1000px) {
+      margin-left: 15px;
     }
   }
 
