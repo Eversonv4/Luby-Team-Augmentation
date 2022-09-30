@@ -52,6 +52,7 @@ export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
                 <NavText>
                   <Image
                     src="/assets/company-icons/logo-luby-site-black.webp"
+                    alt="luby logo"
                     height={36}
                     width={120}
                   />

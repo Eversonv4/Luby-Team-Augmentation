@@ -21,6 +21,7 @@ export default function Footer() {
         <div>
           <Image
             src="/assets/company-icons/logo-luby-site.webp"
+            alt="logo luby"
             width={150}
             height={45}
           />

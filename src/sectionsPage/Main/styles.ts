@@ -60,7 +60,7 @@ export const SubTitle = styled.h2`
   animation-duration: 1.4s;
 `;
 
-export const Description = styled.h4`
+export const Description = styled.h3`
   font-size: 24px;
   font-family: ${({ theme }) => theme.fonts.manrope};
   color: ${({ theme }) => theme.colors.text};
