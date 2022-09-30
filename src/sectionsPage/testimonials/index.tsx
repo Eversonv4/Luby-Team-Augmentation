@@ -31,7 +31,7 @@ const FadeAnimation: Variants = {
 
 export function TestimonnialsSection() {
   return (
-    <Container>
+    <Container id="testimonials-section">
       <Title>Testimonials</Title>
       <SubTitle>
         We are proud to share the referrals of our dear customers
@@ -39,7 +39,7 @@ export function TestimonnialsSection() {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: "some" }}
+        viewport={{ once: true, amount: "some" }}
         variants={FadeAnimation}
       >
         <ContainerCarrossel>
@@ -51,7 +51,6 @@ export function TestimonnialsSection() {
             data-nofollow="true"
             data-expandifr="true"
             data-scale="100"
-            // data-scale="100"
             data-reviews="1981829,1973220,1962997,1917262,1909639"
             data-clutchcompany-id="1748502"
           ></div>

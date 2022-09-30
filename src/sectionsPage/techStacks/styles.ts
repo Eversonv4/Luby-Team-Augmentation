@@ -44,11 +44,15 @@ export const SubTitle = styled.h3`
   text-align: center;
 `;
 
-export const StackContainer = styled.article``;
+export const StackContainer = styled.article`
+  overflow: auto;
+`;
 
 export const TechContainer = styled.div`
   display: flex;
   position: relative;
+
+  min-width: 910px;
 
   &:before {
     content: "";

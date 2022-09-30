@@ -30,11 +30,6 @@ export function CompaniesSection() {
               pagination: false,
               lazyLoad: true,
               focus: "center",
-              breakpoints: {
-                1000: {
-                  arrows: true,
-                },
-              },
             }}
             aria-label="My Favorite Images"
           >

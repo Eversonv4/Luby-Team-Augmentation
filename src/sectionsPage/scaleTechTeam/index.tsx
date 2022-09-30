@@ -33,7 +33,7 @@ const FadeAnimation: Variants = {
 
 export function ScaleTechTeamSection() {
   return (
-    <Container id="ScaleTeam">
+    <Container id="scaleteam-section">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

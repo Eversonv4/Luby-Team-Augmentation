@@ -44,7 +44,7 @@ export function StacksSection() {
   }, [selectedStack]);
 
   return (
-    <Container>
+    <Container id="techstacks-section">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

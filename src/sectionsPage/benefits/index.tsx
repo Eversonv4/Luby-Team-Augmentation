@@ -28,7 +28,7 @@ const FadeTranslateSection: Variants = {
 
 export function BenefitsSection() {
   return (
-    <Container>
+    <Container id="benefits-section">
       <motion.article
         initial="offscreen"
         whileInView="onscreen"

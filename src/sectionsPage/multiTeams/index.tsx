@@ -46,7 +46,7 @@ export function MultiTeamsSection() {
   };
 
   return (
-    <Container>
+    <Container id="multiteams-section">
       <motion.article
         initial="offscreen"
         whileInView="onscreen"

@@ -14,7 +14,7 @@ export function ThePillars() {
   }
 
   return (
-    <Container>
+    <Container id="pillars-section">
       <Title>The 3 Pillars of Luby's IT Team Augmentation Service</Title>
       <SubTitle>
         How could we increase the value provided in our IT Team Augmentation

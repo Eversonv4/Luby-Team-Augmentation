@@ -11,6 +11,10 @@ export const HeaderLayout = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const LogoImg = styled.img`
@@ -18,25 +22,45 @@ export const LogoImg = styled.img`
   max-height: 40px;
 `;
 
-export const NavList = styled.ul`
-  display: flex;
+export const NavList = styled.nav`
+  & ul {
+    display: flex;
 
-  & li {
-    color: ${({ theme }) => theme.colors.text};
-    font-family: ${({ theme }) => theme.fonts.manrope};
-    font-size: 16px;
-    font-weight: 500;
-
-    cursor: pointer;
-    margin-left: 30px;
-
-    a {
-      color: inherit;
+    @media (max-width: 1000px) {
+      display: none;
     }
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.primary};
-      transition: 0.5s ease;
+    & li {
+      color: ${({ theme }) => theme.colors.text};
+      font-family: ${({ theme }) => theme.fonts.manrope};
+      font-size: 16px;
+      font-weight: 500;
+
+      cursor: pointer;
+      margin-left: 30px;
+
+      a {
+        color: inherit;
+      }
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+        transition: 0.5s ease;
+      }
     }
+  }
+`;
+
+export const IconMenu = styled.span`
+  color: ${({ theme }) => theme.colors.text};
+  padding: 10px;
+  box-sizing: content-box;
+  font-weight: bold;
+  font-size: 18px;
+  display: none;
+  margin-left: 20px;
+
+  @media (max-width: 1000px) {
+    display: block;
   }
 `;

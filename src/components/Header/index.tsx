@@ -1,9 +1,24 @@
-import react from "react";
+import react, { useState } from "react";
 import Link from "next/link";
-import { HeaderContainer, HeaderLayout, LogoImg, NavList } from "./styles";
+import {
+  HeaderContainer,
+  HeaderLayout,
+  LogoImg,
+  NavList,
+  IconMenu,
+} from "./styles";
+
+import { MenuAside } from "@components/MenuAside";
 
 export function Header() {
   /* TODO Header Section */
+
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  function OpenMenu() {
+    setMenuIsOpen(!menuIsOpen);
+  }
+
   return (
     <HeaderContainer>
       <HeaderLayout>
@@ -11,20 +26,37 @@ export function Header() {
           src="/assets/company-icons/logo-luby-site.webp"
           alt="logo luby"
         />
-        <nav>
-          <NavList>
+
+        <IconMenu onClick={OpenMenu}>&#9776;</IconMenu>
+
+        <NavList>
+          <ul>
             <li>
-              <Link href="#ScaleTeam">Sale your tech team</Link>
+              <Link href="#scaleteam-section">Sale your tech team</Link>
             </li>
-            <li>Benefits</li>
-            <li>The 3 Pillars</li>
-            <li>Multidisciplinary Teams</li>
-            <li>Stacks</li>
-            <li>Testimonials</li>
-            <li>FAQ</li>
-          </NavList>
-        </nav>
+            <li>
+              <Link href="#benefits-section">Benefits</Link>
+            </li>
+            <li>
+              <Link href="#pillars-section">The 3 Pillars</Link>
+            </li>
+            <li>
+              <Link href="#multiteams-section">Multidisciplinary Teams</Link>
+            </li>
+            <li>
+              <Link href="#techstacks-section">Stacks</Link>
+            </li>
+            <li>
+              <Link href="#testimonials-section">Testimonials</Link>
+            </li>
+            <li>
+              <Link href="#faq-section">FAQ</Link>
+            </li>
+          </ul>
+        </NavList>
       </HeaderLayout>
+
+      <MenuAside handleMenuActive={OpenMenu} isActive={menuIsOpen} />
     </HeaderContainer>
   );
 }
