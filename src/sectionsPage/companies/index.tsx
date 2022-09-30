@@ -25,11 +25,25 @@ export function CompaniesSection() {
               gap: 20,
               type: "loop",
               rewind: true,
-              perPage: 3,
+              perPage: 5,
               width: "100%",
               pagination: false,
               lazyLoad: true,
               focus: "center",
+              breakpoints: {
+                1000: {
+                  perPage: 4,
+                  gap: 10,
+                },
+                800: {
+                  perPage: 3,
+                  gap: 10,
+                },
+                700: {
+                  perPage: 2,
+                  focus: 1,
+                },
+              },
             }}
             aria-label="My Favorite Images"
           >

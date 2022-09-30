@@ -3,12 +3,21 @@ import { IoMdCheckmark } from "react-icons/io";
 
 export const Container = styled.section`
   background-color: #010006;
-  height: 590px;
+  height: 100%;
+  padding: 40px 0;
 
   background-image: url(/assets/background-sections/benefits-luby-bg-azul.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center right;
+
+  @media (max-width: 1000px) {
+    background-position: center;
+  }
+
+  @media (max-width: 700px) {
+    background-position: left center;
+  }
 `;
 
 export const ContainerLayout = styled.article`
@@ -19,8 +28,6 @@ export const ContainerLayout = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  position: relative;
 
   @media (max-width: 1000px) {
     padding: 0 30px;
@@ -53,6 +60,11 @@ export const CheckIcon = styled(IoMdCheckmark)`
   box-sizing: content-box;
 
   margin-right: 15px;
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+    padding: 8px;
+  }
 `;
 
 export const BenefitsList = styled.ul`

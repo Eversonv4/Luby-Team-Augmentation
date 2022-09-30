@@ -17,7 +17,7 @@ const FadeTranslateSection: Variants = {
     opacity: 0,
   },
   onscreen: {
-    y: 80,
+    y: 0,
     opacity: 1,
     transition: {
       type: "spring",

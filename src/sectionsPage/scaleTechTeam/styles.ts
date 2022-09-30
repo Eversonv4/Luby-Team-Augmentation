@@ -55,7 +55,7 @@ export const CardsContainer = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, 1fr);
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: minmax(35px, auto);
   }
 `;
 

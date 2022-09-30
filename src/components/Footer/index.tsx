@@ -39,7 +39,9 @@ export default function Footer() {
             </AddressText>
             <AddressNumber>Tel.: +1 (305) 600 1993</AddressNumber>
           </AddressLayout>
+
           <DivisorLine />
+
           <AddressLayout>
             <AddressText>
               <strong>São Paulo - Brazil</strong>
@@ -50,6 +52,7 @@ export default function Footer() {
           </AddressLayout>
         </AddressContainer>
       </InfoContainer>
+
       <CopyrightContainer>
         <CopyrightTitle>
           Copyright &copy; 2022 Luby Technology LLC. All rights reserved.
