@@ -107,4 +107,11 @@ export const NavTextContrast = styled.span`
   font-size: 1.125rem;
   line-height: 1.125rem;
   text-align: center;
+
+  transition: 0.6s ease;
+  cursor: pointer;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.hover_button};
+  }
 `;

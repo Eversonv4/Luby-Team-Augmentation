@@ -32,52 +32,28 @@ export const SubTitle = styled.h3`
   margin: 0 auto 50px;
 `;
 
-export const ActionBtnContainer = styled.div`
-  background-color: transparent;
+export const ButtonContrast = styled.span`
+  display: block;
+  margin: 30px auto;
+  padding: 15px 25px;
+  width: fit-content;
+
+  border: 2px solid white;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+
   color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.bg_hover};
+
   font-family: ${({ theme }) => theme.fonts.manrope};
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  text-align: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.6s ease;
+  cursor: pointer;
 
-  margin-top: 25px;
-
-  & span {
-    display: flex;
-    align-items: center;
-
-    border: 3px solid #fff;
-    background-color: ${({ theme }) => theme.colors.bg_hover};
-    padding: 15px 15px 15px 25px;
-    width: fit-content;
-
-    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
-
-    cursor: pointer;
-
-    &:hover {
-      background-color: ${({ theme }) => theme.colors.hover_button};
-      transition: 0.6s ease;
-    }
-  }
-
-  & svg {
-    font-size: 18px;
-    margin-left: 10px;
-  }
-
-  & a {
-    color: ${({ theme }) => theme.colors.text};
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  & h4 {
-    font-weight: 300;
-    width: 180px;
-    margin-left: 20px;
-    font-size: 18px;
-    color: ${({ theme }) => theme.colors.text_dark};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.hover_button};
   }
 `;

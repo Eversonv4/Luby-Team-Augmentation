@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Container, Title, SubTitle, ActionBtnContainer } from "./styles";
+import { Container, Title, SubTitle, ButtonContrast } from "./styles";
 import { FiChevronDown } from "react-icons/fi";
 
 import { IframeVideo } from "@components/IframeVideo";
@@ -23,13 +23,9 @@ export function ThePillars() {
         about.
       </SubTitle>
       {loadVideo ? <IframeVideo /> : <IframeThumb showVideo={showVideo} />}
-      <ActionBtnContainer>
-        <span>
-          <Link href="#contact-section">Contact Us</Link>
-          <FiChevronDown />
-        </span>
-        <h4>Decrease Ramp-Up Time and Costs</h4>
-      </ActionBtnContainer>
+      <Link href="#contact-section">
+        <ButtonContrast>Contact Us</ButtonContrast>
+      </Link>
     </Container>
   );
 }
