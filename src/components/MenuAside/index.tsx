@@ -55,6 +55,7 @@ export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
                     alt="luby logo"
                     height={36}
                     width={120}
+                    loading="lazy"
                   />
                 </NavText>
               </li>

@@ -19,6 +19,7 @@ export function MainContent() {
       <BgImage
         src="/assets/background-sections/outsourcing-lp-bg.webp"
         alt="background image"
+        loading="lazy"
       />
       <MainTitle>Team Augmentation</MainTitle>
       <SubTitle>Top Tier IT Professionals</SubTitle>

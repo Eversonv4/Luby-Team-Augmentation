@@ -24,6 +24,7 @@ export default function Footer() {
             alt="logo luby"
             width={150}
             height={45}
+            loading="lazy"
           />
           <InfoTitle>
             Tech Expertise provided <br />

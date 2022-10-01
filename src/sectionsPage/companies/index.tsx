@@ -51,55 +51,87 @@ export function CompaniesSection() {
               <img
                 src="/assets/company-icons/sunwest-bank.webp"
                 alt="sunwest bank logo"
+                loading="lazy"
               />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/bitso.webp" alt="Bitso logo" />
+              <img
+                src="/assets/company-icons/bitso.webp"
+                alt="Bitso logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/dci.webp" alt="DCI logo" />
+              <img
+                src="/assets/company-icons/dci.webp"
+                alt="DCI logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/optii.webp" alt="Optii logo" />
+              <img
+                src="/assets/company-icons/optii.webp"
+                alt="Optii logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
               <img
                 src="/assets/company-icons/neocova.webp"
                 alt="Neocova logo"
+                loading="lazy"
               />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/usend.webp" alt="Usend logo" />
+              <img
+                src="/assets/company-icons/usend.webp"
+                alt="Usend logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/reach.webp" alt="Reach.ai logo" />
+              <img
+                src="/assets/company-icons/reach.webp"
+                alt="Reach.ai logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
               <img
                 src="/assets/company-icons/pay4fun.webp"
                 alt="Pay 4 Fun logo"
+                loading="lazy"
               />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/flipp.webp" alt="Flipp logo" />
+              <img
+                src="/assets/company-icons/flipp.webp"
+                alt="Flipp logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
-              <img src="/assets/company-icons/papaya.webp" alt="Papaya logo" />
+              <img
+                src="/assets/company-icons/papaya.webp"
+                alt="Papaya logo"
+                loading="lazy"
+              />
             </SplideSlide>
 
             <SplideSlide>
               <img
                 src="/assets/company-icons/safrapay.webp"
                 alt="Safrapay logo"
+                loading="lazy"
               />
             </SplideSlide>
           </Splide>
