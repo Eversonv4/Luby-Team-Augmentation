@@ -52,7 +52,7 @@ export function FaqSection() {
           <QuestionContainer>
             <div>
               <Accordeon
-                height="375px"
+                Accordeonheight="375px"
                 question="What is IT Team Augmentation?"
                 onClick={() => handleOpenAcordion("one")}
                 open={open === "one"}
@@ -80,7 +80,7 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                height="198px"
+                Accordeonheight="198px"
                 question="What's the difference between Extended Teams and Team Augmentation?"
                 onClick={() => handleOpenAcordion("two")}
                 open={open === "two"}
@@ -97,7 +97,7 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                height="174px"
+                Accordeonheight="174px"
                 question="Is there any restriction to hire the Team Augmentation services?"
                 onClick={() => handleOpenAcordion("three")}
                 open={open === "three"}
@@ -112,7 +112,7 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                height="834px"
+                Accordeonheight="834px"
                 question="How's the implementation of the Team Augmentation Service?"
                 onClick={() => handleOpenAcordion("four")}
                 open={open === "four"}
@@ -170,7 +170,7 @@ export function FaqSection() {
 
             <div>
               <Accordeon
-                height="512px"
+                Accordeonheight="512px"
                 question="What are Luby's nearshore advantages?"
                 onClick={() => handleOpenAcordion("five")}
                 open={open === "five"}
@@ -208,7 +208,7 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                height="126px"
+                Accordeonheight="126px"
                 question="Why should I hire Luby's Team Augmentation services?"
                 onClick={() => handleOpenAcordion("six")}
                 open={open === "six"}
@@ -222,7 +222,7 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                height="198px"
+                Accordeonheight="198px"
                 question="What does the service offer?"
                 onClick={() => handleOpenAcordion("seven")}
                 open={open === "seven"}

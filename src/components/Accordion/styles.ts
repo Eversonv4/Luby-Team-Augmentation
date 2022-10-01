@@ -9,7 +9,7 @@ export const AcordeonContainer = styled.div`
 
 interface Open {
   open: boolean;
-  height?: string;
+  Accordeonheight?: string;
 }
 
 export const ArrowRightIcon = styled(FiChevronRight).attrs({
@@ -83,7 +83,7 @@ export const ContentText = styled.div<Open>`
   transition: height 0.7s ease;
 
   &.active {
-    height: ${({ height }) => height || "auto"};
+    height: ${({ Accordeonheight }) => Accordeonheight || "auto"};
   }
 
   & ul {

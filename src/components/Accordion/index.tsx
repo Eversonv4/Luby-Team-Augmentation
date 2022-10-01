@@ -11,7 +11,7 @@ interface IAccordeonProps {
   question: string;
   children: ReactNode;
   open: boolean;
-  height?: string;
+  Accordeonheight?: string;
   handleOpenAcordion?: (param: string) => void;
   onClick: () => void;
 }
@@ -20,7 +20,7 @@ export function Accordeon({
   children,
   question,
   open,
-  height,
+  Accordeonheight,
   handleOpenAcordion,
   ...rest
 }: IAccordeonProps) {
@@ -34,7 +34,7 @@ export function Accordeon({
         </label>
 
         <ContentText
-          height={height}
+          Accordeonheight={Accordeonheight}
           className={open ? "active" : ""}
           open={open}
         >

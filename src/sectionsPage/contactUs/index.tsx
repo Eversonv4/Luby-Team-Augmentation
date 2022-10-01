@@ -51,7 +51,7 @@ export function ContactUsSection() {
           </div>
           <FormContainer>
             <form onSubmit={MessageConsole}>
-              <input type="name" placeholder="Name" />
+              <input type="text" placeholder="Name" />
               <input type="email" placeholder="Email" />
               <input type="text" placeholder="Company's Name" />
               <input type="text" placeholder="Your Role" />
