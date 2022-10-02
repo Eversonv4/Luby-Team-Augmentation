@@ -17,7 +17,7 @@ export const LayoutContainer = styled.div`
     cursor: grab;
 
     & img {
-      width: 180px;
+      /* width: 180px; */
 
       @media (max-width: 1000px) {
         width: 140px;
@@ -76,4 +76,19 @@ export const CarrosselContainer = styled.div`
   @media (max-width: 700px) {
     max-width: 350px;
   }
+`;
+
+interface ImageProps {
+  url: string;
+}
+
+export const SlideImage = styled.div<ImageProps>`
+  background-image: url(${({ url }) => url});
+  width: 180px;
+  height: 108px;
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid red;
+  margin: 0 10px;
 `;

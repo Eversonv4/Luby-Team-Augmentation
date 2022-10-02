@@ -4,6 +4,7 @@ import {
   LayoutContainer,
   Title,
   CarrosselContainer,
+  SlideImage,
 } from "./styles";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -45,116 +46,50 @@ export function CompaniesSection() {
                 },
               },
             }}
-            aria-label="My Favorite Images"
+            aria-label="Logos companies"
           >
             <SplideSlide>
-              <img
-                src="/assets/company-icons/sunwest-bank.webp"
-                alt="sunwest bank logo"
-                loading="lazy"
-                width="180"
-                height="48"
-              />
+              <SlideImage url="/assets/company-icons/sunwest-bank.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/bitso.webp"
-                alt="Bitso logo"
-                loading="lazy"
-                width="180"
-                height="55"
-              />
+              <SlideImage url="/assets/company-icons/bitso.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/dci.webp"
-                alt="DCI logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/dci.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/optii.webp"
-                alt="Optii logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/optii.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/neocova.webp"
-                alt="Neocova logo"
-                loading="lazy"
-                width="140"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/neocova.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/usend.webp"
-                alt="Usend logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/usend.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/reach.webp"
-                alt="Reach.ai logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/reach.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/pay4fun.webp"
-                alt="Pay 4 Fun logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/pay4fun.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/flipp.webp"
-                alt="Flipp logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/flipp.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/papaya.webp"
-                alt="Papaya logo"
-                loading="lazy"
-                width="180"
-                height="108"
-              />
+              <SlideImage url="/assets/company-icons/papaya.webp" />
             </SplideSlide>
 
             <SplideSlide>
-              <img
-                src="/assets/company-icons/safrapay.webp"
-                alt="Safrapay logo"
-                loading="lazy"
-                width="180"
-                height="69"
-              />
+              <SlideImage url="/assets/company-icons/safrapay.webp" />
             </SplideSlide>
           </Splide>
         </CarrosselContainer>
