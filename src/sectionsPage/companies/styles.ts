@@ -89,6 +89,5 @@ export const SlideImage = styled.div<ImageProps>`
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid red;
   margin: 0 10px;
 `;
