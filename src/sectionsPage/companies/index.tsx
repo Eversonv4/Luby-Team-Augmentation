@@ -92,7 +92,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/neocova.webp"
                 alt="Neocova logo"
                 loading="lazy"
-                width="180"
+                width="140"
                 height="108"
               />
             </SplideSlide>
