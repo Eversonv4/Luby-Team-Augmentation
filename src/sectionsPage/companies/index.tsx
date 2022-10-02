@@ -89,7 +89,10 @@ export function CompaniesSection() {
             </SplideSlide>
 
             <SplideSlide>
-              <SlideImage url="/assets/company-icons/safrapay.webp" />
+              <SlideImage
+                style={{ backgroundSize: 190 }}
+                url="/assets/company-icons/safrapay.webp"
+              />
             </SplideSlide>
           </Splide>
         </CarrosselContainer>

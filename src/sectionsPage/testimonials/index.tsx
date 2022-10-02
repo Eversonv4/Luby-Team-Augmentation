@@ -91,11 +91,11 @@ export function TestimonnialsSection() {
         </StatusContainerLayout>
       </StatusContainer>
       <Helmet>
-        {/* <script
+        <script
           type="text/javascript"
           src="https://widget.clutch.co/static/js/widget.js"
           async
-        ></script> */}
+        ></script>
       </Helmet>
     </Container>
   );

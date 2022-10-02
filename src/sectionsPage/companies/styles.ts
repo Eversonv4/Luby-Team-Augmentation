@@ -86,9 +86,8 @@ export const SlideImage = styled.div<ImageProps>`
   background-image: url(${({ url }) => url});
   width: 180px;
   height: 108px;
-  background-size: 120px auto;
+  background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0 10px;
-  border: 1px solid red;
 `;
