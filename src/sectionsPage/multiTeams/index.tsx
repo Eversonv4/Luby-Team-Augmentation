@@ -15,8 +15,6 @@ import {
 import { TeamsProps } from "./inteface";
 import { TeamsList } from "@components/TeamsList/TeamsList";
 
-import { motion, Variants } from "framer-motion";
-
 export function MultiTeamsSection() {
   // TODO multi teams
 
@@ -32,67 +30,46 @@ export function MultiTeamsSection() {
     handleTeamActive(chooseTeam);
   }, [chooseTeam]);
 
-  const FadeAnimation: Variants = {
-    offscreen: {
-      opacity: 0,
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 3,
-      },
-    },
-  };
-
   return (
     <Container id="multiteams-section">
-      <motion.article
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: "some" }}
-        variants={FadeAnimation}
-      >
-        <ContainerLayout>
-          <Title>
-            From Specific Individuals to Complete Multidisciplinary Teams
-          </Title>
-          <SubTitle>
-            We are ready to provide you with a full range of professionals,
-            regardless of the chapters you are looking for. Our team only
-            provides professionals from mid to senior level, here's what you can
-            expect:
-          </SubTitle>
-        </ContainerLayout>
+      <ContainerLayout>
+        <Title>
+          From Specific Individuals to Complete Multidisciplinary Teams
+        </Title>
+        <SubTitle>
+          We are ready to provide you with a full range of professionals,
+          regardless of the chapters you are looking for. Our team only provides
+          professionals from mid to senior level, here's what you can expect:
+        </SubTitle>
+      </ContainerLayout>
 
-        <TechContainer>
-          <TeamsListContainer>
-            <ButtonTechList
-              onClick={() => setChooseTeam("tech")}
-              isActive={chooseTeam === "tech"}
-            >
-              Technology
-            </ButtonTechList>
-            <ButtonTechList
-              onClick={() => setChooseTeam("product")}
-              isActive={chooseTeam === "product"}
-            >
-              Product
-            </ButtonTechList>
-            <ButtonTechList
-              onClick={() => setChooseTeam("design")}
-              isActive={chooseTeam === "design"}
-            >
-              Design
-            </ButtonTechList>
-          </TeamsListContainer>
-          <TechlistContainer>
-            {chooseTeam === "tech" && <TeamsList techlist={listActive} />}
-            {chooseTeam === "product" && <TeamsList techlist={listActive} />}
-            {chooseTeam === "design" && <TeamsList techlist={listActive} />}
-          </TechlistContainer>
-        </TechContainer>
-      </motion.article>
+      <TechContainer>
+        <TeamsListContainer>
+          <ButtonTechList
+            onClick={() => setChooseTeam("tech")}
+            isActive={chooseTeam === "tech"}
+          >
+            Technology
+          </ButtonTechList>
+          <ButtonTechList
+            onClick={() => setChooseTeam("product")}
+            isActive={chooseTeam === "product"}
+          >
+            Product
+          </ButtonTechList>
+          <ButtonTechList
+            onClick={() => setChooseTeam("design")}
+            isActive={chooseTeam === "design"}
+          >
+            Design
+          </ButtonTechList>
+        </TeamsListContainer>
+        <TechlistContainer>
+          {chooseTeam === "tech" && <TeamsList techlist={listActive} />}
+          {chooseTeam === "product" && <TeamsList techlist={listActive} />}
+          {chooseTeam === "design" && <TeamsList techlist={listActive} />}
+        </TechlistContainer>
+      </TechContainer>
     </Container>
   );
 }
