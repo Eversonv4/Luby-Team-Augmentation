@@ -1,14 +1,9 @@
 import react, { useState } from "react";
 import Link from "next/link";
-import {
-  HeaderContainer,
-  HeaderLayout,
-  LogoImg,
-  NavList,
-  IconMenu,
-} from "./styles";
+import { HeaderContainer, HeaderLayout, NavList, IconMenu } from "./styles";
 
 import { MenuAside } from "@components/MenuAside";
+import Image from "next/image";
 
 export function Header() {
   /* TODO Header Section */
@@ -22,9 +17,11 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderLayout>
-        <LogoImg
+        <Image
           src="/assets/company-icons/logo-luby-site.webp"
           alt="logo luby"
+          width={134}
+          height={40}
         />
 
         <IconMenu onClick={OpenMenu}>&#9776;</IconMenu>

@@ -17,11 +17,6 @@ export const HeaderLayout = styled.div`
   }
 `;
 
-export const LogoImg = styled.img`
-  max-width: 134px;
-  max-height: 40px;
-`;
-
 export const NavList = styled.nav`
   & ul {
     display: flex;

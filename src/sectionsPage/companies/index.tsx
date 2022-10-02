@@ -52,6 +52,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/sunwest-bank.webp"
                 alt="sunwest bank logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -60,6 +61,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/bitso.webp"
                 alt="Bitso logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -68,6 +70,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/dci.webp"
                 alt="DCI logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -76,6 +79,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/optii.webp"
                 alt="Optii logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -84,6 +88,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/neocova.webp"
                 alt="Neocova logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -92,6 +97,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/usend.webp"
                 alt="Usend logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -100,6 +106,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/reach.webp"
                 alt="Reach.ai logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -108,6 +115,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/pay4fun.webp"
                 alt="Pay 4 Fun logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -116,6 +124,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/flipp.webp"
                 alt="Flipp logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -124,6 +133,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/papaya.webp"
                 alt="Papaya logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
 
@@ -132,6 +142,7 @@ export function CompaniesSection() {
                 src="/assets/company-icons/safrapay.webp"
                 alt="Safrapay logo"
                 loading="lazy"
+                width="180"
               />
             </SplideSlide>
           </Splide>
