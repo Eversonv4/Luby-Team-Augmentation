@@ -55,6 +55,8 @@ export const IconMenu = styled.span`
   display: none;
   margin-left: 20px;
 
+  cursor: pointer;
+
   @media (max-width: 1000px) {
     display: block;
   }

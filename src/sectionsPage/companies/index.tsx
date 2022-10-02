@@ -53,6 +53,7 @@ export function CompaniesSection() {
                 alt="sunwest bank logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -62,6 +63,7 @@ export function CompaniesSection() {
                 alt="Bitso logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -71,6 +73,7 @@ export function CompaniesSection() {
                 alt="DCI logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -80,6 +83,7 @@ export function CompaniesSection() {
                 alt="Optii logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -89,6 +93,7 @@ export function CompaniesSection() {
                 alt="Neocova logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -98,6 +103,7 @@ export function CompaniesSection() {
                 alt="Usend logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -107,6 +113,7 @@ export function CompaniesSection() {
                 alt="Reach.ai logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -116,6 +123,7 @@ export function CompaniesSection() {
                 alt="Pay 4 Fun logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -125,6 +133,7 @@ export function CompaniesSection() {
                 alt="Flipp logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -134,6 +143,7 @@ export function CompaniesSection() {
                 alt="Papaya logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
 
@@ -143,6 +153,7 @@ export function CompaniesSection() {
                 alt="Safrapay logo"
                 loading="lazy"
                 width="180"
+                height="108"
               />
             </SplideSlide>
           </Splide>
