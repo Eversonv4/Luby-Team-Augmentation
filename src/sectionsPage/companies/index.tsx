@@ -53,7 +53,7 @@ export function CompaniesSection() {
                 alt="sunwest bank logo"
                 loading="lazy"
                 width="180"
-                height="108"
+                height="48"
               />
             </SplideSlide>
 
@@ -63,7 +63,7 @@ export function CompaniesSection() {
                 alt="Bitso logo"
                 loading="lazy"
                 width="180"
-                height="108"
+                height="55"
               />
             </SplideSlide>
 
@@ -153,7 +153,7 @@ export function CompaniesSection() {
                 alt="Safrapay logo"
                 loading="lazy"
                 width="180"
-                height="108"
+                height="69"
               />
             </SplideSlide>
           </Splide>
