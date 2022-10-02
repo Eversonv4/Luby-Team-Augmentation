@@ -88,7 +88,7 @@ export function TestimonnialsSection() {
                 talented professionals
               </AchievementTitle>
 
-              <div className="custom-html">
+              {/* <div className="custom-html">
                 <div
                   className="clutch-widget"
                   data-url="https://widget.clutch.co"
@@ -114,17 +114,17 @@ export function TestimonnialsSection() {
                     title="[iFrameSizer]iframe-0.22077650616990474:0:0:mouseleave:396:-4301 Dark"
                   ></iframe>
                 </div>
-              </div>
+              </div> */}
             </div>
           </StatusContainerLayout>
         </motion.div>
       </StatusContainer>
       <Helmet>
-        <script
+        {/* <script
           type="text/javascript"
           src="https://widget.clutch.co/static/js/widget.js"
           async
-        ></script>
+        ></script> */}
       </Helmet>
     </Container>
   );

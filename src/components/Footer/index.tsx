@@ -30,7 +30,7 @@ export default function Footer() {
             Tech Expertise provided <br />
             by Top Tier Talent
           </InfoTitle>
-          <ClutchReviewStars />
+          {/* <ClutchReviewStars /> */}
         </div>
         <AddressContainer>
           <AddressLayout>
