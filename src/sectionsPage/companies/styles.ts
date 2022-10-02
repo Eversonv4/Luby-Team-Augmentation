@@ -17,7 +17,7 @@ export const LayoutContainer = styled.div`
     cursor: grab;
 
     & img {
-      width: 180px;
+      /* width: 180px; */
 
       @media (max-width: 1000px) {
         width: 140px;

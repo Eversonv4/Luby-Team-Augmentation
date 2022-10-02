@@ -20,6 +20,8 @@ export function MainContent() {
         src="/assets/background-sections/outsourcing-lp-bg.webp"
         alt="background image"
         loading="lazy"
+        width="1200"
+        height="900"
       />
       <MainTitle>Team Augmentation</MainTitle>
       <SubTitle>Top Tier IT Professionals</SubTitle>
