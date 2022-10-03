@@ -26,7 +26,7 @@ export const Container = styled.article`
       min-height: 280px;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 414px) {
       min-height: 150px;
     }
   }

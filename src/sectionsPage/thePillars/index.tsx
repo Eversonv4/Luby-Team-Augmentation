@@ -29,7 +29,3 @@ export function ThePillars() {
     </Container>
   );
 }
-
-{
-  /* <div>{loadVideo && <IframeVideo />}</div> */
-}
