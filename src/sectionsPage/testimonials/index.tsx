@@ -101,13 +101,7 @@ export function TestimonnialsSection() {
           </StatusContainerLayout>
         </motion.div>
       </StatusContainer>
-      <Helmet>
-        <script
-          type="text/javascript"
-          src="https://widget.clutch.co/static/js/widget.js"
-          async
-        ></script>
-      </Helmet>
+      <Helmet></Helmet>
     </Container>
   );
 }
