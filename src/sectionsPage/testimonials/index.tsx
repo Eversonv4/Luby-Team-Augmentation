@@ -14,7 +14,6 @@ import {
 
 import { motion, Variants } from "framer-motion";
 import { Helmet } from "react-helmet";
-import Image from "next/image";
 
 const FadeAnimation: Variants = {
   offscreen: {
@@ -101,7 +100,9 @@ export function TestimonnialsSection() {
           </StatusContainerLayout>
         </motion.div>
       </StatusContainer>
-      <Helmet></Helmet>
+      <Helmet>
+        <script type="text/javascript" src="/static/scripts/clutch.js"></script>
+      </Helmet>
     </Container>
   );
 }

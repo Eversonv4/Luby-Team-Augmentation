@@ -5,7 +5,6 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import Theme from "@shared/globalTheme/theme";
 import { GlobalStyle } from "@shared/globalStyle/GlobalStyle";
-import { Helmet } from "react-helmet";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +20,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="author" content="Luby Software" />
         <link rel="icon" href="/assets/company-icons/luby-icon.webp" />
-        <script type="text/javascript" src="/static/scripts/clutch.js"></script>
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>
