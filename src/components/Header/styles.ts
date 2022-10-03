@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BiMenu } from "react-icons/bi";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -46,12 +47,12 @@ export const NavList = styled.nav`
   }
 `;
 
-export const IconMenu = styled.span`
+export const IconMenu = styled(BiMenu)`
   color: ${({ theme }) => theme.colors.text};
   padding: 10px;
   box-sizing: content-box;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 28px;
   display: none;
   margin-left: 20px;
 

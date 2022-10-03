@@ -24,7 +24,7 @@ export function Header() {
           height={40}
         />
 
-        <IconMenu onClick={OpenMenu}>&#9776;</IconMenu>
+        <IconMenu onClick={OpenMenu} />
 
         <NavList>
           <ul>
