@@ -25,6 +25,16 @@ export const MainSection = styled.main`
     rgba(30, 41, 61, 0) 25%,
     rgba(0, 0, 0, 0.7) 75%
   );
+
+  transition: 0.7s ease;
+
+  @media (max-width: 480px) {
+    height: 815px;
+  }
+
+  @media (max-width: 400px) {
+    height: 960px;
+  }
 `;
 
 export const BgImage = styled.img`
@@ -73,7 +83,7 @@ export const Description = styled.h3`
   animation-name: ${AnimateOpacity};
   animation-duration: 1.4s;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -98,8 +108,11 @@ export const ActionBtnContainer = styled.div`
 
     border: 2px solid white;
     background-color: ${({ theme }) => theme.colors.bg_hover};
-    padding: 15px 15px 15px 25px;
+    padding: 15px 25px;
     width: fit-content;
+
+    font-weight: bold;
+    font-size: 1.125rem;
 
     cursor: pointer;
 
@@ -107,17 +120,12 @@ export const ActionBtnContainer = styled.div`
       background-color: ${({ theme }) => theme.colors.hover_button};
       transition: 0.6s ease;
     }
-  }
 
-  & svg {
-    font-size: 18px;
-    margin-left: 10px;
-  }
-
-  & a {
-    color: ${({ theme }) => theme.colors.text};
-    font-size: 18px;
-    font-weight: bold;
+    @media (max-width: 400px) {
+      width: auto;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
   }
 
   & h4 {
@@ -125,5 +133,15 @@ export const ActionBtnContainer = styled.div`
     width: 180px;
     margin-left: 20px;
     font-size: 18px;
+
+    @media (max-width: 400px) {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    display: block;
+    margin: 15px auto;
   }
 `;

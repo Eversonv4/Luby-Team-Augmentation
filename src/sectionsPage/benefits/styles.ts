@@ -11,7 +11,7 @@ export const Container = styled.section`
   background-repeat: no-repeat;
   background-position: center right;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     background-position: center;
   }
 
@@ -29,7 +29,7 @@ export const ContainerLayout = styled.article`
   flex-direction: column;
   justify-content: center;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 30px;
   }
 `;
@@ -84,4 +84,17 @@ export const BenefitsText = styled.h3`
   font-size: 18px;
   line-height: 24px;
   font-weight: 300;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  padding: 10px 0;
+  padding-left: 60px;
+
+  & svg {
+    position: absolute;
+    left: 0;
+  }
 `;

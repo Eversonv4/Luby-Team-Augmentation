@@ -17,4 +17,20 @@ export const List = styled.ul`
   padding: 20px;
 
   animation: ${FadeList} 1.5s ease;
+
+  transition: 1s ease;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 667px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
 `;

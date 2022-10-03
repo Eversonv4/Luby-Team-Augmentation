@@ -12,8 +12,13 @@ export const InfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 50px 20px;
+  }
+
+  @media (max-width: 446px) {
+    flex-direction: column;
+    padding: 50px 20px 30px;
   }
 `;
 
@@ -33,7 +38,7 @@ export const AddressContainer = styled.div`
 
   display: flex;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `;
@@ -47,8 +52,13 @@ export const AddressLayout = styled.div`
 
   padding: 0 15px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     margin-bottom: 50px;
+  }
+
+  @media (max-width: 446px) {
+    padding: 0;
+    margin-bottom: 25px;
   }
 `;
 
@@ -66,7 +76,7 @@ export const DivisorLine = styled.div`
   width: 1px;
   background-color: ${({ theme }) => theme.colors.text};
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -93,4 +103,10 @@ export const CopyrightTitle = styled.h3`
   text-align: center;
 
   padding: 15px 0;
+`;
+
+export const ClutchLabelIcon = styled.img`
+  @media (max-width: 446px) {
+    margin-bottom: 25px;
+  }
 `;

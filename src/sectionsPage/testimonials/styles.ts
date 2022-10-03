@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const Container = styled.section`
@@ -46,12 +47,26 @@ export const StatusContainerLayout = styled.section`
   display: flex;
   justify-content: space-between;
 
-  & .custom-html {
-    margin-left: 35px;
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 60px 30px;
+  }
+
+  @media (max-width: 870px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
@@ -70,6 +85,11 @@ export const StatusTitle = styled.h3`
     color: ${({ theme }) => theme.colors.primary};
     font-weight: 400;
   }
+
+  @media (max-width: 870px) {
+    text-align: center;
+    max-width: 100%;
+  }
 `;
 
 export const StatusSubTitle = styled.h3`
@@ -82,6 +102,12 @@ export const StatusSubTitle = styled.h3`
   margin: 0;
   margin-top: 50px;
   max-width: 500px;
+
+  @media (max-width: 870px) {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 export const AchievementTitle = styled.h4`
@@ -105,6 +131,10 @@ export const AchievementTitle = styled.h4`
   & strong {
     font-size: 2.375rem;
     font-family: ${({ theme }) => theme.fonts.oswald};
+
+    @media (max-width: 510px) {
+      font-size: 1.8rem;
+    }
   }
 
   & span {
@@ -112,5 +142,18 @@ export const AchievementTitle = styled.h4`
     font-size: 2.375rem;
     font-weight: bold;
     margin-right: 20px;
+  }
+
+  @media (max-width: 870px) {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+`;
+
+export const ClutchIcon = styled.img`
+  margin-left: 25px;
+  @media (max-width: 870px) {
+    margin: 0 auto;
   }
 `;

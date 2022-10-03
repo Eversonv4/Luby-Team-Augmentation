@@ -9,10 +9,12 @@ import {
   StatusTitle,
   StatusSubTitle,
   AchievementTitle,
+  ClutchIcon,
 } from "./styles";
 
 import { motion, Variants } from "framer-motion";
 import { Helmet } from "react-helmet";
+import Image from "next/image";
 
 const FadeAnimation: Variants = {
   offscreen: {
@@ -88,33 +90,13 @@ export function TestimonnialsSection() {
                 talented professionals
               </AchievementTitle>
 
-              {/* <div className="custom-html">
-                <div
-                  className="clutch-widget"
-                  data-url="https://widget.clutch.co"
-                  data-widget-type="1"
-                  data-height="40"
-                  data-nofollow="true"
-                  data-expandifr="true"
-                  data-darkbg="darkbg"
-                  data-clutchcompany-id="1748502"
-                >
-                  <iframe
-                    id="iframe-0.22077650616990474"
-                    // width="100%"
-                    src="https://widget.clutch.co/widgets/get/1/darkbg?ref_domain=luby.co&amp;uid=1748502&amp;rel_nofollow=true&amp;ref_path=//team-augmentation/"
-                    // height="40px"
-                    // scrolling="no"
-                    style={{
-                      border: "none",
-                      overflow: "hidden",
-                      display: "block",
-                      height: "40px",
-                    }}
-                    title="[iFrameSizer]iframe-0.22077650616990474:0:0:mouseleave:396:-4301 Dark"
-                  ></iframe>
-                </div>
-              </div> */}
+              <ClutchIcon
+                src="/assets/icons/clutch-icon.webp"
+                width={185}
+                height={64}
+                alt="clutch logo"
+                loading="lazy"
+              />
             </div>
           </StatusContainerLayout>
         </motion.div>

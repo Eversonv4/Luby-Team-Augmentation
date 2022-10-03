@@ -88,6 +88,8 @@ export const NavText = styled.span`
   font-size: 1rem;
   line-height: 1rem;
   font-weight: 500;
+
+  width: fit-content;
 `;
 
 export const NavTextContrast = styled.span`

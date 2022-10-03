@@ -118,33 +118,7 @@ export function StacksSection() {
             </TechContainer>
           </StackContainer>
           <StackListContainer>
-            {selectedStack === "backend" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "frontend" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "mobile" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "databases" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "cloud" && <StackList stacklist={stackActive} />}
-
-            {selectedStack === "infrastructure" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "quality" && (
-              <StackList stacklist={stackActive} />
-            )}
-
-            {selectedStack === "data" && <StackList stacklist={stackActive} />}
+            {selectedStack && <StackList stacklist={stackActive} />}
           </StackListContainer>
         </ContainerLayout>
       </motion.div>

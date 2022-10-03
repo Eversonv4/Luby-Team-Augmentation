@@ -30,4 +30,6 @@ export const Title = styled.h3`
   font-weight: 500;
   margin: 0;
   margin-top: 10px;
+
+  text-align: center;
 `;

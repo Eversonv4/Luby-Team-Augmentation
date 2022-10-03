@@ -12,7 +12,7 @@ export const HeaderLayout = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     justify-content: flex-start;
   }
 `;
@@ -21,7 +21,7 @@ export const NavList = styled.nav`
   & ul {
     display: flex;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
       display: none;
     }
 
@@ -57,7 +57,7 @@ export const IconMenu = styled.span`
 
   cursor: pointer;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     display: block;
   }
 `;

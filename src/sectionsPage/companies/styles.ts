@@ -19,7 +19,7 @@ export const LayoutContainer = styled.div`
     & img {
       /* width: 180px; */
 
-      @media (max-width: 1000px) {
+      @media (max-width: 1024px) {
         width: 140px;
       }
 
@@ -33,7 +33,7 @@ export const LayoutContainer = styled.div`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 25px;
   }
 
@@ -65,7 +65,7 @@ export const CarrosselContainer = styled.div`
   max-width: 860px;
   overflow: hidden;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     max-width: 600px;
   }
 

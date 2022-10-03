@@ -43,34 +43,34 @@ export function BenefitsSection() {
 
           <BenefitsList>
             <li>
-              <CheckIcon />
               <BenefitsText>
+                <CheckIcon />
                 Access to the most talented IT professionals of the region;
               </BenefitsText>
             </li>
             <li>
-              <CheckIcon />
               <BenefitsText>
+                <CheckIcon />
                 Increased productivity and performance;
               </BenefitsText>
             </li>
             <li>
-              <CheckIcon />
               <BenefitsText>
+                <CheckIcon />
                 Dedicated and Flexible service provider ready to support your
                 scaling needs;
               </BenefitsText>
             </li>
             <li>
-              <CheckIcon />
               <BenefitsText>
+                <CheckIcon />
                 Reduced risk inherent to directly hiring tech personnel (hiring
                 developers is our specialty);
               </BenefitsText>
             </li>
             <li>
-              <CheckIcon />
               <BenefitsText>
+                <CheckIcon />
                 Higher cost effectiveness through Luby's nearshore advantage;
               </BenefitsText>
             </li>

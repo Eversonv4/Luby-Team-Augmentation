@@ -1,14 +1,5 @@
 import styled, { keyframes } from "styled-components";
 
-const AnimateTop = keyframes`
-  from {
-    margin-top: -200px;
-  }
-  to {
-    margin-top: 0;
-  }
-`;
-
 export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.bg_hover_dark};
 
@@ -18,10 +9,6 @@ export const Container = styled.section`
 export const ContainerLayout = styled.article`
   max-width: 1170px;
   margin: 0 auto;
-
-  position: relative;
-
-  animation: AnimateTop 2s linear;
 `;
 
 export const Title = styled.h2`
@@ -32,6 +19,7 @@ export const Title = styled.h2`
   font-weight: 400;
 
   text-align: center;
+  margin-bottom: 15px;
 `;
 
 export const SubTitle = styled.h3`
@@ -65,7 +53,7 @@ export const TechContainer = styled.div`
     margin-top: -1px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     overflow: auto;
   }
 `;

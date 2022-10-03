@@ -15,7 +15,7 @@ export const Button = styled.button<IButton>`
   text-align: center;
   cursor: pointer;
 
-  transition: 0.3s linear;
+  transition: 0.5s linear;
 
   background-color: ${({ theme }) => theme.colors.bg_hover_dark};
 
@@ -34,6 +34,8 @@ export const Button = styled.button<IButton>`
     height: 4px;
     background-color: ${({ isActive, theme }) =>
       isActive ? theme.colors.secondary : "transparent"};
+
+    transition: 0.5s ease;
 
     z-index: 3;
   }

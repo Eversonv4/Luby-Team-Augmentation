@@ -16,11 +16,13 @@ export const Title = styled.h2`
   line-height: 2.625rem;
   font-weight: 400;
 
+  padding: 0 15px;
   margin: 0 auto;
+  margin-bottom: 15px;
 `;
 
 export const SubTitle = styled.h3`
-  max-width: 900px;
+  max-width: 920px;
   text-align: center;
 
   color: ${({ theme }) => theme.colors.text_dark};
@@ -30,6 +32,11 @@ export const SubTitle = styled.h3`
   line-height: 1.5rem;
 
   margin: 0 auto 50px;
+  padding: 0 10px;
+
+  @media (max-width: 768px) {
+    margin: 0 auto 25px;
+  }
 `;
 
 export const ButtonContrast = styled.span`

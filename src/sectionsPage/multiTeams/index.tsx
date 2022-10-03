@@ -87,9 +87,7 @@ export function MultiTeamsSection() {
             </ButtonTechList>
           </TeamsListContainer>
           <TechlistContainer>
-            {chooseTeam === "tech" && <TeamsList techlist={listActive} />}
-            {chooseTeam === "product" && <TeamsList techlist={listActive} />}
-            {chooseTeam === "design" && <TeamsList techlist={listActive} />}
+            {chooseTeam && <TeamsList techlist={listActive} />}
           </TechlistContainer>
         </TechContainer>
       </motion.article>

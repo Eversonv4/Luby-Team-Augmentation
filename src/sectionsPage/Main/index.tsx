@@ -33,10 +33,9 @@ export function MainContent() {
       </Description>
 
       <ActionBtnContainer>
-        <span>
-          <Link href="#">Contact Us</Link>
-          <FiChevronDown />
-        </span>
+        <Link href="#contact-section">
+          <span>Contact Us</span>
+        </Link>
         <h4>Decrease Ramp-Up Time and Costs</h4>
       </ActionBtnContainer>
     </MainSection>

@@ -36,7 +36,7 @@ export const QuestionContainer = styled.div`
   justify-content: space-between;
 
   & div div {
-    @media (max-width: 1000px) {
+    @media (max-width: 1024px) {
       max-width: 100%;
       padding: 0 10px;
       border: none;
@@ -44,7 +44,7 @@ export const QuestionContainer = styled.div`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
   }

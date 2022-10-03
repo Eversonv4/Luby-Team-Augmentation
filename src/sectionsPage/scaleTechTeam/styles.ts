@@ -14,8 +14,9 @@ export const Title = styled.h2`
 
   text-align: center;
   line-height: 2.5rem;
+  margin-bottom: 15px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -30,7 +31,7 @@ export const Description = styled.p`
   text-align: center;
   margin: 0 auto;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 20px;
   }
 `;
@@ -47,7 +48,7 @@ export const CardsContainer = styled.div`
   grid-auto-rows: minmax(85px, auto);
   gap: 30px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1024px) {
     padding: 0 30px 50px;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(50px, auto);
@@ -68,6 +69,15 @@ export const Card = styled.div`
   border-radius: 6px;
   overflow: hidden;
 
+  & svg,
+  & image {
+    width: 51px;
+    height: 48px;
+    z-index: 0;
+
+    margin-bottom: 20px;
+  }
+
   :hover {
     background-color: ${({ theme }) => theme.colors.bg_hover_dark};
     color: ${({ theme }) => theme.colors.text};
@@ -77,15 +87,6 @@ export const Card = styled.div`
     & image {
       filter: invert(1);
     }
-  }
-
-  & svg,
-  & image {
-    width: 51px;
-    height: 48px;
-    z-index: 0;
-
-    margin-bottom: 20px;
   }
 `;
 

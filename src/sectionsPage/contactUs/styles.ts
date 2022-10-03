@@ -12,8 +12,9 @@ export const ContainerLayout = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 940px) {
     padding: 0 30px;
+    flex-direction: column;
   }
 `;
 
@@ -27,6 +28,11 @@ export const Span = styled.span`
   font-size: 1rem;
   line-height: 1.125rem;
   letter-spacing: 2px;
+
+  @media (max-width: 940px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const Title = styled.h2`
@@ -35,6 +41,10 @@ export const Title = styled.h2`
   font-size: 3.5rem;
   font-weight: 600;
   line-height: 4.0625rem;
+
+  @media (max-width: 940px) {
+    text-align: center;
+  }
 `;
 
 export const ContactTitle = styled.h3`
@@ -44,6 +54,11 @@ export const ContactTitle = styled.h3`
   color: ${({ theme }) => theme.colors.text_dark};
 
   margin-top: 50px;
+
+  @media (max-width: 940px) {
+    text-align: center;
+    margin-top: 30px;
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -75,10 +90,6 @@ export const FormContainer = styled.div`
       font-size: 1.125rem;
       line-height: 1;
     }
-
-    @media (max-width: 1000px) {
-      margin-left: 15px;
-    }
   }
 
   & textarea {
@@ -105,5 +116,10 @@ export const FormContainer = styled.div`
     :hover {
       background-color: ${({ theme }) => theme.colors.hover_button};
     }
+  }
+
+  @media (max-width: 940px) {
+    max-width: 100%;
+    margin-top: 15px;
   }
 `;

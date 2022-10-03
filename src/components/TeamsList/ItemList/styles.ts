@@ -15,12 +15,23 @@ export const Item = styled.li`
   font-family: ${({ theme }) => theme.fonts.oswald};
   font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.875;
+  line-height: 1.875rem;
+  text-align: center;
 
   :hover {
     background-color: ${({ theme }) => theme.colors.bg_hover_dark};
     color: ${({ theme }) => theme.colors.text};
 
     transition: background-color 0.6s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  transition: 0.5s ease;
+
+  @media (max-width: 700px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 1rem;
   }
 `;
