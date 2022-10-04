@@ -21,6 +21,11 @@ export const Title = styled.h2`
   line-height: 2.625rem;
 
   text-align: center;
+
+  @media (max-width: 420px) {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -32,6 +37,12 @@ export const SubTitle = styled.h3`
   text-align: center;
 
   margin-bottom: 40px;
+
+  @media (max-width: 420px) {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding: 0 10px;
+  }
 `;
 
 export const StatusContainer = styled.div`
@@ -94,6 +105,11 @@ export const StatusTitle = styled.h3`
     text-align: center;
     max-width: 100%;
   }
+
+  @media (max-width: 420px) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
 `;
 
 export const StatusSubTitle = styled.h3`
@@ -111,6 +127,11 @@ export const StatusSubTitle = styled.h3`
     text-align: center;
     max-width: 100%;
     margin-top: 20px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
   }
 `;
 
@@ -132,12 +153,19 @@ export const AchievementTitle = styled.h4`
   margin: 0;
   margin-bottom: 40px;
 
+  transition: 0.7s ease;
+
   & strong {
     font-size: 2.375rem;
     font-family: ${({ theme }) => theme.fonts.oswald};
 
     @media (max-width: 510px) {
       font-size: 1.8rem;
+    }
+
+    @media (max-width: 420px) {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
     }
   }
 
@@ -146,12 +174,24 @@ export const AchievementTitle = styled.h4`
     font-size: 2.375rem;
     font-weight: bold;
     margin-right: 20px;
+
+    @media (max-width: 420px) {
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+
+      margin-right: 10px;
+    }
   }
 
   @media (max-width: 870px) {
     margin-top: 30px;
     margin-bottom: 20px;
     max-width: 100%;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
   }
 `;
 

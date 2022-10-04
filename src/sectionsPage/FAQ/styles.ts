@@ -17,6 +17,11 @@ export const Title = styled.h2`
   font-weight: 500;
   font-size: 2.5rem;
   line-height: 3.125rem;
+
+  @media (max-width: 420px) {
+    font-size: 1.8rem;
+    line-height: 2.125rem;
+  }
 `;
 
 export const TitleHighlight = styled.h3`

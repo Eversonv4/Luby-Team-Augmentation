@@ -19,6 +19,11 @@ export const Title = styled.h2`
   padding: 0 15px;
   margin: 0 auto;
   margin-bottom: 15px;
+
+  @media (max-width: 420px) {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -36,6 +41,11 @@ export const SubTitle = styled.h3`
 
   @media (max-width: 768px) {
     margin: 0 auto 25px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 1rem;
+    line-height: 1.3rem;
   }
 `;
 

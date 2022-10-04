@@ -20,6 +20,11 @@ export const Title = styled.h2`
 
   text-align: center;
   margin-bottom: 15px;
+
+  @media (max-width: 420px) {
+    font-size: 1.9rem;
+    line-height: 2.2rem;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -30,6 +35,13 @@ export const SubTitle = styled.h3`
   font-weight: 300;
 
   text-align: center;
+
+  @media (max-width: 420px) {
+    font-size: 1rem;
+    line-height: 1.2rem;
+
+    padding: 0 10px;
+  }
 `;
 
 export const StackContainer = styled.article`

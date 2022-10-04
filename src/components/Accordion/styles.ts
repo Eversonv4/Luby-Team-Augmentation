@@ -2,15 +2,24 @@ import styled, { keyframes } from "styled-components";
 import { FiChevronRight } from "react-icons/fi";
 import { IoMdHelpCircle } from "react-icons/io";
 
-export const AcordeonContainer = styled.div`
-  max-width: 570px;
-  border-bottom: 2px solid #d7d7d7;
-`;
-
 interface Open {
   open: boolean;
   Accordeonheight?: string;
 }
+
+const changeOpacity = keyframes`
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+`;
+
+export const AcordeonContainer = styled.div`
+  max-width: 570px;
+  border-bottom: 2px solid #d7d7d7;
+`;
 
 export const ArrowRightIcon = styled(FiChevronRight).attrs({
   size: 20,
@@ -62,15 +71,6 @@ export const ContentBox = styled.div<Open>`
   }
 `;
 
-const changeOpacity = keyframes`
-   from {
-      opacity: 0;
-   }
-   to {
-      opacity: 1;
-   }
-`;
-
 export const ContentText = styled.div<Open>`
   position: relative;
   background-color: #f3f3f1;
@@ -108,5 +108,9 @@ export const ContentText = styled.div<Open>`
     line-height: 1.5rem;
     font-weight: 300;
     color: ${({ theme }) => theme.colors.text_dark};
+  }
+
+  @media (max-width: 600px) {
+    overflow: auto;
   }
 `;

@@ -43,6 +43,11 @@ export const Title = styled.h2`
   max-width: 720px;
 
   margin-bottom: 25px;
+
+  @media (max-width: 420px) {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+  }
 `;
 
 export const TitleContrast = styled.strong`

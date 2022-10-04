@@ -8,24 +8,30 @@ export const Container = styled.section`
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.fonts.oswald};
   font-size: 2.25rem;
+  line-height: 2.5rem;
   font-weight: 400;
 
   color: ${({ theme }) => theme.colors.text_dark};
 
   text-align: center;
-  line-height: 2.5rem;
   margin-bottom: 15px;
+
+  transition: 0.7s ease;
 
   @media (max-width: 1024px) {
     padding: 0 20px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 1.8rem;
   }
 `;
 
 export const Description = styled.p`
   font-family: ${({ theme }) => theme.fonts.manrope};
   font-weight: 300;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 
   max-width: 940px;
   text-align: center;
@@ -33,6 +39,10 @@ export const Description = styled.p`
 
   @media (max-width: 1024px) {
     padding: 0 20px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 0.9rem;
   }
 `;
 
@@ -101,16 +111,19 @@ export const CardContent = styled.div`
 
 export const TitleCard = styled.h3`
   font-family: ${({ theme }) => theme.fonts.oswald};
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
+  line-height: 1.875rem;
 
   background-color: transparent;
-
-  line-height: 30px;
 
   text-align: center;
 
   margin-bottom: 10px;
+
+  @media (max-width: 450px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const DescriptionCard = styled.p`
@@ -123,4 +136,8 @@ export const DescriptionCard = styled.p`
   line-height: 24px;
 
   font-weight: 300;
+
+  @media (max-width: 450px) {
+    font-size: 1rem;
+  }
 `;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BiMenu } from "react-icons/bi";
+import Image from "next/image";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -14,17 +15,15 @@ export const HeaderLayout = styled.div`
   justify-content: space-between;
 
   @media (max-width: 1024px) {
-    justify-content: flex-start;
+    padding: 0 30px;
   }
 `;
+
+export const LogoLuby = styled(Image)``;
 
 export const NavList = styled.nav`
   & ul {
     display: flex;
-
-    @media (max-width: 1024px) {
-      display: none;
-    }
 
     & li {
       color: ${({ theme }) => theme.colors.text};
@@ -44,6 +43,10 @@ export const NavList = styled.nav`
         transition: 0.5s ease;
       }
     }
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
   }
 `;
 

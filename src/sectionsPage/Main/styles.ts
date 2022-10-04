@@ -28,12 +28,8 @@ export const MainSection = styled.main`
 
   transition: 0.7s ease;
 
-  @media (max-width: 480px) {
+  @media (max-width: 360px) {
     height: 815px;
-  }
-
-  @media (max-width: 400px) {
-    height: 960px;
   }
 `;
 
@@ -49,7 +45,7 @@ export const MainTitle = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fonts.oswald};
 
-  font-size: 60px;
+  font-size: 3.75rem;
   text-align: center;
   text-shadow: 2px 2px 20px #000;
 
@@ -57,21 +53,34 @@ export const MainTitle = styled.h1`
 
   animation-name: ${AnimateOpacity};
   animation-duration: 1.5s;
+
+  @media (max-width: 540px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 2.8rem;
+    padding: 0 15px;
+  }
 `;
 
 export const SubTitle = styled.h2`
   color: ${({ theme }) => theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.oswald};
 
-  font-size: 32px;
+  font-size: 2rem;
   text-shadow: 2px 2px 20px #000;
 
   animation-name: ${AnimateOpacity};
   animation-duration: 1.4s;
+
+  @media (max-width: 360px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const Description = styled.h3`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: ${({ theme }) => theme.fonts.manrope};
   color: ${({ theme }) => theme.colors.text};
 
@@ -85,6 +94,10 @@ export const Description = styled.h3`
 
   @media (max-width: 1024px) {
     padding: 0 20px;
+  }
+
+  @media (max-width: 540px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -122,8 +135,9 @@ export const ActionBtnContainer = styled.div`
     }
 
     @media (max-width: 400px) {
-      width: auto;
+      width: fit-content;
       justify-content: center;
+      margin: 0 auto;
       margin-bottom: 15px;
     }
   }
@@ -137,6 +151,7 @@ export const ActionBtnContainer = styled.div`
     @media (max-width: 400px) {
       margin-left: 0;
       text-align: center;
+      width: 300px;
     }
   }
 

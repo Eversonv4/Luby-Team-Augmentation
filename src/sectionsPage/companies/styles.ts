@@ -59,6 +59,10 @@ export const Title = styled.h2`
     max-width: 100%;
     text-align: center;
   }
+
+  @media (max-width: 420px) {
+    font-size: 1.7rem;
+  }
 `;
 
 export const CarrosselContainer = styled.div`

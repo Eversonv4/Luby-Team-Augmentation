@@ -45,6 +45,12 @@ export const Title = styled.h2`
   @media (max-width: 940px) {
     text-align: center;
   }
+
+  @media (max-width: 420px) {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
 `;
 
 export const ContactTitle = styled.h3`
@@ -58,6 +64,10 @@ export const ContactTitle = styled.h3`
   @media (max-width: 940px) {
     text-align: center;
     margin-top: 30px;
+  }
+
+  @media (max-width: 420px) {
+    margin-top: 15px;
   }
 `;
 

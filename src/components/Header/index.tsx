@@ -1,9 +1,14 @@
 import react, { useState } from "react";
 import Link from "next/link";
-import { HeaderContainer, HeaderLayout, NavList, IconMenu } from "./styles";
+import {
+  HeaderContainer,
+  HeaderLayout,
+  NavList,
+  IconMenu,
+  LogoLuby,
+} from "./styles";
 
 import { MenuAside } from "@components/MenuAside";
-import Image from "next/image";
 
 export function Header() {
   /* TODO Header Section */
@@ -17,7 +22,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderLayout>
-        <Image
+        <LogoLuby
           src="/assets/company-icons/logo-luby-site.webp"
           alt="logo luby"
           width={134}
