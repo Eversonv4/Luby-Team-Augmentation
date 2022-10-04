@@ -9,6 +9,8 @@ import { TestimonnialsSection } from "@sections/testimonials";
 import { ContactUsSection } from "@sections/contactUs";
 import { FaqSection } from "@sections/FAQ";
 import Footer from "@components/Footer";
+import { Helmet } from "react-helmet";
+import Script from "next/script";
 
 function Home() {
   return (

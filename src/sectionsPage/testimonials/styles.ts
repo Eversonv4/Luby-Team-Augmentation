@@ -37,6 +37,11 @@ export const SubTitle = styled.h3`
 export const StatusContainer = styled.div`
   background-color: #1e293d;
   margin-top: 60px;
+
+  .widgets_wrapper {
+    max-height: 430px;
+    overflow: hidden;
+  }
 `;
 
 export const StatusContainerLayout = styled.section`
@@ -50,7 +55,6 @@ export const StatusContainerLayout = styled.section`
   & div {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   @media (max-width: 1024px) {
