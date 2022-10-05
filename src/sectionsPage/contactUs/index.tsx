@@ -8,6 +8,10 @@ import {
   FormContainer,
 } from "./styles";
 
+import { useForm, Controller } from "react-hook-form";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+
 import { motion, Variants } from "framer-motion";
 
 const FadeAnimation: Variants = {
@@ -31,6 +35,22 @@ export function ContactUsSection() {
     console.log("Hello");
   }
 
+  const {
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm();
+
+  const onSubmit = (data: any) => {
+    console.log({ data });
+  };
+
+  const handleValidate = (value: string) => {
+    const isValid = isValidPhoneNumber(value || "");
+    console.log({ isValid });
+    return isValid;
+  };
+
   return (
     <Container id="contact-section">
       <motion.div
@@ -50,12 +70,33 @@ export function ContactUsSection() {
             </ContactTitle>
           </div>
           <FormContainer>
-            <form onSubmit={MessageConsole}>
+            <form onSubmit={handleSubmit(onSubmit)} className="user-info-form">
               <input type="text" placeholder="Name" />
               <input type="email" placeholder="Email" />
               <input type="text" placeholder="Company's Name" />
+              <Controller
+                name="phone-input"
+                control={control}
+                rules={{
+                  validate: (value) => handleValidate(value),
+                }}
+                render={({ field: { onChange, value } }) => (
+                  <PhoneInput
+                    value={value}
+                    onChange={onChange}
+                    defaultCountry="US"
+                    id="phone-input"
+                    placeholder="Your phone number..."
+                  />
+                )}
+              />
+              {errors["phone-input"] && (
+                <p className="error-message" style={{ color: "red" }}>
+                  Invalid Phone Number
+                </p>
+              )}
+
               <input type="text" placeholder="Your Role" />
-              <input type="tel" placeholder="(___) ___-____" />
               <textarea placeholder="Please feel free to enter all information that can help us to assist you"></textarea>
 
               <button type="submit">Submit</button>
