@@ -73,6 +73,7 @@ export const ContactTitle = styled.h3`
 
 export const FormContainer = styled.div`
   max-width: 622px;
+  width: 100%;
   font-family: ${({ theme }) => theme.fonts.manrope};
 
   & input,

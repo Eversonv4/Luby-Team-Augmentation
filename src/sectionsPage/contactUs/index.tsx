@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   ContainerLayout,
@@ -8,11 +8,13 @@ import {
   FormContainer,
 } from "./styles";
 
-import { useForm, Controller } from "react-hook-form";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import { motion, Variants } from "framer-motion";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const FadeAnimation: Variants = {
   offscreen: {
@@ -29,27 +31,66 @@ const FadeAnimation: Variants = {
   },
 };
 
+interface IContactForm {
+  name: string;
+  email: string;
+  companyName: string;
+  role: string;
+  phone?: string;
+  message: string;
+}
+
+const schemaValidation = yup.object({
+  name: yup.string().required(),
+  email: yup.string().email().required(),
+  companyName: yup.string().required(),
+  role: yup.string().required(),
+  message: yup.string().required(),
+});
+
 export function ContactUsSection() {
-  function MessageConsole(e: any) {
-    e.preventDefault();
-    console.log("Hello");
-  }
+  const [value, setValue] = useState("");
+  const [valid, setValid] = useState<boolean>();
+  const [maxLengthInput, setMaxLengthInput] = useState(0);
+  const [erro, setErro] = useState<boolean>();
 
   const {
+    register,
     handleSubmit,
     formState: { errors },
-    control,
-  } = useForm();
+  } = useForm<IContactForm>({
+    resolver: yupResolver(schemaValidation),
+  });
 
-  const onSubmit = (data: any) => {
-    console.log({ data });
+  const validationInputPhone = (e: any) => {
+    e.preventDefault();
+    // data.preventDefault();
+    console.log("entrou");
+
+    if (value.length < maxLengthInput) {
+      setErro(true);
+      return;
+    }
+    setValid(true);
+    console.log("value", value.length);
+    console.log("max length", maxLengthInput);
   };
 
-  const handleValidate = (value: string) => {
-    const isValid = isValidPhoneNumber(value || "");
-    console.log({ isValid });
-    return isValid;
-  };
+  function onChangeInput(value: string) {
+    setValue(value);
+    setValid(false);
+    setErro(false);
+  }
+
+  function onSubmit(data: IContactForm) {
+    console.log(data);
+  }
+
+  function Submit(e: any) {
+    e.preventDefault();
+    handleSubmit(onSubmit);
+    // validationInputPhone();
+  }
 
   return (
     <Container id="contact-section">
@@ -70,34 +111,76 @@ export function ContactUsSection() {
             </ContactTitle>
           </div>
           <FormContainer>
-            <form onSubmit={handleSubmit(onSubmit)} className="user-info-form">
-              <input type="text" placeholder="Name" />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Company's Name" />
-              <Controller
-                name="phone-input"
-                control={control}
-                rules={{
-                  validate: (value) => handleValidate(value),
-                }}
-                render={({ field: { onChange, value } }) => (
-                  <PhoneInput
-                    value={value}
-                    onChange={onChange}
-                    defaultCountry="US"
-                    id="phone-input"
-                    placeholder="Your phone number..."
-                  />
-                )}
+            <form
+              onSubmit={(e) => {
+                handleSubmit(onSubmit);
+                validationInputPhone(e);
+              }}
+            >
+              <input type="text" placeholder="Name" {...register("name")} />
+              <p>{errors.name?.message}</p>
+
+              <input type="email" placeholder="Email" {...register("email")} />
+              <p>{errors.email?.message}</p>
+
+              <input
+                type="text"
+                placeholder="Company's Name"
+                {...register("companyName")}
               />
-              {errors["phone-input"] && (
-                <p className="error-message" style={{ color: "red" }}>
-                  Invalid Phone Number
-                </p>
+              <p>{errors.companyName?.message}</p>
+
+              <input
+                type="text"
+                placeholder="Your Role"
+                {...register("role")}
+              />
+              <p>{errors.role?.message}</p>
+
+              <PhoneInput
+                country="us"
+                value={value}
+                onChange={(value) => onChangeInput(value)}
+                autoFormat={true}
+                placeholder="Your phone number"
+                enableSearch={true}
+                disableSearchIcon={false}
+                isValid={(inputNumber, country: any, onlyCountries: any) => {
+                  console.log(country?.format);
+                  let StringSplit = country?.format;
+                  const SplitedString = StringSplit.split("");
+                  let filteredString = SplitedString.filter(
+                    (char: string) => char === "."
+                  );
+
+                  let resultLength;
+
+                  if (StringSplit.match(/\s..$/gm)) {
+                    console.log("Matches!!");
+                    resultLength = filteredString.slice(
+                      0,
+                      filteredString.length - 2
+                    );
+                  } else {
+                    console.log("NOT MATCHES!");
+                    resultLength = filteredString;
+                  }
+
+                  setMaxLengthInput(resultLength.length);
+                  return true;
+                }}
+              />
+              {erro && <p style={{ color: "red" }}>Número inválido!</p>}
+              <h1>{value}</h1>
+              {valid && (
+                <h2 style={{ color: "greenyellow" }}>Este número é válido!</h2>
               )}
 
-              <input type="text" placeholder="Your Role" />
-              <textarea placeholder="Please feel free to enter all information that can help us to assist you"></textarea>
+              <textarea
+                {...register("message")}
+                placeholder="Please feel free to enter all information that can help us to assist you"
+              ></textarea>
+              <p>{errors.message?.message}</p>
 
               <button type="submit">Submit</button>
             </form>
