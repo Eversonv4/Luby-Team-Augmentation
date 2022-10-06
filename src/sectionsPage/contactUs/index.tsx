@@ -6,6 +6,8 @@ import {
   Title,
   ContactTitle,
   FormContainer,
+  InputLayout,
+  ErrorMessage,
 } from "./styles";
 
 import { useForm } from "react-hook-form";
@@ -41,16 +43,16 @@ interface IContactForm {
 }
 
 const schemaValidation = yup.object({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-  companyName: yup.string().required(),
-  role: yup.string().required(),
-  message: yup.string().required(),
+  name: yup.string().required("Please, Insert a Name!"),
+  email: yup.string().email().required("Insert a valid Email!"),
+  companyName: yup.string().required("Please, insert a Company Name!"),
+  role: yup.string().required("Please, insert your role in your company!"),
+  message: yup.string().required("Please, leave us a message!"),
 });
 
 export function ContactUsSection() {
   const [value, setValue] = useState("");
-  const [valid, setValid] = useState<boolean>();
+  // const [valid, setValid] = useState<boolean>();
   const [maxLengthInput, setMaxLengthInput] = useState(0);
   const [erro, setErro] = useState<boolean>();
 
@@ -63,28 +65,28 @@ export function ContactUsSection() {
   });
 
   const validationInputPhone = () => {
-    console.log("entrou");
+    // console.log("entrou");
 
     if (value.length < maxLengthInput) {
       setErro(true);
       return;
     }
-    setValid(true);
-    console.log("value", value.length);
-    console.log("max length", maxLengthInput);
+    // setValid(true);
+    // console.log("value", value.length);
+    // console.log("max length", maxLengthInput);
     return true;
   };
 
   function onChangeInput(value: string) {
     setValue(value);
-    setValid(false);
+    // setValid(false);
     setErro(false);
   }
 
   const onSubmit = handleSubmit((data: any) => {
     const isValid = validationInputPhone();
     if (isValid) {
-      console.log({ value, ...data });
+      console.log({ phone: value, ...data });
     }
   });
 
@@ -108,70 +110,81 @@ export function ContactUsSection() {
           </div>
           <FormContainer>
             <form onSubmit={onSubmit}>
-              <input type="text" placeholder="Name" {...register("name")} />
-              <p style={{ color: "red" }}>{errors.name?.message}</p>
+              <InputLayout>
+                <input type="text" placeholder="Name" {...register("name")} />
+                <ErrorMessage>{errors.name?.message}</ErrorMessage>
+              </InputLayout>
 
-              <input type="email" placeholder="Email" {...register("email")} />
-              <p style={{ color: "red" }}>{errors.email?.message}</p>
+              <InputLayout>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  {...register("email")}
+                />
+                <ErrorMessage>{errors.email?.message}</ErrorMessage>
+              </InputLayout>
 
-              <input
-                type="text"
-                placeholder="Company's Name"
-                {...register("companyName")}
-              />
-              <p style={{ color: "red" }}>{errors.companyName?.message}</p>
+              <InputLayout>
+                <input
+                  type="text"
+                  placeholder="Company's Name"
+                  {...register("companyName")}
+                />
+                <ErrorMessage>{errors.companyName?.message}</ErrorMessage>
+              </InputLayout>
 
-              <input
-                type="text"
-                placeholder="Your Role"
-                {...register("role")}
-              />
-              <p style={{ color: "red" }}>{errors.role?.message}</p>
+              <InputLayout>
+                <input
+                  type="text"
+                  placeholder="Your Role"
+                  {...register("role")}
+                />
+                <ErrorMessage>{errors.role?.message}</ErrorMessage>
+              </InputLayout>
 
-              <PhoneInput
-                country="us"
-                value={value}
-                onChange={(value) => onChangeInput(value)}
-                autoFormat={true}
-                placeholder="Your phone number"
-                enableSearch={true}
-                disableSearchIcon={false}
-                isValid={(inputNumber, country: any, onlyCountries: any) => {
-                  // console.log(country?.format);
-                  let StringSplit = country?.format;
-                  const SplitedString = StringSplit.split("");
-                  let filteredString = SplitedString.filter(
-                    (char: string) => char === "."
-                  );
-
-                  let resultLength;
-
-                  if (StringSplit.match(/\s..$/gm)) {
-                    // console.log("Matches!!");
-                    resultLength = filteredString.slice(
-                      0,
-                      filteredString.length - 2
+              <InputLayout>
+                <PhoneInput
+                  country="us"
+                  value={value}
+                  onChange={(value) => onChangeInput(value)}
+                  autoFormat={true}
+                  placeholder="Your phone number"
+                  enableSearch={true}
+                  disableSearchIcon={false}
+                  isValid={(inputNumber, country: any, onlyCountries: any) => {
+                    // console.log(country?.format);
+                    let StringSplit = country?.format;
+                    const SplitedString = StringSplit.split("");
+                    let filteredString = SplitedString.filter(
+                      (char: string) => char === "."
                     );
-                  } else {
-                    // console.log("NOT MATCHES!");
-                    resultLength = filteredString;
-                  }
+                    let resultLength;
+                    if (StringSplit.match(/\s..$/gm)) {
+                      // console.log("Matches!!");
+                      resultLength = filteredString.slice(
+                        0,
+                        filteredString.length - 2
+                      );
+                    } else {
+                      // console.log("NOT MATCHES!");
+                      resultLength = filteredString;
+                    }
+                    setMaxLengthInput(resultLength.length);
+                    return true;
+                  }}
+                />
+                {erro && (
+                  <ErrorMessage>Please, insert a valid number!</ErrorMessage>
+                )}
+              </InputLayout>
 
-                  setMaxLengthInput(resultLength.length);
-                  return true;
-                }}
-              />
-              {erro && <p style={{ color: "red" }}>Número inválido!</p>}
-              <h1>{value}</h1>
-              {valid && (
-                <h2 style={{ color: "greenyellow" }}>Este número é válido!</h2>
-              )}
-
-              <textarea
-                {...register("message")}
-                placeholder="Please feel free to enter all information that can help us to assist you"
-              ></textarea>
-              <p style={{ color: "red" }}>{errors.message?.message}</p>
+              <InputLayout>
+                <textarea
+                  {...register("message")}
+                  placeholder="Please feel free to enter all information that can help us to assist you"
+                ></textarea>
+                <ErrorMessage>{errors.message?.message}</ErrorMessage>
+              </InputLayout>
 
               <button type="submit">Submit</button>
             </form>

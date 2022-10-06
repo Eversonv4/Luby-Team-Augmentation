@@ -81,7 +81,6 @@ export const FormContainer = styled.div`
     width: 100%;
     padding: 15px;
     background-color: #f5f8f9;
-    margin-bottom: 15px;
 
     font-family: ${({ theme }) => theme.fonts.manrope};
     color: #212121;
@@ -133,4 +132,21 @@ export const FormContainer = styled.div`
     max-width: 100%;
     margin-top: 15px;
   }
+`;
+
+export const InputLayout = styled.div`
+  max-width: 622px;
+  width: 100%;
+
+  margin-bottom: 15px;
+`;
+
+export const ErrorMessage = styled.p`
+  width: fit-content;
+
+  font-family: ${({ theme }) => theme.fonts.oswald};
+  background-color: #f00;
+  color: #fff;
+
+  margin-left: 10px;
 `;
