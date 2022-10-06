@@ -32,7 +32,7 @@ export const Container = styled.section<IActiveMenu>`
 
   z-index: ${({ isActive }) => (isActive ? 3 : -1)};
 
-  transition: 0.6s linear;
+  transition: 0.3s linear;
 
   animation: ${({ isActive }) => (isActive ? FadeinEffect : FadeoutEffect)} 0.6s
     linear;
@@ -59,7 +59,7 @@ export const AsideMenuContainer = styled.div<IActiveMenu>`
 
   z-index: 5;
 
-  transition: right 0.5s linear;
+  transition: right 0.3s linear;
 `;
 
 export const MenuContent = styled.div`
