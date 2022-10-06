@@ -148,5 +148,7 @@ export const ErrorMessage = styled.p`
   background-color: #f00;
   color: #fff;
 
+  padding: 0 10px;
+
   margin-left: 10px;
 `;
