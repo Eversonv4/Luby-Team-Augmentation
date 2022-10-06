@@ -11,6 +11,14 @@ html {
 
 .react-tel-input .form-control {
   width: 100% !important;
+  border: none !important;
+  background-color: #f5f8f9 !important;
+  padding: 15px 0px 15px 60px !important;
+  margin-bottom: 15px !important;
+  height: 50px !important;
+
+  font-size: 1.125rem !important;
+  line-height: 1 !important;
 }
 
 .react-tel-input .country-list .search {
@@ -97,6 +105,23 @@ html {
 
 .react-tel-input .country-list .country.highlight {
   background-color: #65d9b4 !important;
+}
+
+.react-tel-input .flag-dropdown {
+  border: none !important;
+  background-color: transparent !important;
+}
+.react-tel-input .flag-dropdown:hover {
+  background-color: transparent !important;
+}
+
+.react-tel-input .selected-flag {
+  width: 50px !important;
+  padding: 0 0 0 18px !important;
+}
+
+.react-tel-input .selected-flag:hover {
+  background-color: transparent !important;
 }
 
 @media (max-width: 576px) {

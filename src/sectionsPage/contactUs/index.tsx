@@ -62,9 +62,7 @@ export function ContactUsSection() {
     resolver: yupResolver(schemaValidation),
   });
 
-  const validationInputPhone = (e: any) => {
-    e.preventDefault();
-    // data.preventDefault();
+  const validationInputPhone = () => {
     console.log("entrou");
 
     if (value.length < maxLengthInput) {
@@ -74,6 +72,7 @@ export function ContactUsSection() {
     setValid(true);
     console.log("value", value.length);
     console.log("max length", maxLengthInput);
+    return true;
   };
 
   function onChangeInput(value: string) {
@@ -82,15 +81,12 @@ export function ContactUsSection() {
     setErro(false);
   }
 
-  function onSubmit(data: IContactForm) {
-    console.log(data);
-  }
-
-  function Submit(e: any) {
-    e.preventDefault();
-    handleSubmit(onSubmit);
-    // validationInputPhone();
-  }
+  const onSubmit = handleSubmit((data: any) => {
+    const isValid = validationInputPhone();
+    if (isValid) {
+      console.log({ value, ...data });
+    }
+  });
 
   return (
     <Container id="contact-section">
@@ -111,31 +107,26 @@ export function ContactUsSection() {
             </ContactTitle>
           </div>
           <FormContainer>
-            <form
-              onSubmit={(e) => {
-                handleSubmit(onSubmit);
-                validationInputPhone(e);
-              }}
-            >
+            <form onSubmit={onSubmit}>
               <input type="text" placeholder="Name" {...register("name")} />
-              <p>{errors.name?.message}</p>
+              <p style={{ color: "red" }}>{errors.name?.message}</p>
 
               <input type="email" placeholder="Email" {...register("email")} />
-              <p>{errors.email?.message}</p>
+              <p style={{ color: "red" }}>{errors.email?.message}</p>
 
               <input
                 type="text"
                 placeholder="Company's Name"
                 {...register("companyName")}
               />
-              <p>{errors.companyName?.message}</p>
+              <p style={{ color: "red" }}>{errors.companyName?.message}</p>
 
               <input
                 type="text"
                 placeholder="Your Role"
                 {...register("role")}
               />
-              <p>{errors.role?.message}</p>
+              <p style={{ color: "red" }}>{errors.role?.message}</p>
 
               <PhoneInput
                 country="us"
@@ -146,7 +137,7 @@ export function ContactUsSection() {
                 enableSearch={true}
                 disableSearchIcon={false}
                 isValid={(inputNumber, country: any, onlyCountries: any) => {
-                  console.log(country?.format);
+                  // console.log(country?.format);
                   let StringSplit = country?.format;
                   const SplitedString = StringSplit.split("");
                   let filteredString = SplitedString.filter(
@@ -156,13 +147,13 @@ export function ContactUsSection() {
                   let resultLength;
 
                   if (StringSplit.match(/\s..$/gm)) {
-                    console.log("Matches!!");
+                    // console.log("Matches!!");
                     resultLength = filteredString.slice(
                       0,
                       filteredString.length - 2
                     );
                   } else {
-                    console.log("NOT MATCHES!");
+                    // console.log("NOT MATCHES!");
                     resultLength = filteredString;
                   }
 
@@ -180,7 +171,7 @@ export function ContactUsSection() {
                 {...register("message")}
                 placeholder="Please feel free to enter all information that can help us to assist you"
               ></textarea>
-              <p>{errors.message?.message}</p>
+              <p style={{ color: "red" }}>{errors.message?.message}</p>
 
               <button type="submit">Submit</button>
             </form>
