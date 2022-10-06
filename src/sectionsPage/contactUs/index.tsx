@@ -83,7 +83,7 @@ export function ContactUsSection() {
     setErro(false);
   }
 
-  const onSubmit = handleSubmit((data: any) => {
+  const onSubmit = handleSubmit((data: IContactForm) => {
     const isValid = validationInputPhone();
     if (isValid) {
       console.log({ phone: value, ...data });

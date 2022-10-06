@@ -12,8 +12,11 @@ export const ContainerLayout = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 1024px) {
+    padding: 0 25px;
+  }
+
   @media (max-width: 940px) {
-    padding: 0 30px;
     flex-direction: column;
   }
 `;
@@ -139,14 +142,17 @@ export const InputLayout = styled.div`
   width: 100%;
 
   margin-bottom: 15px;
+
+  @media (max-width: 940px) {
+    max-width: 100%;
+  }
 `;
 
 export const ErrorMessage = styled.p`
   width: fit-content;
 
   font-family: ${({ theme }) => theme.fonts.oswald};
-  background-color: #f00;
-  color: #fff;
+  color: #f00;
 
   padding: 0 10px;
 

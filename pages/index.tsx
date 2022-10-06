@@ -1,4 +1,4 @@
-import { MainContent } from "@sections/Main";
+import { HomeSection } from "@sections/Home";
 import { CompaniesSection } from "@sections/companies";
 import { ScaleTechTeamSection } from "@sections/scaleTechTeam";
 import { BenefitsSection } from "@sections/benefits";
@@ -9,13 +9,11 @@ import { TestimonnialsSection } from "@sections/testimonials";
 import { ContactUsSection } from "@sections/contactUs";
 import { FaqSection } from "@sections/FAQ";
 import Footer from "@components/Footer";
-import { Helmet } from "react-helmet";
-import Script from "next/script";
 
 function Home() {
   return (
     <>
-      <MainContent />
+      <HomeSection />
       <CompaniesSection />
       <ScaleTechTeamSection />
       <BenefitsSection />

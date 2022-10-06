@@ -10,9 +10,7 @@ import {
 import { Header } from "@components/Header";
 import Link from "next/link";
 
-import { FiChevronDown } from "react-icons/fi";
-
-export function MainContent() {
+export function HomeSection() {
   return (
     <MainSection>
       <Header />
