@@ -1,3 +1,7 @@
+## Team Augmentation
+
+<p align="center">O projeto foi dividido em seções e componentes. Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar.</p>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -107,7 +107,6 @@ export const ActionBtnContainer = styled.div`
 
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.manrope};
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
 
   display: flex;
   align-items: center;
@@ -123,6 +122,8 @@ export const ActionBtnContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.bg_hover};
     padding: 15px 25px;
     width: fit-content;
+
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
 
     font-weight: bold;
     font-size: 1.125rem;
