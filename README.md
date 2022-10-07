@@ -1,18 +1,67 @@
-## Team Augmentation
+<h1 align="center">🚀 Team Augmentation</h1>
 
-<p align="center">O projeto foi dividido em seções e componentes. Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar.</p>
+<img src="https://img.shields.io/static/v1?label=Luby&message=Software&color=10B981&style=for-the-badge&logo=GHOST">
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h2>✅ Instalando dependências</h2>
 
-## Getting Started
+Após clonar o repositório, é preciso instalar as dependências:
 
-First, run the development server:
+### Instalando
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+Em seguida executamos o projeto:
+
+### Executando o projeto
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
+
+<p>O projeto possui ulgumas pastas principais onde se encontram todo o conteúdo da aplicação. São elas:</p>
+
+- pages
+- styles
+- public
+- src
+
+<h2>Pages</h2>
+<p>Descrever pages...</p>
+
+<h2>styles</h2>
+<p>Resumir styles...</p>
+
+<h2>public</h2>
+<p>Apresentas conteúdos público à página...</p>
+
+<h2>src</h2>
+<p>Aqui temos os principais arquivos e códigos do site...</p>
+
+<p>Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar. As seções foram organizadas na ordem:</p>
+
+- Header (componentes)
+- Menu Aside (componentes)
+- Home
+- Companies
+- Scale Your Team
+- Benefits
+- The 3 Pillars
+- Multi Teams
+- Tech Stacks
+- Testimonials
+- Contact Us
+- FAQ (perguntas frequentes)
+- Footer (componentes)
+
+<hr>
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
