@@ -24,13 +24,17 @@ npm run dev
 yarn dev
 ```
 
+<hr />
+
 <p>O projeto possui algumas pastas principais onde se encontram todo o conteúdo da aplicação. São elas: <br />
 (clique nos títulos abaixo para ir até as respectivas seções)</p>
 
-- <a href="#pages-folder">pages</a>
-- <a href="#styles-folder">styles</a>
-- <a href="#public-folder">public</a>
-- <a href="#src-folder">src</a>
+<p align="center" style="font-size: 22px"> 
+<a href="#pages-folder" style="text-decoration: underline">Pages</a> •
+<a href="#styles-folder" style="text-decoration: underline">Styles</a> •
+<a href="#public-folder" style="text-decoration: underline">Public</a> •
+<a href="#src-folder" style="text-decoration: underline">Src</a>
+</p>
 
 <h2 id="pages-folder">Pages</h2>
 
@@ -40,18 +44,97 @@ Lá nós vamos encontrar também a aplicação dos temas globais, utilizados no 
 
 Temos também o arquivo `_document.tsx` que é bastante utilizado quando desejamos implementar alguma meta-tag ou atributo do HTML semântico nas tags mais externas, como por exemplo `<html lang="pt-BR">`. E por último, o arquivo `index.tsx`, que é a primeira página apresentada em tela assim que executamos o projeto. Dentro dela estão as importações todo o conteúdo visível do site, separados por seções.
 
-<h2 id="styles-folder">styles</h2>
+<h2 id="styles-folder">Styles</h2>
 
 Dentro de `styles`, mais especificamente no arquivo `globals.css` temos a importação das fontes utilizadas no projeto e a definição do comportamento do scroll no nosso html. Já no arquivo `inputPhoneNumber.css` é uma estilização bem especifica de um input utilizado na seção "contact us" do projeto, onde temos um formulário para captar números de telefones de diferentes países. Como o componente é importado da biblioteca <a href="https://www.npmjs.com/package/react-phone-input-2">`react-phone-input-2`</a> e já vem pronto, sua estilização precisou ser feita em css puro, ao invés do `styles-components`, que usamos na maior parte do projeto.
 
-<h2 id="public-folder">public</h2>
+<h2 id="public-folder">Public</h2>
 
 Dentro da pasta `public` temos uma pasta de `assets`, onde podemos encontrar todas as imagens, backgrounds e boa parte dos ícones utilizados no projeto, com excessão de pequenos ícones importados por meio da biblioteca <a href="react-icons.github.io/react-icons/">`react-icons`</a>. As imagens foram separadas nas pastas `background-sections`, `company-icons`, `icons` e `programming-tools`. Os próprios nomes já dão uma sugestão sobre quais os tipos das imagens estão contidas. "background-sections" é referente as imagens usadas como fundo em algumas seções; "company-icons" se refere à segunda seção que contém um carrossel com a logo de diversas empresas que tiveram contato com a Luby; "icons" são alguns icones genéricos que podem ser usados no projeto; "programming-tools" contém os ícones de algumas tecnologias onde serão utilizadas na seção "Tech Stacks", onde temos uma lista de ferramentas de desenvolvimento tecnológico: Javascript, ReactJS, Cypress, Jenkins, etc.
 
-<h2 id="src-folder">src</h2>
-<p>Aqui temos os principais arquivos e códigos do site...</p>
+<h2 id="src-folder">Src</h2>
+<p>Aqui temos os principais arquivos e códigos da aplicação. Todo o conteúdo da pasta "source" foi distribuído em quatro pastas:</p>
 
-<p>Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar. As seções foram organizadas na ordem:</p>
+<p align="center" style="font-size: 22px"> 
+   <a href="#assets-src" style="text-decoration: underline">assets</a> •
+   <a href="#" style="text-decoration: underline">components</a> •
+   <a href="#" style="text-decoration: underline">sectionsPage</a> •
+   <a href="#" style="text-decoration: underline">shared</a>
+</p>
+
+<h2 id="assets-src">assets</h2>
+
+Dentro da pasta `assets` temos dois ícones em SVG que foram utilizados especificamente na seção "Scale Your Team" que se localizam no topo dos cards. Os ícones `agility_icon.svg` e `security.svg` estão localizados no canto esquerdo, e no canto direito, respectivamente. Como a família dos ícones não foi encontrada dentro da biblioteca `react-icons`, foi necessário obter esses ícones de outras formas. Em caso de mudança nos ícones dessa seção, não será mais necessário trabalhar com essas imagens SVG.
+
+<h2 id="components-src">components</h2>
+
+Em `components` temos pequenos elementos que podem ser usados em qualquer parte do projeto apenas fazendo sua importação adequadamente.
+
+- <a href="#accordion-components">Accordion</a>
+- <a href="#buttonStackList-components">ButtonStackList</a>
+- <a href="#buttonTechList-components">ButtonTechList</a>
+- <a href="#carrosselTestimonials-components">CarrosselTestimonials</a>
+- <a href="#clutchReview-components">ClutchReview</a>
+- <a href="#footer-components">Footer</a>
+- <a href="#header-components">Header</a>
+- <a href="#iframeThumb-components">IframeThumb</a>
+- <a href="#iframeVideo-components">IframeVideo</a>
+- <a href="#menuAside-components">MenuAside</a>
+- <a href="#stackList-components">StackList</a>
+- <a href="#teamsList-components">TeamsList</a>
+
+<h2 align="center" id="accordion-components">Accordion</h2>
+<h2 align="center" id="buttonStackList-components">ButtonStackList</h2>
+<h2 align="center" id="buttonTechList-components">ButtonTechList</h2>
+<h2 align="center" id="carrosselTestimonials-components">CarrosselTestimonials</h2>
+<h2 align="center" id="clutchReview-components">ClutchReview</h2>
+<h2 align="center" id="footer-components">Footer</h2>
+<h2 align="center" id="header-components">Header</h2>
+<h2 align="center" id="iframeThumb-components">IframeThumb</h2>
+<h2 align="center" id="iframeVideo-components">IframeVideo</h2>
+<h2 align="center" id="menuAside-components">MenuAside</h2>
+<h2 align="center" id="stackList-components">StackList</h2>
+<h2 align="center" id="teamsList-components">TeamsList</h2>
+
+<h2 id="sectionsPage-src">sectionsPage</h2>
+
+Sections page...
+
+- <a href="#benefits-sectionsPage">Benefits</a>
+- <a href="#companies-sectionsPage">Companies</a>
+- <a href="#contactUs-sectionsPage">ContactUs</a>
+- <a href="#faq-sectionsPage">FAQ</a>
+- <a href="#home-sectionsPage">Home</a>
+- <a href="#multiTeams-sectionsPage">MultiTeams</a>
+- <a href="#scaleTechTeam-sectionsPage">ScaleTechTeam</a>
+- <a href="#techStacks-sectionsPage">TechStacks</a>
+- <a href="#testimonials-sectionsPage">Testimonials</a>
+- <a href="#thePillars-sectionsPage">ThePillars</a>
+
+<h2 align="center" id="benefits-sectionsPage">Benefits</h2>
+<h2 align="center" id="companies-sectionsPage">Companies</h2>
+<h2 align="center" id="contactUs-sectionsPage">ContactUs</h2>
+<h2 align="center" id="faq-sectionsPage">FAQ</h2>
+<h2 align="center" id="home-sectionsPage">Home</h2>
+<h2 align="center" id="multiTeams-sectionsPage">MultiTeams</h2>
+<h2 align="center" id="scaleTechTeam-sectionsPage">ScaleTechTeam</h2>
+<h2 align="center" id="techStacks-sectionsPage">TechStacks</h2>
+<h2 align="center" id="testimonials-sectionsPage">Testimonials</h2>
+<h2 align="center" id="thePillars-sectionsPage">ThePillars</h2>
+
+<h2 id="shared-src">shared</h2>
+
+shared files...
+
+- <a href="">dataLists</a>
+- <a href="">globalStyle</a>
+- <a href="">globalTheme</a>
+
+<h2 align="center" id="-shared">dataLists</h2>
+<h2 align="center" id="-shared">globalStyle</h2>
+<h2 align="center" id="-shared">globalTheme</h2>
+
+<p>Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar. Abaixo podemos ver um mapa que nos apresenta as seções e componentes que são mostrados em tela e sua ordem e suas divisões:</p>
 
 - Header (componentes)
 - Menu Aside (componentes)
