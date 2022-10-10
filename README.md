@@ -129,7 +129,7 @@ O `Accordion` é um componente que fica na seção `FAQ`, ele apresenta as pergu
 
 O accordion também recebe uma propriedade chamada `AccordeonHeight` que vai determinar a altura máxima que ele irá abrir. Esse valor é opcional, mas é essencial para o efeito de transição suave, já que o `CSS` não consegue executar o efeito de transição quando o elemento possui uma altura com o valor automático `auto`. Logo será necessário determinar uma altura fixa que possa conter a resposta da pergunta, manter uma folga para o texto respirar, além de apresentar o efeito de transição suave.
 
-Por último temos mais duas últimas propriedades que devem ser passadas por parâmetro ao importar o componente, `handleOpenAcordion`
+Por último temos mais duas últimas propriedades que devem ser passadas por parâmetro ao importar o componente, `openAccordion`
 
 <h2 align="center" id="buttonStackList-components">ButtonStackList</h2>
 <h2 align="center" id="buttonTechList-components">ButtonTechList</h2>
