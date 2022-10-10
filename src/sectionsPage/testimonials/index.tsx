@@ -14,6 +14,7 @@ import {
 
 import { motion, Variants } from "framer-motion";
 import { CarrosselTestimonials } from "@components/CarrosselTestimonials";
+import ClutchReviewStars from "@components/ClutchReview";
 
 const FadeAnimation: Variants = {
   offscreen: {
@@ -79,13 +80,15 @@ export function TestimonnialsSection() {
                 talented professionals
               </AchievementTitle>
 
-              <ClutchIcon
+              {/* <ClutchIcon
                 src="/assets/icons/clutch-icon.webp"
                 width={185}
                 height={64}
                 alt="clutch logo"
                 loading="lazy"
-              />
+              /> */}
+
+              <ClutchReviewStars />
             </div>
           </StatusContainerLayout>
         </motion.div>
