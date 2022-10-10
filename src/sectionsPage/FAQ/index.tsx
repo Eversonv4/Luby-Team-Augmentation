@@ -52,10 +52,10 @@ export function FaqSection() {
           <QuestionContainer>
             <div>
               <Accordeon
-                Accordeonheight="375px"
+                AccordeonHeight="375px"
                 question="What is IT Team Augmentation?"
-                onClick={() => handleOpenAcordion("one")}
-                open={open === "one"}
+                openAccordion={() => handleOpenAcordion("one")}
+                isOpen={open === "one"}
               >
                 <p>
                   Team Augmentation if the full outsourcing of a technical
@@ -80,10 +80,10 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                Accordeonheight="198px"
+                AccordeonHeight="198px"
                 question="What's the difference between Extended Teams and Team Augmentation?"
-                onClick={() => handleOpenAcordion("two")}
-                open={open === "two"}
+                openAccordion={() => handleOpenAcordion("two")}
+                isOpen={open === "two"}
               >
                 <p>
                   On the Extended Teams offering, the squads are fully managed
@@ -97,10 +97,10 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                Accordeonheight="174px"
+                AccordeonHeight="174px"
                 question="Is there any restriction to hire the Team Augmentation services?"
-                onClick={() => handleOpenAcordion("three")}
-                open={open === "three"}
+                openAccordion={() => handleOpenAcordion("three")}
+                isOpen={open === "three"}
               >
                 <p>
                   Any company or business that needs specialized development
@@ -112,10 +112,10 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                Accordeonheight="834px"
+                AccordeonHeight="834px"
                 question="How's the implementation of the Team Augmentation Service?"
-                onClick={() => handleOpenAcordion("four")}
-                open={open === "four"}
+                openAccordion={() => handleOpenAcordion("four")}
+                isOpen={open === "four"}
               >
                 <p>
                   Luby's IT Team Augmentation Process will be implemented
@@ -170,10 +170,10 @@ export function FaqSection() {
 
             <div>
               <Accordeon
-                Accordeonheight="512px"
+                AccordeonHeight="512px"
                 question="What are Luby's nearshore advantages?"
-                onClick={() => handleOpenAcordion("five")}
-                open={open === "five"}
+                openAccordion={() => handleOpenAcordion("five")}
+                isOpen={open === "five"}
               >
                 <p>
                   As all of Luby's professionals are working remotely from
@@ -208,10 +208,10 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                Accordeonheight="126px"
+                AccordeonHeight="126px"
                 question="Why should I hire Luby's Team Augmentation services?"
-                onClick={() => handleOpenAcordion("six")}
-                open={open === "six"}
+                openAccordion={() => handleOpenAcordion("six")}
+                isOpen={open === "six"}
               >
                 <p>
                   Luby's talent pool of high performing fully remote IT
@@ -222,10 +222,10 @@ export function FaqSection() {
               </Accordeon>
 
               <Accordeon
-                Accordeonheight="198px"
+                AccordeonHeight="198px"
                 question="What does the service offer?"
-                onClick={() => handleOpenAcordion("seven")}
-                open={open === "seven"}
+                openAccordion={() => handleOpenAcordion("seven")}
+                isOpen={open === "seven"}
               >
                 <p>
                   The service is adapted to the actual needs of each client. Our

@@ -42,7 +42,47 @@ Dentro da pasta `pages` temos o arquivo `_app.tsx` que possui todo o conteúdo d
 
 Lá nós vamos encontrar também a aplicação dos temas globais, utilizados no `styled-components` que irá prover toda a aplicação com cores e fontes pré-definidas, assim como a importação dos estilos globais em css puro.
 
-Temos também o arquivo `_document.tsx` que é bastante utilizado quando desejamos implementar alguma meta-tag ou atributo do HTML semântico nas tags mais externas, como por exemplo `<html lang="pt-BR">`. E por último, o arquivo `index.tsx`, que é a primeira página apresentada em tela assim que executamos o projeto. Dentro dela estão as importações todo o conteúdo visível do site, separados por seções.
+Temos também o arquivo `_document.tsx` que é bastante utilizado quando desejamos implementar alguma meta-tag ou atributo do HTML semântico nas tags mais externas, como por exemplo `<html lang="pt-BR">`.
+
+Dentro de `_document.tsx` temos um trecho importante que é a definição de execução carregamento das estilizações do styled components do lado do servidor. Para isso precisamos fazer a importação do componente `ServerStyleSheet`:
+
+```
+import { ServerStyleSheet } from "styled-components"
+```
+
+E adicionamos o seguinte trecho de código dentro da nossa classe `MyDocument`, mas fora do método `render()`:
+
+```
+static async getInitialProps(ctx: any) {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App: any) => (props: any) =>
+            sheet.collectStyles(<App {...props} />),
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
+    }
+  }
+```
+
+Dessa forma podemos garantir que o NextJs faça o carregamento das estilizações por dentro do servidor com mais performance, antes de exibir em tela.
+
+E por último, o arquivo `index.tsx`, que é a primeira página apresentada em tela assim que executamos o projeto. Dentro dela estão as importações todo o conteúdo visível do site, separados por seções.
 
 <h2 id="styles-folder">Styles</h2>
 
@@ -57,9 +97,9 @@ Dentro da pasta `public` temos uma pasta de `assets`, onde podemos encontrar tod
 
 <p align="center" style="font-size: 22px"> 
    <a href="#assets-src" style="text-decoration: underline">assets</a> •
-   <a href="#" style="text-decoration: underline">components</a> •
-   <a href="#" style="text-decoration: underline">sectionsPage</a> •
-   <a href="#" style="text-decoration: underline">shared</a>
+   <a href="#components-src" style="text-decoration: underline">components</a> •
+   <a href="#sectionsPage-src" style="text-decoration: underline">sectionsPage</a> •
+   <a href="#shared-src" style="text-decoration: underline">shared</a>
 </p>
 
 <h2 id="assets-src">assets</h2>
@@ -84,6 +124,13 @@ Em `components` temos pequenos elementos que podem ser usados em qualquer parte 
 - <a href="#teamsList-components">TeamsList</a>
 
 <h2 align="center" id="accordion-components">Accordion</h2>
+
+O `Accordion` é um componente que fica na seção `FAQ`, ele apresenta as perguntas quando está fechado, e ao ser aberto vai mostrar a resposta referente à pergunta. Esse componente recebe por "Props" uma `question`, que é o título da pergunta; Recebe uma propriedade `isOpen`, que recebe um valor booleano e irá definir se o accordion estará aberto ou fechado. Possui também a propriedade `children`, isso significa que o conteúdo da resposta precisará ser englobado pelo componente como se fosse uma `<div>`. Se a resposta estiver dentro de tags `<p>`, a estilização irá aplicar automaticamente, basta ir no arquivo `styles.ts` dentro da mesma pasta e estilizar o texto de acordo com o restante do conteúdo mostrado.
+
+O accordion também recebe uma propriedade chamada `AccordeonHeight` que vai determinar a altura máxima que ele irá abrir. Esse valor é opcional, mas é essencial para o efeito de transição suave, já que o `CSS` não consegue executar o efeito de transição quando o elemento possui uma altura com o valor automático `auto`. Logo será necessário determinar uma altura fixa que possa conter a resposta da pergunta, manter uma folga para o texto respirar, além de apresentar o efeito de transição suave.
+
+Por último temos mais duas últimas propriedades que devem ser passadas por parâmetro ao importar o componente, `handleOpenAcordion`
+
 <h2 align="center" id="buttonStackList-components">ButtonStackList</h2>
 <h2 align="center" id="buttonTechList-components">ButtonTechList</h2>
 <h2 align="center" id="carrosselTestimonials-components">CarrosselTestimonials</h2>

@@ -3,8 +3,8 @@ import { FiChevronRight } from "react-icons/fi";
 import { IoMdHelpCircle } from "react-icons/io";
 
 interface Open {
-  open: boolean;
-  Accordeonheight?: string;
+  isOpen: boolean;
+  AccordeonHeight?: string;
 }
 
 const changeOpacity = keyframes`
@@ -66,7 +66,7 @@ export const ContentBox = styled.div<Open>`
       right: 0px;
       font-size: 1.5rem;
       transition: 0.7s ease;
-      transform: ${({ open }) => (open ? "rotate(90deg)" : "")};
+      transform: ${({ isOpen }) => (isOpen ? "rotate(90deg)" : "")};
     }
   }
 `;
@@ -83,7 +83,7 @@ export const ContentText = styled.div<Open>`
   transition: height 0.7s ease;
 
   &.active {
-    height: ${({ Accordeonheight }) => Accordeonheight || "auto"};
+    height: ${({ AccordeonHeight }) => AccordeonHeight || "auto"};
   }
 
   & ul {
