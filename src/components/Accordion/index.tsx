@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import {
   AcordeonContainer,
   ContentBox,
@@ -6,14 +6,7 @@ import {
   ArrowRightIcon,
   HelpIcon,
 } from "./styles";
-
-interface IAccordeonProps {
-  question: string;
-  children: ReactNode;
-  isOpen: boolean;
-  AccordeonHeight?: string;
-  openAccordion: () => void;
-}
+import { IAccordionProps } from "./interface";
 
 export function Accordeon({
   children,
@@ -22,14 +15,14 @@ export function Accordeon({
   AccordeonHeight,
   openAccordion,
   ...rest
-}: IAccordeonProps) {
+}: IAccordionProps) {
   return (
     <AcordeonContainer {...rest}>
-      <ContentBox isOpen={isOpen} className="contentBox">
+      <ContentBox isOpen={isOpen}>
         <label onClick={openAccordion}>
           <HelpIcon />
           <span>{question}</span>
-          <ArrowRightIcon className="arrow" />
+          <ArrowRightIcon className="arrow-right-rotate" />
         </label>
 
         <ContentText

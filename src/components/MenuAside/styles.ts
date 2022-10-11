@@ -23,7 +23,7 @@ const FadeinEffect = keyframes`
    }
 `;
 
-export const Container = styled.section<IActiveMenu>`
+export const BackgroundShadow = styled.section<IActiveMenu>`
   position: fixed;
   top: 0;
   height: 100vh;
@@ -90,6 +90,8 @@ export const NavText = styled.span`
   font-weight: 500;
 
   width: fit-content;
+
+  cursor: pointer;
 `;
 
 export const NavTextContrast = styled.span`

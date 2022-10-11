@@ -31,14 +31,6 @@ export default function Footer() {
             Tech Expertise provided <br />
             by Top Tier Talent
           </InfoTitle>
-          {/* <ClutchLabelIcon
-            src="/assets/icons/clutch-icon-label.webp"
-            width={180}
-            height={40}
-            alt="clutch icon"
-            loading="lazy"
-          /> */}
-
           <ClutchReviewStars />
         </div>
         <AddressContainer>

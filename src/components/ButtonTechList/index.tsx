@@ -1,15 +1,10 @@
-import React, { ReactNode, ButtonHTMLAttributes } from "react";
 import { Button } from "./styles";
+import { IButton } from "./interface";
 
-interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  isActive: boolean;
-}
-
-export function ButtonTechList({ children, isActive, ...rest }: IButton) {
+export function ButtonTechList({ TechTitle, isActive, ...rest }: IButton) {
   return (
     <Button {...rest} isActive={isActive}>
-      {children}
+      {TechTitle}
     </Button>
   );
 }

@@ -13,8 +13,8 @@ import { StackProps, StackItem } from "./interface";
 
 import { motion, Variants } from "framer-motion";
 
-import { ButtonStackList } from "@components/ButtonStackList";
-import { StackList } from "@components/StackList/StackList";
+import { ButtonTechList } from "@components/ButtonTechList";
+import { StackList } from "@components/StackList/List";
 import { StackListData } from "@shared/dataLists/StackListData";
 
 const AnimationSection: Variants = {
@@ -60,61 +60,53 @@ export function StacksSection() {
 
           <StackContainer>
             <TechContainer>
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "backend"}
                 onClick={() => handleStackList("backend")}
-              >
-                Back-End
-              </ButtonStackList>
+                TechTitle="Back-End"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "frontend"}
                 onClick={() => handleStackList("frontend")}
-              >
-                Front-End
-              </ButtonStackList>
+                TechTitle="Front-End"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "mobile"}
                 onClick={() => handleStackList("mobile")}
-              >
-                Mobile
-              </ButtonStackList>
+                TechTitle="Mobile"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "databases"}
                 onClick={() => handleStackList("databases")}
-              >
-                Databases
-              </ButtonStackList>
+                TechTitle="Databases"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "cloud"}
                 onClick={() => handleStackList("cloud")}
-              >
-                Cloud
-              </ButtonStackList>
+                TechTitle="Cloud"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "infrastructure"}
                 onClick={() => handleStackList("infrastructure")}
-              >
-                Infrastructure and CI/CD
-              </ButtonStackList>
+                TechTitle="Infrastructure and CI/CD"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "quality"}
                 onClick={() => handleStackList("quality")}
-              >
-                Quality Assurance
-              </ButtonStackList>
+                TechTitle="Quality Assurance"
+              />
 
-              <ButtonStackList
+              <ButtonTechList
                 isActive={selectedStack === "data"}
                 onClick={() => handleStackList("data")}
-              >
-                Data
-              </ButtonStackList>
+                TechTitle="Data"
+              />
             </TechContainer>
           </StackContainer>
           <StackListContainer>

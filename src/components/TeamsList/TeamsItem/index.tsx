@@ -5,6 +5,6 @@ interface ItemProps {
   title: string;
 }
 
-export function ItemList({ title }: ItemProps) {
+export function TeamsItem({ title }: ItemProps) {
   return <Item>{title}</Item>;
 }

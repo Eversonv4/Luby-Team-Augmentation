@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemList } from "../ItemList";
+import { TeamsItem } from "../TeamsItem";
 
 import { List } from "./styles";
 
@@ -12,7 +12,7 @@ export function TeamsList({ techlist }: TechListProps) {
 
   return (
     <List>
-      {list && list.map((item) => <ItemList key={item} title={item} />)}
+      {list && list.map((item) => <TeamsItem key={item} title={item} />)}
     </List>
   );
 }

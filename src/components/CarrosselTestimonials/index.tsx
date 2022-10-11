@@ -37,7 +37,6 @@ export function CarrosselTestimonials() {
             border: "none",
             overflow: "hidden",
             display: "block",
-            // height: "805px",
           }}
           title="[iFrameSizer]iframe-0.8994833892171967:0:0:mouseleave:779:5324"
         ></Iframe>

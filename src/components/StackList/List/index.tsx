@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemList } from "../ItemList";
+import { StackItem } from "../StackItem";
 
 import { List } from "./styles";
 
@@ -19,7 +19,7 @@ export function StackList({ stacklist }: StackListProps) {
     <List>
       {list &&
         list.map((item) => (
-          <ItemList key={item.title} image={item.image} title={item.title} />
+          <StackItem key={item.title} image={item.image} title={item.title} />
         ))}
     </List>
   );

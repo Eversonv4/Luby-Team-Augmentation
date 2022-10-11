@@ -80,14 +80,6 @@ export function TestimonnialsSection() {
                 talented professionals
               </AchievementTitle>
 
-              {/* <ClutchIcon
-                src="/assets/icons/clutch-icon.webp"
-                width={185}
-                height={64}
-                alt="clutch logo"
-                loading="lazy"
-              /> */}
-
               <ClutchReviewStars />
             </div>
           </StatusContainerLayout>

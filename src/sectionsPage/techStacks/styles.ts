@@ -57,16 +57,23 @@ export const TechContainer = styled.div`
   &:before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     width: 100%;
     height: 1px;
     background-color: ${({ theme }) => theme.colors.text};
     z-index: 1;
-    margin-top: -1px;
   }
 
   @media (max-width: 1024px) {
     overflow: auto;
+  }
+
+  & button {
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 500;
   }
 `;
 

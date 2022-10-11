@@ -7,7 +7,7 @@ interface ItemProps {
   image: string;
 }
 
-export function ItemList({ title, image }: ItemProps) {
+export function StackItem({ title, image }: ItemProps) {
   return (
     <Item>
       <Image src={image} alt={title} width={75} height={75} loading="lazy" />

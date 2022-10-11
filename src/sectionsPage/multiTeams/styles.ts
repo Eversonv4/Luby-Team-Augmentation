@@ -57,6 +57,8 @@ export const TechContainer = styled.article`
 export const TeamsListContainer = styled.div`
   width: 100%;
 
+  background-color: ${({ theme }) => theme.colors.bg_hover_dark};
+
   display: flex;
 `;
 

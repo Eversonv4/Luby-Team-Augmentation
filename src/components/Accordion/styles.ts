@@ -1,11 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { FiChevronRight } from "react-icons/fi";
 import { IoMdHelpCircle } from "react-icons/io";
-
-interface Open {
-  isOpen: boolean;
-  AccordeonHeight?: string;
-}
+import { IAccordionOpen } from "./interface";
 
 const changeOpacity = keyframes`
    from {
@@ -33,7 +29,7 @@ export const HelpIcon = styled(IoMdHelpCircle).attrs({
   box-sizing: "content-box";
 `;
 
-export const ContentBox = styled.div<Open>`
+export const ContentBox = styled.div<IAccordionOpen>`
   position: relative;
 
   & label {
@@ -61,7 +57,7 @@ export const ContentBox = styled.div<Open>`
       margin: 0 10px;
     }
 
-    & .arrow {
+    & .arrow-right-rotate {
       position: absolute;
       right: 0px;
       font-size: 1.5rem;
@@ -71,7 +67,7 @@ export const ContentBox = styled.div<Open>`
   }
 `;
 
-export const ContentText = styled.div<Open>`
+export const ContentText = styled.div<IAccordionOpen>`
   position: relative;
   background-color: #f3f3f1;
   transition: max-height 2s ease;

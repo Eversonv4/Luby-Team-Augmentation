@@ -16,10 +16,7 @@ export default function ClutchReviewStars() {
       >
         <ClutchIframe
           id="iframe-0.1898702559008667"
-          // width="100%"
           src="https://widget.clutch.co/widgets/get/2/darkbg?ref_domain=luby.co&amp;uid=1748502&amp;rel_nofollow=true&amp;ref_path=//team-augmentation/"
-          // height="45px"
-          // scrolling="no"
           style={{
             border: "none",
             overflow: "hidden",

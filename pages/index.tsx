@@ -1,4 +1,4 @@
-import { HomeSection } from "@sections/Home";
+import { HomeSection } from "@sections/HomeSection";
 import { CompaniesSection } from "@sections/companies";
 import { ScaleTechTeamSection } from "@sections/scaleTechTeam";
 import { BenefitsSection } from "@sections/benefits";

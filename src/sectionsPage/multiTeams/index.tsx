@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 import { TeamsProps } from "./inteface";
-import { TeamsList } from "@components/TeamsList/TeamsList";
+import { TeamsList } from "@components/TeamsList/List";
 
 import { motion, Variants } from "framer-motion";
 
@@ -70,21 +70,18 @@ export function MultiTeamsSection() {
             <ButtonTechList
               onClick={() => setChooseTeam("tech")}
               isActive={chooseTeam === "tech"}
-            >
-              Technology
-            </ButtonTechList>
+              TechTitle="Technology"
+            />
             <ButtonTechList
               onClick={() => setChooseTeam("product")}
               isActive={chooseTeam === "product"}
-            >
-              Product
-            </ButtonTechList>
+              TechTitle="Product"
+            />
             <ButtonTechList
               onClick={() => setChooseTeam("design")}
               isActive={chooseTeam === "design"}
-            >
-              Design
-            </ButtonTechList>
+              TechTitle="Design"
+            />
           </TeamsListContainer>
           <TechlistContainer>
             {chooseTeam && <TeamsList techlist={listActive} />}

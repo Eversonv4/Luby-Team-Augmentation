@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
 import {
-  Container,
+  BackgroundShadow,
   AsideMenuContainer,
   MenuContent,
   CloseMenuIcon,
@@ -39,10 +39,10 @@ export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
 
   return (
     <>
-      <Container
+      <BackgroundShadow
         onClick={() => handleMenuActive()}
         isActive={isActive}
-      ></Container>
+      />
       <AsideMenuContainer isActive={isActive}>
         <MenuContent>
           <CloseMenuIcon onClick={handleMenuActive} />
