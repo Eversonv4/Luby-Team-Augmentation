@@ -45,7 +45,7 @@ export function TestimonnialsSection() {
         variants={FadeAnimation}
       >
         <ContainerCarrossel>
-          {/* <CarrosselTestimonials /> */}
+          <CarrosselTestimonials />
         </ContainerCarrossel>
       </motion.div>
 
@@ -80,7 +80,7 @@ export function TestimonnialsSection() {
                 talented professionals
               </AchievementTitle>
 
-              {/* <ClutchReviewStars /> */}
+              <ClutchReviewStars />
             </div>
           </StatusContainerLayout>
         </motion.div>
