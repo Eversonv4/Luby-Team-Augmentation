@@ -123,7 +123,9 @@ Em `components` temos pequenos elementos que podem ser usados em qualquer parte 
 - <a href="#stackList-components">StackList</a>
 - <a href="#teamsList-components">TeamsList</a>
 
-<h2 align="center" id="accordion-components">Accordion</h2>
+<h2 align="center" id="accordion-components">
+  <a href="#components-src">Accordion</a>
+</h2>
 
 O `Accordion` é um componente que fica na seção `FAQ`, ele apresenta as perguntas quando está fechado, e ao ser aberto vai mostrar a resposta referente à pergunta. Esse componente recebe por "Props" uma `question`, que é o título da pergunta; Recebe uma propriedade `isOpen`, que recebe um valor booleano e irá definir se o accordion estará aberto ou fechado, como o componente só receber um valor true ou false, a lógica que vai determinar se ele estará aberto ou fechado é feita no container ou componente que fará a importação desse componente, nesse caso, a seção "FAQ". Possui também a propriedade `children`, isso significa que o conteúdo da resposta precisará ser englobado pelo componente como se fosse uma `<div>`. Se a resposta estiver dentro de tags `<p>`, a estilização irá aplicar automaticamente, basta ir no arquivo `styles.ts` dentro da mesma pasta e estilizar o texto de acordo com o restante do conteúdo mostrado.
 
@@ -231,7 +233,9 @@ export const ContentBox = styled.div<IAccordionOpen>`
 
 No exemplo acima, se o estado `isOpen` for verdadeiro, o ícone irá rotacionar em 90 graus. Lembrando de adicionar a classe `arrow-right-rotate` ou qualquer outro seletor para indicar o elemento que se deseja estilizar em caso de um valor ser true ou false. O mesmo vale para outros elementos desse componente, será fácil notar um padrão. Outro detalhe: nota-se que o parâmetro da função está escrito dentro de `({ isOpen })`, foi preferível escrever dessa forma para que possamos puxar exatamente aquela informação desejada, ao invés de algo como `props.isOpen`.
 
-<h2 align="center" id="buttonTechList-components">ButtonTechList</h2>
+<h2 align="center" id="buttonTechList-components">
+  <a href="#components-src">ButtonTechList</a>
+</h2>
 
 Esse componente fica na seção <a href="#multiTeams-sectionsPage">MultiTeams</a> e na seção <a href="#techStacks-sectionsPage">TechStacks</a>. São coponentes relativemente simples, assim como um `Accordion` eles recebem algumas propriedades, são elas: `isActive`um valor booleano que será usado para criar uma estilização condicional, além de uma propriedade chamada `TechTitle` que representa o título, ou texto, que será mostrado em tela.
 
@@ -263,7 +267,9 @@ color: ${({ isActive, theme }) => isActive ? theme.colors.secondary : theme.colo
 `
 ```
 
-<h2 align="center" id="carrosselTestimonials-components">CarrosselTestimonials</h2>
+<h2 align="center" id="carrosselTestimonials-components">
+  <a href="#components-src">CarrosselTestimonials</a>
+</h2>
 
 Esse componente é um widget que já vem pronto do site <a href="https://clutch.co/profile/luby#summary">clutch.co</a>. Ao importar para o seu projeto, é importante pegar todo o conteúdo de dentro da `div` que possui a classe `clutch-widget`, o conteúdo de dentro faz parte do Iframe do widget que trará um carrossel com reviews de algumas empresas sobre a Luby.
 
@@ -271,21 +277,29 @@ Além de importar todo o conteúdo de `clutch-widget`, é necessário importar o
 
 Dentro da estilização estão os `media-queries` para controlar a altura do widget em diferentes resoluções de telas.
 
-<h2 align="center" id="clutchReview-components">ClutchReview</h2>
+<h2 align="center" id="clutchReview-components">
+  <a href="#components-src">ClutchReview</a>
+</h2>
 
 Assim como o componente do `CarrosselTestimonials`, o widget já vem pronto. Uma informação importante é que nesse componente não é necessário fazer o import do `script`, já que esse widget faz uso do mesmo widget que o `CarrosselTestimonials`, mas é importante que manter todo o conteúdo de dentro da `div` com a classe `custom-html`. Para posicionar bem em tela, vale a pena usar esse widget como componente e importar dentro da sua seção, dentro de um container para adequá-lo ao layout do seu projeto.
 
-<h2 align="center" id="footer-components">Footer</h2>
+<h2 align="center" id="footer-components">
+  <a href="#components-src">Footer</a>
+</h2>
 
 O `footer` é um componente pronto e isolado do restante, para aplicar em tela basta importar e aplicar em tela. Assim como qualquer outro componente, sua estilização estão dentro da própria pasta do componente, assim como sua responsividade com os `media queries`.
 
-<h2 align="center" id="header-components">Header</h2>
+<h2 align="center" id="header-components">
+  <a href="#components-src">Header</a>
+</h2>
 
 O Header também é um componente isolado. Ele foi importado e aplicado dentro da seção <a href="#homeSection-sectionsPage">HomeSection</a>. Além do menu `nav`, que está linkando à diferentes seções da landing page, dentro do `Header` também foi importado e aplicado o componente <a href="#menuAside-components">Menu Aside</a>. Dentro do Header criamos uma função para abrir e fechar o Menu Aside, e criamos um estado com `useState` que vai armazenar qual o estado atual do Menu Aside, `true` ou `false`.
 
 Tanto a função para abrir e fechar o menu, quanto o valor do estado do Menu Aside será passado para o componente `MenuAside` por meio de props.
 
-<h2 align="center" id="iframeThumb-components">IframeThumb</h2>
+<h2 align="center" id="iframeThumb-components">
+  <a href="#components-src">IframeThumb</a>
+</h2>
 
 Esse componente funciona como uma "thumbnail" do vídeo que retiramos do youtube. Para melhorar a performance do site e evitar que o usuário consuma dados desnecessário, foi criado uma prévia de vídeo que é apenas um container com uma imagem de fundo e um ícone de "play". Os elementos iframe acabam trazendo mais informações que apenas o player do vídeo, dessa forma, ao utilizar um componente como prévia, evitando o carregamento direto do player, podemos economizar em processamento, melhorando a performance.
 
@@ -293,11 +307,15 @@ Esse componente é importado na seção <a href="#thePillars-sectionsPage">The P
 
 Vale ressaltar que o `IframeThumb` deve sequir as mesmas dimensões do iframe do vídeo do youtube, assim como respeitar os seus `media queries`
 
-<h2 align="center" id="iframeVideo-components">IframeVideo</h2>
+<h2 align="center" id="iframeVideo-components">
+  <a href="#components-src">IframeVideo</a>
+</h2>
 
 O componente `IframeVideo` é mais um widget que já vem pronto direto do youtube. Basta aplicarmos o iframe em tela que o vídeo será importado, não tem muito mistério. Dentro do arquivo `styles.ts` cuidamos da responsividade desse componente, assim como nos demais componentes e o seus respectivos arquivos de estilos.
 
-<h2 align="center" id="menuAside-components">MenuAside</h2>
+<h2 align="center" id="menuAside-components">
+  <a href="#components-src">MenuAside</a>
+</h2>
 
 O `Menu Aside` é um componente semelhante ao `Header`, com uma lista de links que vão redirecionar à alguma seção, mas ele possui umas animações e efeitos. Esse componente pode ser divido em duas partes, o `BackgroundShadow` que é um fundo mais escuro, porém transparente que fica por cima de toda a tela, e o `AsideMenuContainer`, que possui uma largura fixa e onde está localizado a listagem de links.
 
@@ -307,7 +325,9 @@ A mesma função para fechar o menu é aplicada no `BackgroundShadow`, para o ca
 
 Em relação as animações do menu, como `BackgroundShadow` e `AsideMenuContainer` são componentes independentes, cada um recebeu uma animação diferente ao aparecer e sumir, sendo o primeiro recebendo uma animação de opacidade, e o segundo, uma transição lateral. Toda e qualquer estilização e animação desses elementos podem ser encontradas dentro do arquivo `styles.ts` desse componente.
 
-<h2 align="center" id="stackList-components">StackList</h2>
+<h2 align="center" id="stackList-components">
+  <a href="#components-src">StackList</a>
+</h2>
 
 Dentro de `StackList` podemos encontrar dois componentes: `List` e `StackItem`. Esse componente está sendo aplicado na seção <a href="#techStacks-sectionsPage">TechStacks</a>. O componente `List` contém apenas uma `<ul>` e dentro dela foi aplicado as dimensões do componente, assim como a montagem do layout utilizando uma estilização baseada em `Grid`, e dentro da `<ul>` nós importamos e aplicamoso o componente `StackItem`, que nada mais é que uma `<li>`. E dentro de `StackItem` temos apenas um container com o nome `Item`, e dentro dele temos uma imagem com a logo da tecnologia e um `Title`, com o nome da ferramenta.
 
@@ -315,7 +335,9 @@ A estilização dos itens `StackItem`, assim como a denifição de quantas colun
 
 Os dados que serão utilizados para preencher essa lista vem do arquivo de nome `StackListData.ts`, mais especificamente, fica dentro da pasta `dataLists`, dentro de <a href="#shared-src">shared</a>. Em resumo, importamos a nossa lista de dentro da pasta `List`, aplicamos na seção <a href="#techStacks-sectionsPage">TechStacks</a> e passamos por props os dados do arquivo `StackListData.ts`.
 
-<h2 align="center" id="teamsList-components">TeamsList</h2>
+<h2 align="center" id="teamsList-components">
+  <a href="#components-src">TeamsList</a>
+</h2>
 
 O componente `TeamsList` funciona examente da mesma forma que o componente anterior, `StackList`, sua principal diferença é nas quantidade de colunas no grid e que não possui imagens, mas a lógica é exatamente a mesma.
 
