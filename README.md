@@ -26,6 +26,12 @@ yarn dev
 
 <hr />
 
+<h2>Configurando o Path Mapping</h2>
+
+path mapping...
+
+<h2>Iniciando o projeto</h2>
+
 <p>O projeto possui algumas pastas principais onde se encontram todo o conteúdo da aplicação. São elas: <br />
 (clique nos títulos abaixo para ir até as respectivas seções)</p>
 
@@ -350,6 +356,7 @@ Sections page...
 - <a href="#benefits-sectionsPage">Benefits</a>
 - <a href="#companies-sectionsPage">Companies</a>
 - <a href="#contactUs-sectionsPage">ContactUs</a>
+  - <a href="#inputPhone-contactUs">Validação React-Phone-Input-2</a>
 - <a href="#faq-sectionsPage">FAQ</a>
 - <a href="#home-sectionsPage">Home</a>
 - <a href="#multiTeams-sectionsPage">MultiTeams</a>
@@ -359,23 +366,347 @@ Sections page...
 - <a href="#thePillars-sectionsPage">ThePillars</a>
 
 <h2 align="center" id="benefits-sectionsPage">Benefits</h2>
+
+A seção `Benefits` é bastante simples, com um título principal e uma lista com alguns itens. A imagem de fundo foi colocada como background no `css` da `<section>` que engloba essa seção. Os ícones de "check" de fundo azul foi colocado com um `position: absolute` para que o círculo não ficasse deformado com as margens do texto.
+
+Dentro dessa seção, assim como nas seções adiante foi importado a biblioteca <a href="https://www.framer.com/motion/">Framer Motion</a> para fazer a animação do conteúdo da seção surgir em tela vindo de baixo numa animação bem suave. Exemplo de código:
+
+```
+...
+import { motion, Variants } from "framer-motion";
+
+const FadeTranslateSection: Variants = {
+  offscreen: {
+    y: 150,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 3,
+    },
+  },
+};
+
+export function BenefitsSection() {
+  return (
+    <Container id="benefits-section">
+      <motion.article
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: "some" }}
+        variants={FadeTranslateSection}
+      >
+      ...
+      </motion.article>
+    </Container>
+  )
+}
+```
+
+Esse componente englobando o conteúdo das `<section>` irá se repetir em diversas seções, o gatilho da animação é quando damos scroll até aquela determinada seção.
+
 <h2 align="center" id="companies-sectionsPage">Companies</h2>
+
+Nesta seção temos apenas um título lateral e um carrossel com criado utilizando a biblioteca <a href="https://splidejs.com">Splide</a>, que é uma ferramenta bastante simples e em pouco tempos nós já temos um carrossel em tela. As imagens das empresas que aparecem foram colocadas como `background` das divs. Essa foi uma estratégia adotada para melhorar o SEO, já que ao renderizar uma imagem com a tag `<img>`, ou a tag de imagem do NextJS `<Image />`, as regras de SEO pedem para que passemos alguns valores e atributos, etc.
+
+Colocando as imagens como fundo de uma div com tamanho fixo, ao analisar a página, as imagens não serão interpretadas como imagens para o SEO, e dessa forma ele nos dá uma nota melhor.
+
+Todas as regras para manipular o carrossel e os slides são passadas dentro do próprio componente do `Splide`. Para mais informações sobre o funcionamento dessa biblioteca, recomendo fortemente a dar uma lida na documentação <a href="https://splidejs.com">Splide</a>. Uma vez que se aprende a utilizar essa ferramenta, ela será sempre a primeira opção quando pensar em carrossel. Exemplo de como aplicamos as propriedades desejadas ao carrossel dentro do ReactJS:
+
+```
+<Splide
+  className="carrossel-companies"
+  options={{
+    arrows: false,
+    autoplay: true,
+    interval: 3000,
+    ...
+  }}
+  aria-label="Logos companies"
+>
+...
+```
+
 <h2 align="center" id="contactUs-sectionsPage">ContactUs</h2>
+
+Essa seção à primeira vista parece simples, e de fato é. Temos duas `<div>` lado a lado. Do lado esquerdo temos um título e alguns `<span>` e alguns textos em negrito. Ao lado direto temos um formulário, nele nós utilizamos a biblioteca <a href="https://react-hook-form.com">React Hook Form</a> junto com a ferramenta `Yup` para gerenciar os estados dos nossos e principalmente as validações dos nossos `inputs`. Seria tudo bem tranquilo se não fosse pelo input de números de celulares internacionais, `PhoneInput`.
+
+O componente `PhoneInput` foi importado da biblioteca <a href="https://www.npmjs.com/package/react-phone-input-2">React-Phone-Input-2</a>, e ele por si só é um componente bem mais complexo que um input normal. Primeiro instamos a biblioteca como está na documentação, depois fazemos as importações do componente, e do seu arquivo de estilização, ambos provenientes da própria biblioteca:
+
+```
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+```
+
+Em seguida aplicamos o componente no nosso formulário e passamos para ele alguns atributos desejados, como por exemplo: o país que irá aparecer por padrão, o valor inicial (que normalmente é uma `string` vazia), uma função `onChange`, formatar automaticamente `autoFormat`, etc:
+
+```
+<PhoneInput
+  country="us"
+  value={initialValuePhoneInput}
+  onChange={(value) => onChangePhoneInput(value)}
+  autoFormat={true}
+  placeholder="Your phone number"
+  enableSearch={true}
+/>
+```
+
+Só isso já é suficiente para fazer o input funcionar normalmente, mas precisamos aplicar uma validação, e aí as coisas ficam um pouco mais delicadas, mas é possível. Dentro da documentação nos é apresentado uma forma, que seria adicionando ao nosso input o atributo `isValid` e passando para ele uma função que já recebe alguns parâmetros por padrão: `inputNumber`, `country` e `countries`.
+
+```
+import startsWith from 'lodash.startswith';
+
+<PhoneInput
+  isValid={(inputNumber, country, countries) => {
+    return countries.some((country) => {
+      return startsWith(inputNumber, country.dialCode) || startsWith(country.dialCode, inputNumber);
+    });
+  }}
+/>
+```
+
+Esses valores são adicionados por padrão, onde:
+
+- `inputNumber` - valor que está dentro do input
+- `country` - É o país selecionado na opção de países do input, ele nos retorna um objeto com as seguintes características:
+
+```
+{
+  name: string;
+  regions: string[];
+  iso2: string;
+  countryCode: string;
+  dialCode: string;
+  format: string;
+  priority: number;
+}
+```
+
+Todos esses informações e valores são referentes ao país escolhido no input
+
+- `countries` = é a `lista com todos os países suportados pelo input`, contendo mais de 200 países e cada elemento do array é um objeto que possui as mesmas propriedades encontradas no parâmetro `country`. Só para fixar: "country" é um país especifico selecionado, já o "countries" é uma lista de objetos do tipo "country", contendo todos os países.
+
+Esses são os valores, mas quem iria ficar responsável por validar se um determinado número passado no input é válido ou não, ia ficar por conta da biblioteca `lodash.startswith`, porém ela não se mostrou útil, já que mesmo ao digitar propositalmente um número inválido, ela retornada um valor positivo, afirmando que se tratava de um número válido.
+
+Partindo desse ponto, buscou-se outra forma de validar o input já que a forma disponibilizada pela biblioteca não funcionava, assim como também não dava para validar utilizando o `React Hook Form` com o `Yup`, por conta do `PhoneInput` não ser um input normal, mas um componente mais complexo.
+
+<h2 id="inputPhone-contactUs">Validação React-Phone-Input-2</h2>
+
+Como houve problemas na validação dos números de telefone por meio da ferramenta indicada na documentação do <a href="https://www.npmjs.com/package/react-phone-input-2">React-Phone-Input-2</a>, assim como também não era possível realizar a validação pelo React Hook Form ou o Yup, se fez necessário buscar outra forma de validar corretamente o input de telefone. Após analisar os valores recebidos em nos parâmetros `country` e `countries` que recebemos por padrão na função que aplicamos dentro do atributo `isValid`, podemos realizar uma validação mais confiável e testável. Chegamos à seguinte conclusão:
+
+(Como o projeto foi criado com template typescript, algumas tipagens são necessárias)
+
+```
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
+interface IPhoneInputCountry {
+  name: string;
+  regions: string[];
+  iso2: string;
+  countryCode: string;
+  dialCode: string;
+  format: string;
+  priority: number;
+}
+
+const [initialValuePhoneInput, setInitialValuePhoneInput] = useState("");
+const [maxLengthPhoneInput, setMaxLengthPhoneInput] = useState(0);
+const [errorPhoneInput, setErrorPhoneInput] = useState(false);
+
+function onChangePhoneInput(phoneInputValue: string) {
+  setInitialValuePhoneInput(phoneInputValue);
+  setErrorPhoneInput(false);
+}
+
+function validationInputPhone() {
+  if (initialValuePhoneInput.length < maxLengthPhoneInput) {
+    setErrorPhoneInput(true);
+    return;
+  }
+  return true;
+};
+
+<PhoneInput
+  country="us"
+  value={initialValuePhoneInput}
+  onChange={(value) => onChangePhoneInput(value)}
+  autoFormat={true}
+  placeholder="Your phone number"
+  enableSearch={true}
+  disableSearchIcon={false}
+  isValid={(inputNumber, country: any) => {
+    const selectedCountry: IPhoneInputCountry = country;
+
+    let placeholderMaskInput = selectedCountry?.format;
+    const stringConvertedToArray = placeholderMaskInput.split("");
+
+    let filteredMaskInput = stringConvertedToArray.filter(
+      (character: string) => character === "."
+    );
+
+    let resultLength;
+    if (placeholderMaskInput.match(/\s..$/gm)) {
+      // console.log("Matches!");
+      resultLength = filteredMaskInput.slice(0, filteredMaskInput.length - 2);
+    } else {
+      // console.log("NOT MATCHES!");
+      resultLength = filteredMaskInput;
+    }
+    setMaxLengthPhoneInput(resultLength.length);
+    return true;
+  }}
+/>
+
+{errorPhoneInput && (
+  <p>Please, insert a valid number!</p>
+)}
+```
+
+Tudo isso compõe todo o componente `PhoneInput` junto com sua validação. Mas não se preocupa, vamos explicando por partes:
+
+```
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+```
+
+Esse trecho acima se trata da importação do componente e a sua estilização da listagem dos países ao abrirmos o menu de países.
+
+Logo abaixo temos a tipagem do objeto `country` que recebemos dentro da função que fica dentro do atributo `isValid`:
+
+```
+interface IPhoneInputCountry {
+  name: string;
+  regions: string[];
+  iso2: string;
+  countryCode: string;
+  dialCode: string;
+  format: string;
+  priority: number;
+}
+```
+
+Depois temos alguns estados que vão nos auxiliar a manter um controle das informações dos inputs e seus nomes são bastante descritivos:
+
+```
+const [initialValuePhoneInput, setInitialValuePhoneInput] = useState("");
+const [maxLengthPhoneInput, setMaxLengthPhoneInput] = useState(0);
+const [errorPhoneInput, setErrorPhoneInput] = useState(false);
+```
+
+Temos também duas funções, uma que vai monitorar os dados inseridos no input e outra para validar:
+
+```
+function onChangePhoneInput(phoneInputValue: string) {
+  setInitialValuePhoneInput(phoneInputValue);
+  setErrorPhoneInput(false);
+}
+
+function validationInputPhone() {
+  if (initialValuePhoneInput.length < maxLengthPhoneInput) {
+    setErrorPhoneInput(true);
+    return;
+  }
+  return true;
+};
+```
+
+A função `onChangePhoneInput` será executada sempre que algum valor for alterado dentro do `PhoneInput` e sempre que for alterado, ela irá aplicar o valor no nosso estado `initialValuePhoneInput` e enquanto o usuário estiver digitando o seu número dentro do input, `errorPhoneInput` sempre será `false` e não serão apresentados erros. Se o usuário tentar submeter o formulário com um número que não seja válido, ele irá executar a função `validationInputPhone`, que irá fazer a verificação e atribuir o valor `true` para o nosso estado `errorPhoneInput`. Dessa forma, mostramos em tela a mensagem de erro, e assim que o usuário alterar o input pra corrigir o seu número de telefone a mensagem de erro irá sumir, ativando a função `onChangePhoneInput`.
+
+E com base no retorno da função `validationInputPhone` podemos condicionar o envio, ou não, do formulário.
+
+Por último, a lógica por trás da validação desse input:
+
+```
+<PhoneInput
+  [...]
+
+  isValid={(inputNumber, country: any) => {
+    const selectedCountry: IPhoneInputCountry = country;
+
+    let placeholderMaskInput = selectedCountry?.format;
+    const stringConvertedToArray = placeholderMaskInput.split("");
+
+    let filteredMaskInput = stringConvertedToArray.filter(
+      (character: string) => character === "."
+    );
+
+    let resultLength;
+    if (placeholderMaskInput.match(/\s..$/gm)) {
+      // console.log("Matches!");
+      resultLength = filteredMaskInput.slice(0, filteredMaskInput.length - 2);
+    } else {
+      // console.log("NOT MATCHES!");
+      resultLength = filteredMaskInput;
+    }
+    setMaxLengthPhoneInput(resultLength.length);
+    return true;
+  }}
+/>
+```
+
+Como estamos usando `typescript`, foi necessário aplicar uma tipagem no parâmetro `country`, porém ao aplicar a interface direto no parâmetro da função acabava gerando conflito no componente e ele não permitia tal ação. Dessa forma, passamos uma tipagem do tipo `any` para que o typescript parasse de acusar erro, mas logo na linha abaixo passamos o valor de `country` para uma variável e nesta aplicamos a sua devida tipagem.
+
+Dentro de `selectedCountry` temos uma propriedade chamada `format`, dentro dela vem uma string que representa a máscara do input para aquele determinado país escolhido. Por exemplo, ao selecionar o Brasil, ele nos retorna o seguinte valor:
+
+```
+"+.. (..) ........."
+```
+
+Onde cada ponto "`.`" seria um dígito. Tendo isso em mente, passamos esse valor para uma variável e convertemos essa `string` em um `array`, separando caractere por caractere e colocando cada um separadamente dentro do array, isso por meio do método de string `split`.
+
+Depois disso precisávamos saber a quantidade de números deveriam ser digitado para que fosse válido. Então filtramos o array de strings para que nos retornasse um novo array com apenas os elementos que contém um ponto "`.`", depois disso era só pegar o tamanho desse novo array e saberíamos quantos caracteres deveria estar no input para que ele fosse válido.
+
+Entretanto houve um pequeno problema em que alguns `format` estavam vindo com dois pontos a mais que o permitido, foi onde realizamos uma vericação por meio de `regex` em que ao se deparar com uma máscara que contém esses pontos a mais, ele logo tratava de remover esses dois últimos elementos do nosso array filtrado.
+
+```
+let resultLength;
+
+if (placeholderMaskInput.match(/\s..$/gm)) {
+  // console.log("Matches!");
+  resultLength = filteredMaskInput.slice(0, filteredMaskInput.length - 2);
+} else {
+  // console.log("NOT MATCHES!");
+  resultLength = filteredMaskInput;
+}
+
+setMaxLengthPhoneInput(resultLength.length);
+```
+
+E assim passando corretamente um número contendo a quantidade máxima de caracteres para o estado `maxLengthPhoneInput` e assim podemos aplicar a função `validationInputPhone` e ela terá a quantidade total de caracteres que aquele número daquele país deveria ter (`maxLengthPhoneInput`) e a quantidade atual que temos no nosso input (`initialValuePhoneInput`) e verifcar se os valores estão de acordo.
+
+Por fim temos uma mensagem de erro que será mostrada ao usuário em caso de tentar submeter um número inválido.
+
+```
+{ errorPhoneInput && <p>Please, insert a valid number!</p> }
+```
+
+Sinta-se à vontade pra estilizar a mensagem como preferir.
+
 <h2 align="center" id="faq-sectionsPage">FAQ</h2>
+
 <h2 align="center" id="homeSection-sectionsPage">HomeSection</h2>
+
 <h2 align="center" id="multiTeams-sectionsPage">MultiTeams</h2>
+
 <h2 align="center" id="scaleTechTeam-sectionsPage">ScaleTechTeam</h2>
+
 <h2 align="center" id="techStacks-sectionsPage">TechStacks</h2>
+
 <h2 align="center" id="testimonials-sectionsPage">Testimonials</h2>
+
 <h2 align="center" id="thePillars-sectionsPage">ThePillars</h2>
 
 <h2 id="shared-src">shared</h2>
 
 shared files...
 
-- <a href="">dataLists</a>
-- <a href="">globalStyle</a>
-- <a href="">globalTheme</a>
+- <a href="#dataLists-shared">dataLists</a>
+- <a href="#globalStyle-shared">globalStyle</a>
+- <a href="#globalTheme-shared">globalTheme</a>
 
 <h2 align="center" id="dataLists-shared">dataLists</h2>
 <h2 align="center" id="globalStyle-shared">globalStyle</h2>

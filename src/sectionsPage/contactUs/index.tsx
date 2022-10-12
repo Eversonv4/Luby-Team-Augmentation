@@ -9,12 +9,14 @@ import {
   InputLayout,
   ErrorMessage,
 } from "./styles";
+import { IContactForm, IPhoneInputCountry } from "./interface";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { motion, Variants } from "framer-motion";
+
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -33,15 +35,6 @@ const FadeAnimation: Variants = {
   },
 };
 
-interface IContactForm {
-  name: string;
-  email: string;
-  companyName: string;
-  role: string;
-  phone?: string;
-  message: string;
-}
-
 const schemaValidation = yup.object({
   name: yup.string().required("Please, Insert a Name!"),
   email: yup.string().email().required("Insert a valid Email!"),
@@ -51,42 +44,32 @@ const schemaValidation = yup.object({
 });
 
 export function ContactUsSection() {
-  const [value, setValue] = useState("");
-  // const [valid, setValid] = useState<boolean>();
-  const [maxLengthInput, setMaxLengthInput] = useState(0);
-  const [erro, setErro] = useState<boolean>();
+  const [initialValuePhoneInput, setInitialValuePhoneInput] = useState("");
+  const [maxLengthPhoneInput, setMaxLengthPhoneInput] = useState(0);
+  const [errorPhoneInput, setErrorPhoneInput] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IContactForm>({
+  // prettier-ignore
+  const { register, handleSubmit, formState: { errors } } = useForm<IContactForm>({
     resolver: yupResolver(schemaValidation),
   });
 
-  const validationInputPhone = () => {
-    // console.log("entrou");
-
-    if (value.length < maxLengthInput) {
-      setErro(true);
+  function validationInputPhone() {
+    if (initialValuePhoneInput.length < maxLengthPhoneInput) {
+      setErrorPhoneInput(true);
       return;
     }
-    // setValid(true);
-    // console.log("value", value.length);
-    // console.log("max length", maxLengthInput);
     return true;
-  };
+  }
 
-  function onChangeInput(value: string) {
-    setValue(value);
-    // setValid(false);
-    setErro(false);
+  function onChangePhoneInput(phoneInputValue: string) {
+    setInitialValuePhoneInput(phoneInputValue);
+    setErrorPhoneInput(false);
   }
 
   const onSubmit = handleSubmit((data: IContactForm) => {
     const isValid = validationInputPhone();
     if (isValid) {
-      console.log({ phone: value, ...data });
+      console.log({ phone: initialValuePhoneInput, ...data });
     }
   });
 
@@ -145,35 +128,37 @@ export function ContactUsSection() {
               <InputLayout>
                 <PhoneInput
                   country="us"
-                  value={value}
-                  onChange={(value) => onChangeInput(value)}
+                  value={initialValuePhoneInput}
+                  onChange={(value) => onChangePhoneInput(value)}
                   autoFormat={true}
                   placeholder="Your phone number"
                   enableSearch={true}
                   disableSearchIcon={false}
-                  isValid={(inputNumber, country: any, onlyCountries: any) => {
-                    // console.log(country?.format);
-                    let StringSplit = country?.format;
-                    const SplitedString = StringSplit.split("");
-                    let filteredString = SplitedString.filter(
-                      (char: string) => char === "."
+                  isValid={(inputNumber, country: any) => {
+                    console.log(country);
+                    const selectedCountry: IPhoneInputCountry = country;
+                    let placeholderMaskInput = selectedCountry?.format;
+                    // prettier-ignore
+                    const stringConvertedToArray = placeholderMaskInput.split("");
+
+                    let filteredMaskInput = stringConvertedToArray.filter(
+                      (character: string) => character === "."
                     );
+
                     let resultLength;
-                    if (StringSplit.match(/\s..$/gm)) {
-                      // console.log("Matches!!");
-                      resultLength = filteredString.slice(
-                        0,
-                        filteredString.length - 2
-                      );
+                    if (placeholderMaskInput.match(/\s..$/gm)) {
+                      // console.log("Matches!");
+                      // prettier-ignore
+                      resultLength = filteredMaskInput.slice(0, filteredMaskInput.length - 2);
                     } else {
                       // console.log("NOT MATCHES!");
-                      resultLength = filteredString;
+                      resultLength = filteredMaskInput;
                     }
-                    setMaxLengthInput(resultLength.length);
+                    setMaxLengthPhoneInput(resultLength.length);
                     return true;
                   }}
                 />
-                {erro && (
+                {errorPhoneInput && (
                   <ErrorMessage>Please, insert a valid number!</ErrorMessage>
                 )}
               </InputLayout>
