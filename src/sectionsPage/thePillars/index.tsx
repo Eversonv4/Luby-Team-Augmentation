@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Container, Title, SubTitle, ButtonContrast } from "./styles";
-import { FiChevronDown } from "react-icons/fi";
 
 import { IframeVideo } from "@components/IframeVideo";
 import { IframeThumb } from "@components/IframeThumb";

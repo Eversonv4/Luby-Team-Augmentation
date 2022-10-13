@@ -18,25 +18,6 @@ interface IActivateMenu {
 }
 
 export function MenuAside({ handleMenuActive, isActive }: IActivateMenu) {
-  // function ChangeColor() {
-  //   if (window.scrollY > altura_nav_bar) {
-  //     console.log("está maior!");
-  //   } else {
-  //     console.log("está zero!");
-  //   }
-  // }
-
-  // window.onscroll = ChangeColor;
-
-  /*
-    another way to trigger the function
-
-     React.useEffect(() => {
-    window.addEventListener("scroll", changeNavbar);
-  }, []);
-  
-  */
-
   return (
     <>
       <BackgroundShadow

@@ -117,7 +117,6 @@ Dentro da pasta `assets` temos dois ícones em SVG que foram utilizados especifi
 Em `components` temos pequenos elementos que podem ser usados em qualquer parte do projeto apenas fazendo sua importação adequadamente.
 
 - <a href="#accordion-components">Accordion</a>
-- <a href="#buttonStackList-components">ButtonStackList</a>
 - <a href="#buttonTechList-components">ButtonTechList</a>
 - <a href="#carrosselTestimonials-components">CarrosselTestimonials</a>
 - <a href="#clutchReview-components">ClutchReview</a>
@@ -351,7 +350,7 @@ De dentro da pasta `TeamsList`, importamos a nossa lista `TeamsList`, aplicamos 
 
 <h2 id="sectionsPage-src">sectionsPage</h2>
 
-Sections page...
+Dentro dessa pasta temos todas as seções do projeto que fica entre o Header e o Footer.
 
 - <a href="#benefits-sectionsPage">Benefits</a>
 - <a href="#companies-sectionsPage">Companies</a>
@@ -365,7 +364,9 @@ Sections page...
 - <a href="#testimonials-sectionsPage">Testimonials</a>
 - <a href="#thePillars-sectionsPage">ThePillars</a>
 
-<h2 align="center" id="benefits-sectionsPage">Benefits</h2>
+<h2 align="center" id="benefits-sectionsPage">
+  <a href="#sectionsPage-src">Benefits</a>
+</h2>
 
 A seção `Benefits` é bastante simples, com um título principal e uma lista com alguns itens. A imagem de fundo foi colocada como background no `css` da `<section>` que engloba essa seção. Os ícones de "check" de fundo azul foi colocado com um `position: absolute` para que o círculo não ficasse deformado com as margens do texto.
 
@@ -408,7 +409,9 @@ export function BenefitsSection() {
 
 Esse componente englobando o conteúdo das `<section>` irá se repetir em diversas seções, o gatilho da animação é quando damos scroll até aquela determinada seção.
 
-<h2 align="center" id="companies-sectionsPage">Companies</h2>
+<h2 align="center" id="companies-sectionsPage">
+  <a href="#sectionsPage-src">Companies</a>
+</h2>
 
 Nesta seção temos apenas um título lateral e um carrossel com criado utilizando a biblioteca <a href="https://splidejs.com">Splide</a>, que é uma ferramenta bastante simples e em pouco tempos nós já temos um carrossel em tela. As imagens das empresas que aparecem foram colocadas como `background` das divs. Essa foi uma estratégia adotada para melhorar o SEO, já que ao renderizar uma imagem com a tag `<img>`, ou a tag de imagem do NextJS `<Image />`, as regras de SEO pedem para que passemos alguns valores e atributos, etc.
 
@@ -430,7 +433,9 @@ Todas as regras para manipular o carrossel e os slides são passadas dentro do p
 ...
 ```
 
-<h2 align="center" id="contactUs-sectionsPage">ContactUs</h2>
+<h2 align="center" id="contactUs-sectionsPage">
+  <a href="#sectionsPage-src">ContactUs</a>
+</h2>
 
 Essa seção à primeira vista parece simples, e de fato é. Temos duas `<div>` lado a lado. Do lado esquerdo temos um título e alguns `<span>` e alguns textos em negrito. Ao lado direto temos um formulário, nele nós utilizamos a biblioteca <a href="https://react-hook-form.com">React Hook Form</a> junto com a ferramenta `Yup` para gerenciar os estados dos nossos e principalmente as validações dos nossos `inputs`. Seria tudo bem tranquilo se não fosse pelo input de números de celulares internacionais, `PhoneInput`.
 
@@ -575,7 +580,7 @@ import "react-phone-input-2/lib/style.css";
 
 Esse trecho acima se trata da importação do componente e a sua estilização da listagem dos países ao abrirmos o menu de países.
 
-Logo abaixo temos a tipagem do objeto `country` que recebemos dentro da função que fica dentro do atributo `isValid`:
+Logo abaixo temos a tipagem do objeto `country` que recebemos como parâmetro da função que fica dentro do atributo `isValid`:
 
 ```
 interface IPhoneInputCountry {
@@ -648,7 +653,7 @@ Por último, a lógica por trás da validação desse input:
 />
 ```
 
-Como estamos usando `typescript`, foi necessário aplicar uma tipagem no parâmetro `country`, porém ao aplicar a interface direto no parâmetro da função acabava gerando conflito no componente e ele não permitia tal ação. Dessa forma, passamos uma tipagem do tipo `any` para que o typescript parasse de acusar erro, mas logo na linha abaixo passamos o valor de `country` para uma variável e nesta aplicamos a sua devida tipagem.
+Como estamos usando `typescript`, foi necessário aplicar uma tipagem no parâmetro `country`, porém ao aplicar a interface direto no parâmetro da função acabava gerando conflito no componente e ele não permitia tal ação. Dessa forma, passamos uma tipagem do tipo `any` para que o typescript parasse de acusar erro, mas logo na linha abaixo passamos o valor de `country` para uma variável `selectedCountry` e nesta aplicamos a sua devida tipagem.
 
 Dentro de `selectedCountry` temos uma propriedade chamada `format`, dentro dela vem uma string que representa a máscara do input para aquele determinado país escolhido. Por exemplo, ao selecionar o Brasil, ele nos retorna o seguinte valor:
 
@@ -656,7 +661,7 @@ Dentro de `selectedCountry` temos uma propriedade chamada `format`, dentro dela 
 "+.. (..) ........."
 ```
 
-Onde cada ponto "`.`" seria um dígito. Tendo isso em mente, passamos esse valor para uma variável e convertemos essa `string` em um `array`, separando caractere por caractere e colocando cada um separadamente dentro do array, isso por meio do método de string `split`.
+Onde cada ponto "`.`" seria um dígito. Tendo isso em mente, passamos esse valor para uma variável e convertemos essa string em um `array`, separando caractere por caractere e colocando cada um separadamente dentro do array, isso por meio do método de string `split()`.
 
 Depois disso precisávamos saber a quantidade de números deveriam ser digitado para que fosse válido. Então filtramos o array de strings para que nos retornasse um novo array com apenas os elementos que contém um ponto "`.`", depois disso era só pegar o tamanho desse novo array e saberíamos quantos caracteres deveria estar no input para que ele fosse válido.
 
@@ -686,71 +691,229 @@ Por fim temos uma mensagem de erro que será mostrada ao usuário em caso de ten
 
 Sinta-se à vontade pra estilizar a mensagem como preferir.
 
-<h2 align="center" id="faq-sectionsPage">FAQ</h2>
+<h2 align="center" id="faq-sectionsPage">
+  <a href="#sectionsPage-src">FAQ</a>
+</h2>
 
-<h2 align="center" id="homeSection-sectionsPage">HomeSection</h2>
+Nesta seção de perguntas frequentes a estilização é bastante simples, temos um título maior ao topo, e um pequeno `<span>` acima dele. Os componentes `Accordion` foram divididos em duas colunas e a lógica aplicada para selecionar qual acordeon desejamos abrir é bastante simples: primeiro criamos um estado que vai armazenar qual acordeon será aberto:
 
-<h2 align="center" id="multiTeams-sectionsPage">MultiTeams</h2>
+```
+const [selectedAccordion, setSelectedAccordion] = useState("");
 
-<h2 align="center" id="scaleTechTeam-sectionsPage">ScaleTechTeam</h2>
+function handleOpenAccordion(AccordionName: string) {
+  if (AccordionName === selectedAccordion) {
+    setSelectedAccordion("");
+    return;
+  }
+  setSelectedAccordion(AccordionName);
+}
+```
 
-<h2 align="center" id="techStacks-sectionsPage">TechStacks</h2>
+Também implementamos uma função `handleOpenAccordion` que será executada quando clicado no acordeon desejado, e ao fazer isso, o acordeon irá passar um valor que o identificará e fará a abertura do componente:
 
-<h2 align="center" id="testimonials-sectionsPage">Testimonials</h2>
+```
+<Accordeon
+  AccordeonHeight="375px"
+  question="What is IT Team Augmentation?"
+  openAccordion={() => handleOpenAccordion("one")} // A função será passada já com o valor daquele accordion
+  isOpen={selectedAccordion === "one"}
+>
+...
+```
 
-<h2 align="center" id="thePillars-sectionsPage">ThePillars</h2>
+Se desejar estilizar o componente <a href="#components-src">Accordion</a>, basta ir até a descrição desse componente nesta mesma documentação e você irá encontrar mais detalhes sobre. Se deseja estilizar o layout desta seção, basta ir no arquivo `styles.ts` dentro da pasta `FAQ`. A responsividade desta seção está em seus respectivos arquivos de estilo.
+
+<h2 align="center" id="homeSection-sectionsPage">
+  <a href="#sectionsPage-src">HomeSection</a>
+</h2>
+
+A seção `Home Section` é a seção principal que podemos ver logo que entramos no site. Dentro dela temos o componente <a href="#header-components">Header</a> importado logo no topo. Em seguida temos uma imagem que será usada como background desta seção, está possui um `position: absolute` e um `z-index: -1` para que ela fique no topo da página, em um nível abaixo, para que não interferisse nos componentes em tela: títulos, botões, parágrafos, etc.
+
+Nesta seção temos um título principal, um subtítulo e um parágrafo, logo abaixo temos um botão que nos irá levar até a seção <a href="#contactUs-sectionsPage">ContactUs</a> e um texto ao lado deste botão. Todo esse conteúdo de dentro está centralizado ao meio e sua responsividade foi aplicada no arquivo `styles.ts` dentro da pasta desta seção.
+
+<h2 align="center" id="multiTeams-sectionsPage">
+  <a href="#sectionsPage-src">MultiTeams</a>
+</h2>
+
+Em `MultiTeams` temos a primeira seção com um menu dinâmico. Aqui temos a importação dos componentes <a href="#buttonTechList-components">ButtonTechList</a> e da nossa lista <a href="#teamsList-components">TeamsList</a>. Para mais detalhes sobre esses componentes, vale a pena conferir o trecho da documentação que abordamos esses tópicos.
+
+Aqui aplicamos uma lógica para que a listagem dos times de tecnologias fossem apresentados em tela de acordo com suas respectivas áreas `Technology`, `Product` e `Design`. Para isso, primeiramente importamos o componente `TeamsListData`, que está na pasta `shared` e contém um array com a lista dos nomes das tecnologias separadas pelos seus times.
+
+Em seguida criamos alguns estamos e uma função para lidar com essa listagem dinâmica:
+
+```
+const [chooseTeam, setChooseTeam] = useState<TeamsProps>("tech");
+const [listActive, setListActive] = useState<string[]>([]);
+
+function handleTeamActive(team: TeamsProps) {
+  setChooseTeam(team);
+  setListActive(TeamsListData[team]);
+}
+```
+
+O primeiro estado `chooseTeam` é onde iremos armazenar o nome do team ("tech", "product" e "design"), como assim que carregamos a página temos que mostrar um time, o valor inicial para esse estado já foi o time `tech`. O segundo estado é a lista de todos grupos daquele time específico. Porém essa lista vai variar de acordo com o time escolhido `chooseTeam` vá alterando.
+
+A função `handleTeamActive` irá receber o título do time ativo e logo irá passar esse valor para o estado `chooseTeam`, assim como também vamos pegar a listagem do time correto do nosso objeto `TeamsListData` com base no time indicado e passar para o nosso estado `listActive`.
+
+O Objeto `TeamsListData` tem uma cara mais ou menos assim:
+
+```
+export const TeamsListData = {
+  tech: [...],
+  product: [...],
+  design: [...],
+}
+```
+
+Com base nisso, passamos a listagem escolhida dentro do nosso estado `listActive` para dentro do nosso componente-lista `TeamsList`.
+
+<h2 align="center" id="scaleTechTeam-sectionsPage">
+  <a href="#sectionsPage-src">ScaleTechTeam</a>
+</h2>
+
+Nesta seção temos um título principal, uma descrição e alguns cards. A parte legal aqui é que os cards foram criados dentro de uma `<div>` que possui um `template grid` e isso permitiu que tanto a estilização quanto a responsividade da seção fosse bem mais simples.
+
+Na `<div>` que engloba os `cards` passamos a seguinte configuração para o grid:
+
+```
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-auto-rows: minmax(85px, auto);
+gap: 30px;
+```
+
+Em `grid-template-columns: repeat(4, 1fr);` dividimos o nosso grid em 4 colunas, cada uma delas com as larguras iguais `1fr`. Passamos também uma altura mímina e máxima, respectivamente, para as linhas do grid `minmax(85px, auto);`, e por último um `gap` de 30px para que os cards dessem uma respirada. No media query desse conteúdo é só alterando a quantidade de colunas do grid e o tamanho das linhas, bem tranquilo.
+
+O efeito de `hover` possui um detalhe a mais. Os ícones que vieram provenientes da biblioteca <a href="react-icons.github.io/react-icons/">`react-icons`</a> recebem as cores dinamicamente assim como o texto, porém, temos dois ícones que não vieram dessa biblioteca, pois não foi encontrado a família. De tal forma, foi retirado esse ícone da internet e os convertidos manualmente para `SVG`. Por conta disso, não foi possível alterar sua cor dinamicamente como podemos fazer com um texto ou um svg da bibliboteca react-icons, então aplicamos uma propriedade css `filter: invert(1)` que consegue fazer o mesmo efeito de alterar a cor do ícone, de preto para branco. Dentro do componente `Card` dentro do arquivo `styles.ts` foi adicionado essa estilização ao passar o mouse em cima do componente, resultando em uma estilização igual para todos os cards, independente dos ícones.
+
+<h2 align="center" id="techStacks-sectionsPage">
+  <a href="#sectionsPage-src">TechStacks</a>
+</h2>
+
+A seção `TechStacks` é identica à seção <a href="#multiTeams-sectionsPage">MultiTeams</a>, a única diferença é os dados vem de um outro objeto, o `StackListData.ts`, também dentro da pasta <a href="#shared-src">shared</a>, e o componente que fará a listagem é o <a href="#stackList-components">StackList</a>, e cada elemento terá um texto e uma imagem, referente àquela tecnologia, por exemplo: `{ title: Javascript, image: 'URL_da_Imagem' }`.
+
+Os botões que farão o controle de qual `Stack` será listada também é o componente <a href="#buttonStackList-components">ButtonStackList</a> e a sua lógica para a sua ativação é a mesma lógica.
+
+```
+const [selectedStack, setSelectedStack] = useState<StackProps>("backend");
+const [stackActive, setStackActive] = useState<StackItem[]>([]);
+
+function handleStackList(stack: StackProps) {
+  setSelectedStack(stack);
+  setStackActive(StackListData[stack]);
+}
+```
+
+Como podemos observar, o raciocínio se mantém o mesmo nessa seção. Dentro do nosso estado `selectedStack` temos armazenado qual stack selecionada e com isso podemos definir a listagem de qual stack desejamos mostrar em tela. No estado `stackActive` armazenamos a lista do conteúdo dentro da stack selecionada.
+
+Depois passamos por props a lista que está no nosso estado `stackActive`, para o nosso componente <a href="#stackList-components">StackList</a> e ele fará o trabalho de renderizar os pequenos cards com o nome e a logo daquela tecnologia.
+
+A lógica dos botões `ButtonTechList` é comum tanto na seção aqui quanto na seção `MultiTeams`, passamos para o componente uma verificação que retorna um valor booleano, se o valor do nosso estado `selectedStack` for igual áquele do botão especifico, então retornará verdadeiro. Passamos também uma função para que ao clicar nesse botão, um novo estado seja passado ao nosso estado `selectedStack` e por último é o título que irá aparecer naquele botão `TechTitle`.
+
+<h2 align="center" id="testimonials-sectionsPage">
+  <a href="#sectionsPage-src">Testimonials</a>
+</h2>
+
+Esta seção é bastante simples, já que boa parte dela se resume ao componente <a href="#carrosselTestimonials-components">CarrosselTestimonials</a>, basta importá-lo e aplicá-lo em tela dentro de uma `<div>` com uma largura máxima pré-definina e ele se comportará bem. Acima desse componente temos um título e um subtítulo bem simples.
+
+Abaixo do carrossel de reviews dos clientes da `Luby` temos uma "sub-seção" que nos apresenta um status e informações sobre as conquistas da luby. Nesta seção temos dois conteúdos separados cada um de um lado, dessa forma colocamos cada um dentro de uma `<div>` e aplicamos um alinhamento de `justify-content` para que elas se separassem. Temos alguns títulos e spans, mas sua estilização não envolve nenhuma lógica complicada. Vale atentar-se que na coluna da direita temos um widget proveniente do site <a href="https://clutch.co/profile/luby#summary">clutch.co</a>, é um pequeno widget de review que também já está pronto e basta importar o componente `ClutchReview`. Mais detalhes sobre este componente pode ser encontrado em <a href="#clutchReview-components">ClutchReview</a>.
+
+<h2 align="center" id="thePillars-sectionsPage">
+  <a href="#sectionsPage-src">ThePillars</a>
+</h2>
+
+A seção `The 3 Pillars` é uma seção relativamente simples, temos um título no topo e um subtítulo logo abaixo, além de um botão que linka até a seção <a href="#contactUs-sectionsPage">ContactUs</a>. A parte principal desta seção se encontra nos dois componentes `IframeThumb` e `IframeVideo`, onde nós trocamos a renderização dos componentes de forma condicional. A lógica aplicada é bem básica, mas só por renderizar uma simples div com uma imagem de fundo e um ícone já causa um impactor enorme na performance do site, ao invés de renderizar todo um iframe com diversos dados externos:
+
+```
+const [loadVideo, setLoadVideo] = useState(false);
+
+function showVideo() {
+  setLoadVideo(true);
+}
+
+{loadVideo ? <IframeVideo /> : <IframeThumb showVideo={showVideo} />}
+```
+
+O estado `loadVideo` é o que vai servir de gatilho para trocar entre o `IframeThumb` e o `IframeVideo`. A função só tem um propósito: trocar o valor do estado de `false` para `true`. Dessa forma a thumbnail some e o navegador faz a requisição e nos retorna o vídeo do youtube. A função de troca de componente é passada por props para o `IframeThumb` e passamos para o ícone de `play` no evento `onClick`.
 
 <h2 id="shared-src">shared</h2>
 
-shared files...
+Dentro da pasta `shared` temos definidos os estilos globais assim como os nossos temas, com as fontes utilizadas no projeto, as cores, além dos dados das listas <a href="#stackList-components">StackList</a> e <a href="#teamsList-components">TeamsList</a>.
 
 - <a href="#dataLists-shared">dataLists</a>
+  - <a href="#Stack-dataLists">StackListData</a>
+  - <a href="#Teams-dataLists">TeamsListData</a>
 - <a href="#globalStyle-shared">globalStyle</a>
 - <a href="#globalTheme-shared">globalTheme</a>
 
 <h2 align="center" id="dataLists-shared">dataLists</h2>
+
+Dentro de `dataLists` temos as informações que vão servir para apresentar em tela as informações das listas nas seções `StackLists` e `TeamsLists`.
+
+<h3 id="Stack-dataLists">StackListData</h3>
+
+Em StackListData temos um objeto contendo a lista de tecnologias, com suas logos e seus nomes, separados por categorias: `backend`, `frontend`, `mobile`, etc. E todas as imagens das logos das tecnologias estão dentro da pasta `public/assets/programming-tools`, separadas por suas respectivas stacks.
+
+<h3 id="Teams-dataLists">TeamsListData</h3>
+
+Em `TeamsListData` também temos um objeto contendo uma lista de áreas de desenvolvimento, separados por times: `technology`, `product` e `design` .
+
 <h2 align="center" id="globalStyle-shared">globalStyle</h2>
+
+Aqui nós definimos alguns estilos globais por meio da ferramenta de contexto do styled-components, passando algumas estilizações que desejamos que sejam aplicadas em todo o projeto. Diferente do arquivo `globals.css`, dentro da pasta <a href="#styles-folder">Styles</a>, nos estilos globais do styled-components não é uma boa opção para fazer a importação das fontes do projeto. Por isso utilizamos ambos os estilos globais.
+
+Para mais informações sobre estilos globais com o Styled Components, é recomendado conferir mais detalhes em sua <a href="https://styled-components.com/docs/api#helpers">documentação</a>.
+
 <h2 align="center" id="globalTheme-shared">globalTheme</h2>
 
-<p>Dessa forma, os tópicos também serão abordados com base em cada seção para facilitar o entendimento e permitir que seja fácil se localizar. Abaixo podemos ver um mapa que nos apresenta as seções e componentes que são mostrados em tela e sua ordem e suas divisões:</p>
+Assim como na estilização global, podemos criar um objeto contendo nossas cores utilizadas no projeto, assim como as fontes. De tal forma, podemos acessar essas informações em qualquer lugar do projeto, já que o componente `<ThemeProvider>` está englobando todo o projeto dentro do arquivo `_app.tsx`. O tema criado:
 
-- Header (componentes)
-- Menu Aside (componentes)
-- Home
-- Companies
-- Scale Your Team
-- Benefits
-- The 3 Pillars
-- Multi Teams
-- Tech Stacks
-- Testimonials
-- Contact Us
-- FAQ (perguntas frequentes)
-- Footer (componentes)
+```
+export default {
+  colors: {
+    text: "#FFFFFF",
+    text_dark: "#1b1b1b",
 
-<hr>
+    primary: "#02A4EF",
+    secondary: "#FFB706",
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+    bg_hover: "#0039B3",
+    bg_hover_dark: "#002066",
+    hover_button: "#2F3439",
+    bg_cards: "#EBEBE8",
+  },
+  fonts: {
+    oswald: "Oswald",
+    manrope: "Manrope",
+  },
+};
+```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dentro de `globalTheme` criamos esse objeto contendo nossas cores e fontes. Dentro do arquivo `_app.tsx` fazemos a importação do componente `<ThemeProvider>` proveniente do 'styled-components' e englobamos todo o conteúdo de `_app.tsx` e passamos o nosso tema como atributo do nosso componente `<ThemeProvider>`:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+import { GlobalStyle } from "@shared/globalStyle/GlobalStyle";
+import { ThemeProvider } from "styled-components";
+import Theme from "@shared/globalTheme/theme";
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<ThemeProvider theme={Theme}>
+  <GlobalStyle />
+  <Component {...pageProps} />
+</ThemeProvider>
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Exemplo de como consumir uma cor proveniente do nosso tema lá de dentro do nosso arquivo `styles.ts` dentro de alguma pasta de componente ou seção:
 
-## Learn More
+```
+color: ${({ theme }) => theme.colors.text_dark};
+```
 
-To learn more about Next.js, take a look at the following resources:
+Para mais detalhes sobre como utilizar os temas e os estilos globais, recomendo ler essa seção da documentação do <a href="https://styled-components.com/docs/api#helpers">styled components</a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h2>styled.d.ts</h2>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Nesse arquivo nos criamos só para resolver os problemas de tipagem e fazer com que o próprio typescrit nossa nos ajudar com sugestões sobre quais as propriedades nós temos nos temas. Assim, sempre que tivermos dúvidas sobre o nome de alguma cor ou fonte, o próprio typescript vai nos mostrar quais opções temos.
 
-## Deploy on Vercel
+<hr />
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em caso de dúvidas ou sugestões a respeito da documentação, pode entrar em contato com o email <i>eversonv4@gmail.com</i>

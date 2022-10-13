@@ -27,14 +27,14 @@ const FadeAnimation: Variants = {
 };
 
 export function FaqSection() {
-  const [open, setOpen] = useState("");
+  const [selectedAccordion, setSelectedAccordion] = useState("");
 
-  function handleOpenAcordion(value: string) {
-    if (value === open) {
-      setOpen("");
+  function handleOpenAccordion(AccordionName: string) {
+    if (AccordionName === selectedAccordion) {
+      setSelectedAccordion("");
       return;
     }
-    setOpen(value);
+    setSelectedAccordion(AccordionName);
   }
 
   return (
@@ -54,8 +54,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="375px"
                 question="What is IT Team Augmentation?"
-                openAccordion={() => handleOpenAcordion("one")}
-                isOpen={open === "one"}
+                openAccordion={() => handleOpenAccordion("one")}
+                isOpen={selectedAccordion === "one"}
               >
                 <p>
                   Team Augmentation if the full outsourcing of a technical
@@ -82,8 +82,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="198px"
                 question="What's the difference between Extended Teams and Team Augmentation?"
-                openAccordion={() => handleOpenAcordion("two")}
-                isOpen={open === "two"}
+                openAccordion={() => handleOpenAccordion("two")}
+                isOpen={selectedAccordion === "two"}
               >
                 <p>
                   On the Extended Teams offering, the squads are fully managed
@@ -99,8 +99,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="174px"
                 question="Is there any restriction to hire the Team Augmentation services?"
-                openAccordion={() => handleOpenAcordion("three")}
-                isOpen={open === "three"}
+                openAccordion={() => handleOpenAccordion("three")}
+                isOpen={selectedAccordion === "three"}
               >
                 <p>
                   Any company or business that needs specialized development
@@ -114,8 +114,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="834px"
                 question="How's the implementation of the Team Augmentation Service?"
-                openAccordion={() => handleOpenAcordion("four")}
-                isOpen={open === "four"}
+                openAccordion={() => handleOpenAccordion("four")}
+                isOpen={selectedAccordion === "four"}
               >
                 <p>
                   Luby's IT Team Augmentation Process will be implemented
@@ -172,8 +172,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="512px"
                 question="What are Luby's nearshore advantages?"
-                openAccordion={() => handleOpenAcordion("five")}
-                isOpen={open === "five"}
+                openAccordion={() => handleOpenAccordion("five")}
+                isOpen={selectedAccordion === "five"}
               >
                 <p>
                   As all of Luby's professionals are working remotely from
@@ -210,8 +210,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="126px"
                 question="Why should I hire Luby's Team Augmentation services?"
-                openAccordion={() => handleOpenAcordion("six")}
-                isOpen={open === "six"}
+                openAccordion={() => handleOpenAccordion("six")}
+                isOpen={selectedAccordion === "six"}
               >
                 <p>
                   Luby's talent pool of high performing fully remote IT
@@ -224,8 +224,8 @@ export function FaqSection() {
               <Accordeon
                 AccordeonHeight="198px"
                 question="What does the service offer?"
-                openAccordion={() => handleOpenAcordion("seven")}
-                isOpen={open === "seven"}
+                openAccordion={() => handleOpenAccordion("seven")}
+                isOpen={selectedAccordion === "seven"}
               >
                 <p>
                   The service is adapted to the actual needs of each client. Our

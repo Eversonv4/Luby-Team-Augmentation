@@ -135,7 +135,6 @@ export function ContactUsSection() {
                   enableSearch={true}
                   disableSearchIcon={false}
                   isValid={(inputNumber, country: any) => {
-                    console.log(country);
                     const selectedCountry: IPhoneInputCountry = country;
                     let placeholderMaskInput = selectedCountry?.format;
                     // prettier-ignore
