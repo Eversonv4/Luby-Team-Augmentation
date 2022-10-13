@@ -26,9 +26,55 @@ yarn dev
 
 <hr />
 
-<h2>Configurando o Path Mapping</h2>
+<h2>Configurando o Path Mapping (ou Absolute Imports)</h2>
 
-path mapping...
+O `path mapping` é uma forma de se importar componentes em ReactJs, mas também funciona em NextJs, em que não precisamos fazer todo o caminho até aquele determinado componente. Dessa forma, podemos evitar importações do tipo:
+
+```
+import MyComponent from '../../../../FolderProject'
+```
+
+Ao invés disso, podemos apenas utilizar:
+
+```
+import MyComponent from 'Components/FolderProject'
+```
+
+Fica mais simples de se ler e visualmente mais agradável.
+
+Para isso, precisamos realizar algumas simples configurações no arquivo `tsconfig.json` para que o intellisense do `vscode` ache o caminho dos componentes. Dentro do arquivo `tsconfig.json`, mais especificamente dentro de `compilerOptinos`, nós vamos adicionar uma propriedade chamada `baseUrl` e outra `paths`. Ficando assim:
+
+```
+"baseUrl": ".",
+"paths": {
+  "@components/*": ["src/components/*"],
+  "@shared/*": ["src/shared/*"],
+  "@sections/*": ["src/sectionsPage/*"],
+  "@assets/*": ["src/assets/*"]
+},
+```
+
+Para realizar a importação primeiro passamos uma URL base `baseUrl`, e em seguida passamos os caminhos para as pastas que queremos fazer as importações com o path mapping. Normalmente utilizamos essa ferramenta dentro da nossa pasta `src`, onde temos uma pasta para os componentes, outra para arquivos e funções compartilhadas, assets, páginas e todo tipo de conteúdo que pode ser importado por diversos arquivos.
+
+Dentro do nosso projeto, mais especificamente dentro da pasta `src` temos quatro pastas `components`, `shared`, `sectionsPage` e `assets`, por isso decidi utilizar o path mapping nessas pastas, que só de olhar podemos identificar claramente de qual pasta veio aquele determinado arquivo.
+
+Dentro da propriedade `paths` que adicionado ao ao arquivo `tsconfig.json`, criamos um objeto em que a propriedade é a forma como queremos fazer a importação para aquela determinada pasta, e o valor é um array contendo o caminho até aquela pasta, ou seja, para importar algo de dentro de `components`, por exemplo, utilizamos:
+
+```
+import { MyComponent } from '@components/myComponentFolder'
+```
+
+Mas o real caminho que está sendo percorrido é:
+
+```
+import { MyComponent } from 'src/components/myComponentFolder'
+```
+
+Isso porque definimos que a pasta raiz do projeto seria a nossa `baseUrl: "."`. Outro detalhe: o `*` depois da barra das URLs `"@components/*"` ou `["src/components/*"]`, significa que queremos pegar todos os arquivos de dentro da pasta.
+
+A medida que o seu projeto for crescendo e tiverem mais pastas, podem serem adicionadas quantas forem necessárias, basta adicionar o caminho até elas dentro do `tsconfig.json`. É bom parar a execução do projeto enquanto estiver adicionando mais uma pasta ao path mapping, depois executa o projeto normalmente.
+
+Em caso de dúvidas, ou que não tenha ficado claro, o próprio NextJs possui um texto aplicando sobre <a href="https://nextjs.org/docs/advanced-features/module-path-aliases">como utilizar o Absolute Imports</a>.
 
 <h2>Iniciando o projeto</h2>
 
